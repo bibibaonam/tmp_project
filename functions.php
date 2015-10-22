@@ -693,3 +693,24 @@ function sub_category_template()
 	}
 }
 add_action('template_redirect', 'sub_category_template');
+
+
+function checkCatHotels(){
+	$isHotels = false;
+	$categories = get_the_category();
+	if (count($categories) > 0) {
+		foreach ($categories as $cat) {
+			if ($cat->slug == 'hotels') {
+				$isHotels = true; break;
+			}
+			$parrent = get_term($cat->category_parent, 'category');
+			if ($parrent) {
+				if ($parrent->slug == 'hotels') {
+					$isHotels = true; break;
+				}
+			}
+		}
+	}
+	
+	return $isHotels;
+}

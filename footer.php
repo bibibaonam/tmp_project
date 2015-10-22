@@ -167,7 +167,8 @@
 </div>
 
 <!-- id=companyInfo -->
-<?php if ( is_home() || is_front_page() || is_category('villa') || is_single('padma-resort-bali-at-legian') ): ?>
+<?php //if ( is_home() || is_front_page() || is_category('villa') || is_single('padma-resort-bali-at-legian') ): ?>
+<?php if ( is_home() || is_front_page() || is_category('hotels') || (in_category('hotels') && is_single())): ?>
 <div id="footer_tel">
   <ul>
   	<li><a href="tel:0359564170">東京本社　03-5956-4170</a></li>
@@ -213,7 +214,8 @@
 
 </div><!-- id=footer_group -->
 
-<?php if( is_page('order') || is_category('villa') || is_single('padma-resort-bali-at-legian')): ?>
+<?php //if( is_page('order') || is_category('villa') || is_single('padma-resort-bali-at-legian')): ?>
+<?php if( is_page('order') || in_category('hotels') || (in_category('hotels') && is_single())): ?>
 <?php else : ?>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -341,10 +343,8 @@ function slide_order_show(){
 
 <?php wp_footer(); ?>
 
-
-
-
-<?php if( is_category('villa') || is_single('padma-resort-bali-at-legian')): ?>
+<?php //if( is_category('villa') || is_single('padma-resort-bali-at-legian')): ?>
+<?php if(in_category('hotels') || (in_category('hotels') && is_single())): ?>
 <?php else : ?>
   <!-- UI Calender -->
 

@@ -79,7 +79,7 @@
 
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<?php if(is_home() || is_front_page() || in_category('villa')): ?>
+<?php if(is_home() || is_front_page() || in_category('hotels')): ?>
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 <?php else : ?>
 <meta name="viewport" content="width=device-width" />
@@ -176,7 +176,7 @@
 <meta property="og:title" content="バリ島旅行・ツアー情報 | バリ島へのご旅行はバリ・ガール">
 <?php if( is_home() || is_front_page()): ?>
 <meta name="description" content="一人一人のご旅行を大切に。バリ渡航歴がある専門スタッフがお客様のご旅行をお手配させて頂きます。バリでは、現地支店のスタッフがお客様のご旅行をサポート致します。特別なバリ島旅行は、バリガールへご相談ください。" />
-<?php elseif(is_category('villa')): ?>
+<?php elseif(is_category('hotels')): ?>
 <meta name="description" content="海、山、自然、エリアごとに個性あふれるバリ・ガールおすすめのヴィラ＆ホテルを紹介。" />
 <?php elseif(is_category('spa')): ?>
 <meta name="description" content="至福の癒しスパ。憧れの花びらいっぱいのバスタブも、毎日スパ三昧も、バリ島だから、プチプライス。" />
@@ -192,7 +192,7 @@
 <META NAME="ROBOTS" CONTENT="NOODP">
 <?php if( is_home() || is_front_page()): ?>
 <meta name="keywords" content="バリ,旅行,ツアー,バリガール,旅工房" />
-<?php elseif(is_category('villa')): ?>
+<?php elseif(is_category('hotels')): ?>
 <meta name="keywords" content="バリ 旅行,ヴィラ・ホテル,プルメリア・バリ,バリ島,海外旅行,ヴィラ,ホテル,スパ,ウェディング,バリ・ガール" />
 <?php elseif(is_category('spa')): ?>
 <meta name="keywords" content="バリ 旅行,スパ,プルメリア・バリ,バリ島,海外旅行,ヴィラ,ホテル,スパ,ウェディング,バリ・ガール" />
@@ -202,10 +202,10 @@
 <meta name="keywords" content="バリ 旅行,<?php the_title(); ?>,プルメリア・バリ,バリ島,海外旅行,ヴィラ,ホテル,スパ,ウェディング,バリ・ガール" />
 <?php endif; ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<?php if(in_category('villa')): ?>
+<?php if(in_category('hotels')): ?>
 <?php if(is_single('padma-resort-bali-at-legian')): ?>
 <link href="/css/global-res.css" rel="stylesheet" type="text/css" />
-<?php elseif(is_category('villa')): ?>
+<?php elseif(in_category('hotels')): ?>
 <link href="/css/global-res.css" rel="stylesheet" type="text/css" />
 <?php else : ?>
 <link href="/css/global.css" rel="stylesheet" type="text/css" />
@@ -228,7 +228,7 @@
 <link href="/css/select.css" rel="stylesheet" type="text/css" />
 <?php elseif(is_page('ubud') || is_page('seminyak-kerobokan') || is_page('kuta-legian') || is_page('jimbaran-uluwatu') || is_page('nusadua') || is_page('sanur') || is_page('canggu') || is_page('candidasa') || is_page('tanahlot') || is_page('menjangan') || is_page('lovina') || is_page('yogyakarta') || is_page('lombok') || is_page('lembongan')): ?>
 <link href="/css/city.css" rel="stylesheet" type="text/css" />
-<?php elseif(in_category('villa')): ?>
+<?php elseif(in_category('hotels')): ?>
 <?php if(is_single()): ?>
 <?php if ( $paged >= 2 || $page >= 2 ): ?>
 <link href="/css/villa-single.css" rel="stylesheet" type="text/css" />
@@ -236,10 +236,10 @@
 <?php if(is_single('padma-resort-bali-at-legian')): ?>
 <link href="/css/villa-single.css" rel="stylesheet" type="text/css" />
 <?php else : ?>
-<link href="/css/villa.css" rel="stylesheet" type="text/css" />
+<link href="/css/villa-single.css" rel="stylesheet" type="text/css" />
 <?php endif; ?>
 <?php endif; ?>
-<?php elseif(is_category('villa')): ?>
+<?php elseif(is_category('hotels')): ?>
 <link href="/css/villa-cat.css" rel="stylesheet" type="text/css" />
 <?php else : ?>
 <link href="/css/villa.css" rel="stylesheet" type="text/css" />
@@ -462,10 +462,11 @@ $(function () {
 
 
 </script>
-<?php elseif(in_category('villa') || in_category('spa')): ?>
+<?php elseif(in_category('hotels') || in_category('spa')): ?>
 <script language="javascript" type="text/javascript" src="/js/tab.js"></script>
 <script type="text/javascript" src="/js/jquery.lightbox-0.5.js"></script>
-<?php if(is_single('padma-resort-bali-at-legian')): ?>
+<?php //if(is_single('padma-resort-bali-at-legian')): ?>
+<?php if(in_category('hotels') && is_single()): ?>
 <script type="text/javascript">
 
 
@@ -713,7 +714,8 @@ location.replace('/');
 <?php endif; ?>
 <?php endif; ?>
 
-<?php if(is_single('padma-resort-bali-at-legian')): ?>
+<?php //if(is_single('padma-resort-bali-at-legian')): ?>
+<?php if(in_category('hotels') && is_single()): ?>
 <?php if ( $paged >= 2 || $page >= 2 ): ?>
 <?php else : ?>
 <script type="text/javascript" src="/js/villa-single.js"></script>
@@ -877,7 +879,7 @@ location.replace('/');
 <div id="h_read">
 <h1>バリ島を知り尽くしたコンシェルジュがご対応。バリ島ツアーの専門店「バリ・ガール」</h1>
 </div>
-<?php elseif(is_category('villa')): ?>
+<?php elseif(is_category('hotels')): ?>
 <div id="h_logo">
 <p><a href="http://www.plbali.com/"><img src="/img/logo.jpg" width="209" height="75" alt="バリ・ガール" /></a></p>
 </div>
@@ -939,7 +941,7 @@ location.replace('/');
 <div id="special">
 <?php elseif(is_page('ubud') || is_page('seminyak-kerobokan') || is_page('kuta-legian') || is_page('jimbaran-uluwatu') || is_page('nusadua') || is_page('sanur') || is_page('canggu') || is_page('candidasa') || is_page('tanahlot') || is_page('menjangan') || is_page('lovina') || is_page('yogyakarta') || is_page('lombok') || is_page('lembongan')): ?>
 <div id="city">
-<?php elseif(in_category('villa')): ?>
+<?php elseif(in_category('hotels')): ?>
 <div id="villa">
 <?php elseif(in_category('spa')): ?>
 <div id="spa">
@@ -975,7 +977,7 @@ location.replace('/');
 <ul>
 <li id="gNavi00"><a href="https://www.tabikobo.net/form/bali-girl/order/">オーダーメイド ordermade</a></li>
 <li id="gNavi01"><a href="/select/">セレクト select</a></li>
-<li id="gNavi02"><a href="/villa/">ヴィラ・ホテル villa &amp; hotel</a></li>
+<li id="gNavi02"><a href="/hotels/">ヴィラ・ホテル villa &amp; hotel</a></li>
 <li id="gNavi03"><a href="/spa/">スパ SPA</a></li>
 <li id="gNavi04"><a href="/optional/">オプショナル optional</a></li>
 <li id="gNavi05"><a href="/wedding/">ウェディング wedding</a></li>
@@ -983,11 +985,13 @@ location.replace('/');
 </ul>
 </div>
 
-<?php if( is_home() || is_front_page() || is_single('padma-resort-bali-at-legian')): ?>
+<?php //if( is_home() || is_front_page() || is_single('padma-resort-bali-at-legian')): ?>
+<?php if( is_home() || is_front_page() || (in_category('hotels') && is_single())): ?>	
+	
 <div id="gNaviSp">
 <ul>
 <li id="gNaviSp00"><a href="https://www.tabikobo.net/form/bali-girl/order/">オーダー<br>メイド<span>ordermade</span></a></li>
-<li id="gNaviSp01"><a href="/villa/">ヴィラ・<br>ホテル<span>villa &amp; hotel</span></a></li>
+<li id="gNaviSp01"><a href="/hotels/">ヴィラ・<br>ホテル<span>villa &amp; hotel</span></a></li>
 <li id="gNaviSp02"><a href="/spa/">スパ<span>SPA</span></a></li>
 <li id="gNaviSp03"><a href="/optional/">オプショ<br>ナル<span>optional</span></a></li>
 <li id="gNaviSp04"><a href="/wedding/">ウェディ<br>ング<span>wedding</span></a></li>

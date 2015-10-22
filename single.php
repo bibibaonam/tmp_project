@@ -42,7 +42,8 @@ $catslug = $cat[0]->slug;
   <!-- #contents -->
 
   <?php if(! in_category(array('specials','wedding'))): ?>
-  <?php if ( is_single('padma-resort-bali-at-legian') ) : ?>
+  <?php //if ( is_single('padma-resort-bali-at-legian') ) : ?>
+   <?php if (in_category('hotels') && is_single()) : ?>
   <?php else : ?>
   <?php get_sidebar(); ?>
   <?php endif; ?>

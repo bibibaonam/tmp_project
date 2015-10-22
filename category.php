@@ -208,11 +208,11 @@ get_header() ?>
 <?php /*-----------------------*/?>
 <?php /*--------villa----------*/?>
 <?php /*-----------------------*/?>
-<?php elseif(in_category('villa')): ?>
+<?php elseif(in_category('hotels')): ?>
 
 	<?php
 
-	$link = 'villa';
+	$link = 'hotels';
 
 	$arr_categories = array(
 		array(
