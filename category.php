@@ -1006,22 +1006,26 @@ function plbali_show_post_ranking($posts, &$arr_post_id){
 
 			$icon = get_post_meta($post->ID,'icon',true);
 			$arr_icon = array(
-				'girls'     => array('01', '女子旅'),
+				'couple'     => array('01', '女子旅'),
 				// 'alone'     => array('02', 'ひとり旅'),
-				'couple'    => array('03', 'カップル'),
-				'family'    => array('04', 'ファミリー'),
+				'family'    => array('02', 'カップル'),
+				'girls'    => array('03', 'ファミリー'),
 				// 'honeymoon' => array('05', 'グループ'),
 				// 'group'     => array('06', 'ハネムーン'),
 				// 'premium'   => array('07', 'プレミアム世代'),
-			);
-
-			if(isset($icon[0]) && strlen($icon[0]) > 0 ): ?>
+			) ?>
 			<ul class="icon_list">
-				<?php foreach ($icon as $value) {
-					echo '<li><img src="/img/villa/list_osusume_icon'.$arr_icon[$value][0].'.png" width="46" height="46" alt="'.$arr_icon[$value][1].'"></li>';
-				} ?>
+				<?php
+				if (is_array($icon)) {
+					foreach ($icon as $value) {
+						if(isset($arr_icon[$value][0]))
+						echo '<li><img src="/img/villa/list_osusume_icon'.$arr_icon[$value][0].'.png" width="46" height="46" alt="'.$arr_icon[$value][1].'"></li>';
+					}
+				}else{
+					echo '<li style="height:35px">&nbsp;</li>';
+				}
+				?>
 			</ul>
-			<?php endif ?>
 		</div>
 	<?php } ?>
 <?php
