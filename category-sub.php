@@ -69,16 +69,16 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 				$arr_post_id = array();
 
 				$posts = get_posts('category_name='.$cat->slug.'&tag=list_villa&meta_key=ranking&orderby=meta_value_num&posts_per_page=999&order=ASC');
-				plbali_show_post_hotel($posts, $arr_post_id, $short_slug);
+				plbali_show_post($posts, $arr_post_id, $short_slug, 'ヴィラ一覧');
 
 				$posts = get_posts('category_name='.$cat->slug.'&tag=list_villa&meta_key=disp_sort&orderby=meta_value_num&posts_per_page=999&order=ASC');
-				plbali_show_post_hotel($posts, $arr_post_id, $short_slug);
+				plbali_show_post($posts, $arr_post_id, $short_slug, 'ヴィラ一覧');
 
 				$posts = get_posts('category_name='.$cat->slug.'&tag=list_villa&meta_key=hotel_name_jp&orderby=meta_value_num&posts_per_page=999&order=ASC');
-				plbali_show_post_hotel($posts, $arr_post_id, $short_slug);
+				plbali_show_post($posts, $arr_post_id, $short_slug, 'ヴィラ一覧');
 
 				$posts = get_posts('category_name='.$cat->slug.'&tag=list_villa&orderby=title&order=ASC&posts_per_page=999');
-				plbali_show_post_hotel($posts, $arr_post_id, $short_slug);
+				plbali_show_post($posts, $arr_post_id, $short_slug, 'ヴィラ一覧');
 
 				?>
 
@@ -92,16 +92,16 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 				$arr_post_id = array();
 
 				$posts = get_posts('category_name='.$cat->slug.'&tag=list_hotel&meta_key=ranking&orderby=meta_value_num&posts_per_page=999&order=ASC');
-				plbali_show_post_hotel($posts, $arr_post_id, $short_slug);
+				plbali_show_post($posts, $arr_post_id, $short_slug, 'ホテル一覧');
 
 				$posts = get_posts('category_name='.$cat->slug.'&tag=list_hotel&meta_key=disp_sort&orderby=meta_value_num&posts_per_page=999&order=ASC');
-				plbali_show_post_hotel($posts, $arr_post_id, $short_slug);
+				plbali_show_post($posts, $arr_post_id, $short_slug, 'ホテル一覧');
 
 				$posts = get_posts('category_name='.$cat->slug.'&tag=list_hotel&meta_key=hotel_name_jp&orderby=meta_value_num&posts_per_page=999&order=ASC');
-				plbali_show_post_hotel($posts, $arr_post_id, $short_slug);
+				plbali_show_post($posts, $arr_post_id, $short_slug, 'ホテル一覧');
 
 				$posts = get_posts('category_name='.$cat->slug.'&tag=list_hotel&orderby=title&order=ASC&posts_per_page=999');
-				plbali_show_post_hotel($posts, $arr_post_id, $short_slug);
+				plbali_show_post($posts, $arr_post_id, $short_slug, 'ホテル一覧');
 				?>
 
 				<?php if(!empty($arr_post_id)){ ?>
@@ -118,97 +118,15 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 </div><!-- #container -->
 <?php get_footer() ?>
 
-<?php function plbali_show_post_hotel($posts, &$arr_post_id, $short_slug){
+ <?php function plbali_show_post($posts, &$arr_post_id, $short_slug, $h2){
+	if ($posts){
 
-	if ($posts){ ?>
-
-	<?php if(empty($arr_post_id)){ ?>
-	<div class="h2_title"><h2 class="<?php echo $short_slug ?>_h2">ホテル一覧</h2></div>
-	<div class="villa_list box">
-		<div class="<?php echo $short_slug ?>">
-			<div class="box">
-	<?php } ?>
-			<?php foreach($posts as $post):
-				setup_postdata($post);
-				if (isset($arr_post_id[$post->ID])) {
-					continue;
-				}
-				$arr_post_id[$post->ID] = $post->ID;
-				?>
-				<div class="list">
-				<div class="list_img">
-					<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
-						<?php
-							// $title = get_the_title($post->ID);
-							// // the_post_thumbnail(array( 100,100 ),array( 'alt' =>$title, 'title' => $title));
-							// $thumb = get_the_post_thumbnail($post->ID, array( 100,100 ), array( 'alt' =>$title, 'title' => $title));
-							// echo $thumb;
-						?>
-						<?php $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true)) ?>
-						<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
-						<img src="<?php echo $thumbnail ?>" title="<?php echo $title ?>" style="max-width:100px;max-height:100px">
-					</a>
-				</div>
-				<div class="list_name">
-				<div class="o_icon">
-					<?php
-						$staff_recommendation = get_post_meta($post->ID, 'staff_recommendation', true);
-						if ($staff_recommendation) { ?>
-						<img src="/img/staff_osusume_icon.gif" width="122" height="17" alt="スタッフおすすめ">
-					<?php } ?>
-				</div>
-				<span><?php echo post_custom('copy') ?></span>
-				<a href="<?php echo get_permalink($post->ID) ?>" target="_top"><?php echo $title ?></a>
-				</div>
-				<p class="area"><?php
-					$areaObj = get_term(get_post_meta($post->ID, 'area', true), 'area');
-					echo ($areaObj) ? $areaObj->name: '';
-				?></p>
-				<?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-					<?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-					<p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-					<p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-					<p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-					<p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-					<p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-					<p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2〜3つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-					<p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2〜4つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-					<p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2〜5つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-					<p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3〜4つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-					<p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3〜5つ星"></p>
-					<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-					<p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4〜5つ星"></p>
-					<?php endif ?>
-				<?php endif ?>
-				</div>
-			<?php endforeach ?>
-			<!-- </div>
-		</div>
-	</div> -->
-	<?php }
-	}
- ?>
-
-
-
- <?php function plbali_show_post_villa($posts, &$arr_post_id, $short_slug){
-		if ($posts){ ?>
-
-<?php if(empty($arr_post_id)){ ?>
-		<div class="h2_title"><h2 class="<?php echo $short_slug ?>_h2">ヴィラ一覧</h2></div>
+		if(empty($arr_post_id)){ ?>
+		<div class="h2_title"><h2 class="<?php echo $short_slug ?>_h2"><?php echo $h2 ?></h2></div>
 		<div class="villa_list box">
 			<div class="<?php echo $short_slug ?>">
 				<div class="box">
-<?php } ?>
+		<?php } ?>
 				<?php foreach($posts as $post):
 					setup_postdata($post);
 					if (isset($arr_post_id[$post->ID])) {
