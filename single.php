@@ -22,7 +22,7 @@ $catslug = $cat[0]->slug;
   <div id="contents" class="<?php echo $catslug; ?>">
     <?php while ( have_posts() ) : the_post(); ?>
     <?php get_breadcrumbs(); ?>
-    <?php if(in_category('villa')): ?>
+    <?php if(in_category('hotels')): ?>
     <!-- ヴィラ -->
     <?php get_template_part('content-single-villa') ?>
     <?php elseif(in_category('spa')): ?>
