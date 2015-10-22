@@ -202,16 +202,10 @@
 <meta name="keywords" content="バリ 旅行,<?php the_title(); ?>,プルメリア・バリ,バリ島,海外旅行,ヴィラ,ホテル,スパ,ウェディング,バリ・ガール" />
 <?php endif; ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<?php if(in_category('hotels') && is_single()): ?>
-<?php if(is_single('padma-resort-bali-at-legian')): ?>
-<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
-<?php elseif(in_category('hotels') && is_single()): ?>
-<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
-<?php else : ?>
-<link href="/css/global.css" rel="stylesheet" type="text/css" />
-<?php endif; ?>
+<?php if(in_category('hotels')): ?>
+		<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
 <?php elseif( is_home() || is_front_page()): ?>
-<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
+	<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
 <?php else : ?>
 <link href="/css/global.css" rel="stylesheet" type="text/css" />
 <?php endif; ?>

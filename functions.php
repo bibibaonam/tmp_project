@@ -856,7 +856,7 @@ if(function_exists("register_field_group"))
 				'label' => '売れすじランキング',
 				'name' => 'ranking',
 				'type' => 'number',
-				'default_value' => '',
+				'default_value' => '999999',
 				'placeholder' => 1,
 				'prepend' => '',
 				'append' => '',
@@ -1182,7 +1182,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'qa',
+					'value' => 'post',
 					'order_no' => 0,
 					'group_no' => 0,
 				),

@@ -34,7 +34,7 @@ if ($short_slug == 'ubud') {
 }
 
 
-$link = 'villa';
+$link = 'hotels';
 
 // echo "<pre>";
 // print_r($cat);
