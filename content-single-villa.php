@@ -11,6 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div id="detaile_h"></div>
 <div id="detail">
+aaaaaaaaaaaaaaa
 <?php if ( 0 === get_query_var( 'page' ) ) : ?>
 <?php /*?>詳細ページ<?php */?>
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
@@ -49,66 +50,42 @@
 <div id="main_img"><img src="<?php echo $image_attributes ? $image_attributes[0] : ''; ?>" alt="<?php the_title(); ?>" /></div>
 <?php endif;?>
 <div id="tour1" class="tour">
-    <?php $departureList = get_field('tour_link_departure_id');
-	$hotel_id = get_field('hotel_id');
-	$arrDep = array();
-	$arrHotelID = array();
-	if($departureList) {
-		foreach($departureList as $itemList) {
-			switch($itemList){
-			case '2':
-				$arrDep[$itemList] ='成田発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '3':
-				$arrDep[$itemList] ='羽田発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '5':
-				$arrDep[$itemList] ='関空発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '7':
-				$arrDep[$itemList] ='名古屋発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '8':
-				$arrDep[$itemList] ='福岡発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '10':
-				$arrDep[$itemList] ='札幌発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '11':
-				$arrDep[$itemList] ='仙台発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			}
-		}
-	}
-    ?>
     <ul>
+		<!-- TODO: call API -->
         <li class="tour_read"><strong>現在のツアー最安値</strong>
         燃油サーチャージャー込　その他税別途</li>
-        <?php foreach($arrDep as $key=>$itemList) {?>
-	    <li data-tour-search="hotel_id=<?php echo $arrHotelID[$key] ; ?>&departure_id=<?php echo $key ?>">
-		<div data-tour>
-		<strong><?php echo $itemList; ?> <span data-tour-info="price_min"></span>円〜</strong>
-		<div class="btn"><a data-tour-info="code">予約</a></div>
-		</div>
-	    </li>
-	<?php } ?>
+		<li><strong>成田発 64,100円〜</strong><div class="btn"><a href="http://tour.tabikobo.com/tour/list?media=plumeriabali&amp;region_id=1&amp;country_id=3&amp;city_id=70&amp;district_id=&amp;departure_place_id=&amp;y-m=&amp;d=&amp;duration_from=&amp;duration_to=&amp;hotel_id=465&amp;airline_id=&amp;stay_type_code=&amp;bugget=&amp;departure_place_time_code=&amp;destination_time_code=&amp;departure_place_arrival_time_code=&amp;destination_arrival_time_code=&amp;conductor_code=&amp;keyword=&amp;code=TDP%25PAD%25&amp;commit.x=0&amp;commit.y=0">予約</a></div></li>
+		<li class="pr0"><strong>羽田発 71,100円〜</strong><div class="btn"><a href="http://tour.tabikobo.com/tour/list?media=plumeriabali&amp;region_id=1&amp;country_id=3&amp;city_id=70&amp;district_id=&amp;departure_place_id=&amp;y-m=&amp;d=&amp;duration_from=&amp;duration_to=&amp;hotel_id=465&amp;airline_id=&amp;stay_type_code=&amp;bugget=&amp;seat_code=&amp;departure_place_time_code=&amp;destination_time_code=&amp;departure_place_arrival_time_code=&amp;destination_arrival_time_code=&amp;conductor_code=&amp;keyword=&amp;code=HDP%25PAD%25&amp;commit.x=0&amp;commit.y=0">予約</a></div></li>
+		<li><strong>関空発 46,600円〜</strong><div class="btn"><a href="http://tour.tabikobo.com/tour/list?media=plumeriabali&amp;region_id=1&amp;country_id=3&amp;city_id=70&amp;district_id=&amp;departure_place_id=5&amp;y-m=&amp;d=&amp;duration_from=&amp;duration_to=&amp;hotel_id=465&amp;airline_id=&amp;stay_type_code=&amp;bugget=&amp;seat_code=&amp;departure_place_time_code=&amp;destination_time_code=&amp;departure_place_arrival_time_code=&amp;destination_arrival_time_code=&amp;conductor_code=&amp;keyword=&amp;code=&amp;commit.x=122&amp;commit.y=21">予約</a></div></li>
+		<li><strong>名古屋発 71,800円〜</strong><div class="btn"><a href="http://tour.tabikobo.com/tour/list?page=1&amp;order=price_asc&amp;media=plumeriabali&amp;region_id=1&amp;country_id=3&amp;city_id=70&amp;departure_place_id=7&amp;hotel_id=465&amp;commit_x=42&amp;commit_y=14">予約</a></div></li>
+		<li class="pr0"><strong>福岡発 81,800円〜</strong><div class="btn"><a href="http://tour.tabikobo.com/tour/list?media=plumeriabali&amp;region_id=1&amp;country_id=3&amp;city_id=70&amp;district_id=&amp;departure_place_id=8&amp;y-m=&amp;d=&amp;duration_from=&amp;duration_to=&amp;hotel_id=&amp;airline_id=&amp;stay_type_code=&amp;bugget=&amp;seat_code=&amp;departure_place_time_code=&amp;destination_time_code=&amp;departure_place_arrival_time_code=&amp;destination_arrival_time_code=&amp;conductor_code=&amp;keyword=&amp;code=FDP%25PAD%25&amp;commit.x=0&amp;commit.y=0">予約</a></div></li>
+		<li><strong>札幌発 87,000円〜</strong><div class="btn"><a href="http://tour.tabikobo.com/tour/list?media=plumeriabali&amp;region_id=1&amp;country_id=3&amp;city_id=70&amp;district_id=&amp;departure_place_id=10&amp;y-m=&amp;d=&amp;duration_from=&amp;duration_to=&amp;hotel_id=465&amp;airline_id=&amp;stay_type_code=&amp;bugget=&amp;seat_code=&amp;departure_place_time_code=&amp;destination_time_code=&amp;departure_place_arrival_time_code=&amp;destination_arrival_time_code=&amp;conductor_code=&amp;keyword=&amp;code=&amp;commit.x=37&amp;commit.y=15">予約</a></div></li>
+		<li><strong>仙台発 91,000円〜</strong><div class="btn"><a href="http://tour.tabikobo.com/tour/list?media=plumeriabali&amp;region_id=1&amp;country_id=3&amp;city_id=70&amp;district_id=&amp;departure_place_id=11&amp;y-m=&amp;d=&amp;duration_from=&amp;duration_to=&amp;hotel_id=465&amp;airline_id=&amp;stay_type_code=&amp;bugget=&amp;departure_place_time_code=&amp;destination_time_code=&amp;departure_place_arrival_time_code=&amp;destination_arrival_time_code=&amp;conductor_code=&amp;keyword=&amp;code=&amp;commit.x=26&amp;commit.y=7">予約</a></div></li>
+        <?php if(post_custom('narita_price')): ?>
+        <!--<li><strong>成田発 <?php echo post_custom('narita_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('narita_url'); ?>">予約</a></div></li>-->
+        <?php endif; ?>
+        <?php if(post_custom('haneda_price')): ?>
+        <!--<li><strong>羽田発 <?php echo post_custom('haneda_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('haneda_url'); ?>">予約</a></div></li>-->
+        <?php endif; ?>
+        <?php if(post_custom('kanku_price')): ?>
+         <!--<li><strong>関空発 <?php echo post_custom('kanku_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('kanku_url'); ?>">予約</a></div></li>-->
+        <?php endif; ?>
+        <?php if(post_custom('nagoya_price')): ?>
+         <!--<li><strong>名古屋発 <?php echo post_custom('nagoya_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('nagoya_url'); ?>">予約</a></div></li>-->
+        <?php endif; ?>
+        <?php if(post_custom('fukuoka_price')): ?>
+         <!--<li><strong>福岡発 <?php echo post_custom('fukuoka_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('fukuoka_url'); ?>">予約</a></div></li>-->
+        <?php endif; ?>
+        <?php if(post_custom('sapporo_price')): ?>
+         <!--<li><strong>札幌発 <?php echo post_custom('sapporo_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('sapporo_url'); ?>">予約</a></div></li>-->
+        <?php endif; ?>
+        <?php if(post_custom('sendai_price')): ?>
+         <!--<li><strong>仙台発 <?php echo post_custom('sendai_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('sendai_url'); ?>">予約</a></div></li>-->
+        <?php endif; ?>
         <?php if(post_custom('hotel_reserve_link')): ?>
-        <li class="tour_hotel"><strong>ホテルのみご予約はこちらから</strong><div class="btn"><a href="<?php echo post_custom('hotel_reserve_link'); ?>">詳細</a></div></li>
+         <li class="tour_hotel"><strong>ホテルのみご予約はこちらから</strong><div class="btn"><a href="<?php echo post_custom('hotel_reserve_link'); ?>">詳細</a></div></li>
         <?php endif; ?>
     </ul>
-    <script src="http://api.tabikobo.com/myapi/js/tourprice-1.0.0.js"></script>
-<script type="text/javascript">
-　　$(document).ready(function(){
-　　  tourprice.searchAndLoad();
-　　});
-</script>
 </div>
 
 <div id="lNaviBox">
@@ -756,59 +733,31 @@
 <?php endif; ?>
 
 <div id="tour2" class="tour">
-	<?php $departureList = get_field('tour_link_departure_id');
-	$hotel_id = get_field('hotel_id');
-	$arrDep = array();
-	$arrHotelID = array();
-	if($departureList) {
-		foreach($departureList as $itemList) {
-			switch($itemList){
-			case '2':
-				$arrDep[$itemList] ='成田発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '3':
-				$arrDep[$itemList] ='羽田発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '5':
-				$arrDep[$itemList] ='関空発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '7':
-				$arrDep[$itemList] ='名古屋発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '8':
-				$arrDep[$itemList] ='福岡発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '10':
-				$arrDep[$itemList] ='札幌発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			case '11':
-				$arrDep[$itemList] ='仙台発';
-				$arrHotelID[$itemList] = $hotel_id;
-				break;
-			}
-		}
-	}
-    ?>
     <ul>
         <li class="tour_read"><strong>現在のツアー最安値</strong>
         燃油サーチャージャー込　その他税別途</li>
-        <?php foreach($arrDep as $key=>$itemList) {?>
-	    <li data-tour-search="hotel_id=<?php echo $arrHotelID[$key] ; ?>&departure_id=<?php echo $key ?>">
-		<div data-tour>
-		<strong><?php echo $itemList; ?> <span data-tour-info="price_min"></span>円〜</strong>
-		<div class="btn"><a data-tour-info="code">予約</a></div>
-		</div>
-	    </li>
-	<?php } ?>
-        <?php if(post_custom('hotel_reserve_link')): ?>
-        <li class="tour_hotel"><strong>ホテルのみご予約はこちらから</strong><div class="btn"><a href="<?php echo post_custom('hotel_reserve_link'); ?>">詳細</a></div></li>
+        <?php if(post_custom('narita_price')): ?>
+        <li><strong>成田発 <?php echo post_custom('narita_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('narita_url'); ?>">予約</a></div></li>
         <?php endif; ?>
+        <?php if(post_custom('haneda_price')): ?>
+        <li><strong>羽田発 <?php echo post_custom('haneda_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('haneda_url'); ?>">予約</a></div></li>
+        <?php endif; ?>
+        <?php if(post_custom('kanku_price')): ?>
+        <li><strong>関空発 <?php echo post_custom('kanku_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('kanku_url'); ?>">予約</a></div></li>
+        <?php endif; ?>
+        <?php if(post_custom('nagoya_price')): ?>
+        <li><strong>名古屋発 <?php echo post_custom('nagoya_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('nagoya_url'); ?>">予約</a></div></li>
+        <?php endif; ?>
+        <?php if(post_custom('fukuoka_price')): ?>
+        <li><strong>福岡発 <?php echo post_custom('fukuoka_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('fukuoka_url'); ?>">予約</a></div></li>
+        <?php endif; ?>
+        <?php if(post_custom('sapporo_price')): ?>
+        <li><strong>札幌発 <?php echo post_custom('sapporo_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('sapporo_url'); ?>">予約</a></div></li>
+        <?php endif; ?>
+        <?php if(post_custom('sendai_price')): ?>
+        <li><strong>仙台発 <?php echo post_custom('sendai_price'); ?>円〜</strong><div class="btn"><a href="<?php echo post_custom('sendai_url'); ?>">予約</a></div></li>
+        <?php endif; ?>
+        <li class="tour_hotel"><strong>ホテルのみご予約はこちらから</strong><div class="btn"><a href="<?php the_permalink(); ?>2/">詳細</a></div></li>
     </ul>
 </div>
 
