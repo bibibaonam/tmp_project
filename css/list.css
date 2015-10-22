@@ -1,0 +1,706 @@
+@charset "UTF-8";
+/* CSS Document */
+#h1_title{
+	width:742px;
+	height:200px;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+}
+#h1_title h1{
+	width:742px;
+	height:0px;
+	overflow:hidden;
+	font-size: 1em;
+	line-height: 2em;
+	background-image: url(../img/villa_top_title.jpg);
+	background-repeat: no-repeat;
+	display: block;
+	padding-top: 200px;
+}
+#villa_map{
+	position:relative;
+}
+#mBtn1,#mBtn2,#mBtn3,#mBtn4,#mBtn5,#mBtn6{
+	height:16px;
+	position:absolute;
+}
+#mBtn1{
+	width:44px;
+	top:102px;
+	left:512px;
+}
+#mBtn2{
+	width:132px;
+	top:137px;
+	left:392px;
+}
+#mBtn3{
+	width:83px;
+	top:156px;
+	left:443px;
+}
+#mBtn4{
+	width:123px;
+	top:173px;
+	left:401px;
+}
+#mBtn5{
+	width:67px;
+	top:181px;
+	left:527px;
+}
+#mBtn6{
+	width:52px;
+	top:153px;
+	left:536px;
+}
+#mBtn1 a,#mBtn2 a,#mBtn3 a,#mBtn4 a,#mBtn5 a,#mBtn6 a{
+	display:block;
+	height:16px;
+}
+#mBtn1 a{
+	width:44px;
+}
+#mBtn2 a{
+	width:132px;
+}
+#mBtn3 a{
+	width:83px;
+}
+#mBtn4 a{
+	width:123px;
+}
+#mBtn5 a{
+	width:67px;
+}
+#mBtn6 a{
+	width:52px;
+}
+#villa_title{
+	margin-bottom:20px;
+	width: 670px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+}
+#villa_title .h2_title{
+	width:173px;
+	height:52px;
+	margin-right:27px;
+	padding:0px;
+	overflow:hidden;
+	float:left;
+}
+#villa_title .h2_title h2{
+	width:173px;
+	height:0px;
+	margin-bottom:6px;
+	padding-top: 52px;
+	overflow:hidden;
+	font-size: 1em;
+	line-height: 2em;
+	background-image:url(../img/villa_title.jpg);
+	background-repeat: no-repeat;
+	display: block;
+}
+#villa_title .read{
+	width: 470px;
+	float:left;
+}
+#villa_title .read p{
+	font-size:93%;
+	color:#666666;
+	line-height:1.5em;
+}
+#villa_title .read strong{
+	display:block;
+	font-size:123.1%;
+	color:#651D21;
+	margin-bottom:10px;
+	padding-top: 5px;
+}
+.villa_list{
+	width: 670px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+}
+.villa_list .box{
+	width:670px;
+}
+.villa_list #sub_list .box{
+	width:684px;
+	margin-right:-14px;
+}
+.villa_list .mb_0{
+	padding-bottom:0px;
+}
+.villa_list .list,.villa_list .right{
+	width:320px;
+}
+.villa_list #sub_list .list{
+	width:670px;
+}
+
+/*.ubdo,.semi,.kuta,.jim,.nusa,.sanu{
+	min-height:205px;
+}*/
+.villa_list .h3_title{
+	width:670px;
+	height:21px;
+	margin-bottom:6px;
+	padding:0px;
+	/*overflow:hidden;*/
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #2C1814;
+}
+.villa_list #sub_list .h3_title{
+	width:670px;
+}
+.villa_list .ubdo .h3_title{
+	border:0;
+}
+.villa_list .h3_title h3{
+	width:320px;
+	height:21px;
+	margin-bottom:6px;
+	/*padding-top: 21px;
+	overflow:hidden;*/
+	font-size: 1px;
+	line-height: 1em;
+	/*background-repeat: no-repeat;*/
+	display: block;
+}
+.villa_list #sub_list .h3_title h3{
+	width:670px;
+}
+#villa .ubdo .list,#villa .semi .list,#villa .kuta .list,#villa .jim .list,#villa .nusa .list,#villa .sanu .list,#villa .cang .list,#villa .cand .list,#villa .tana .list,#villa .menj .list,#villa .lovi .list,#villa .yogy .list,#villa .lomb .list,#villa .lemb .list,#villa .other .list{
+	width:670px;
+	padding-bottom: 10px;
+	min-height:42px;
+	float: none;
+	padding-top: 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #333;
+}
+#villa  #sub_list .list{
+	margin-right: 14px;
+}
+#villa .ubdo .right,#villa .semi .right,#villa .kuta .right,#villa .jim .right,#villa .nusa .right,#villa .sanu .right,#villa .cang .right,#villa .cand .right,#villa .tana .right,#villa .lovi .right,#villa .menj .right,#villa .yogy .right,#villa .lomb .right,#villa .lemb .right,#villa .other .right{
+	width:157px;
+}
+#villa li{
+	font-size:77%;
+	line-height:1.5em;
+}
+.ubdo a{
+	color:#5A7937;
+}
+.semi a{
+	color:#F03F46;
+}
+.kuta a{
+	color:#D28D47;
+}
+.jim a{
+	color:#009999;
+}
+.nusa a{
+	color:#D766B3;
+}
+.sanu a{
+	color:#34548E;
+}
+.cang a{
+	color:#FFCB51;
+}
+.cand a{
+	color:#8C7077;
+}
+.tana a{
+	color:#ED724B;
+}
+.menj a{
+	color:#64D13A;
+}
+.lovi a{
+	color:#4B3A5F;
+}
+.yogy a{
+	color:#83D0F7;
+}
+.lomb a{
+	color:#B271EA;
+}
+.lemb a{
+	color:#3FEDD9;
+}
+.other a{
+	color:#5C3219;
+}
+.villa_list img{
+	margin-bottom:2px;
+}
+.villa_list span{
+	display:block;
+	line-height:1.2em;
+	font-size:77%;
+	margin-bottom:2px;
+}
+.villa_list a{
+	font-size:93%;
+	line-height:1.2em;
+	display:block;
+	font-weight: bold;
+	margin-bottom:5px;
+}
+.villa_list p.area{
+	text-align:center;
+	color:#FFF;
+	font-size:77%;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:1em;
+	padding-right:1em;
+	float:right;
+	line-height:1em;
+	margin-bottom: 5px;
+}
+.ubdo p.area{
+	background-color:#5C7B37;
+}
+.semi p.area{
+	background-color:#F03F46;
+}
+.kuta p.area{
+	background-color:#D28D47;
+}
+.jim p.area{
+	background-color:#009999;
+}
+.nusa p.area{
+	background-color:#D766B3;
+}
+.sanu p.area{
+	background-color:#34548E;
+}
+.cang p.area{
+	background-color:#FFCB51;
+}
+.cand p.area{
+	background-color:#8C7077;
+}
+.tana p.area{
+	background-color:#ED724B;
+}
+.menj p.area{
+	background-color:#64D13A;
+}
+.lovi p.area{
+	background-color:#4B3A5F;
+}
+.yogy p.area{
+	background-color:#83D0F7;
+}
+.lomb p.area{
+	background-color:#B271EA;
+}
+.lemb p.area{
+	background-color:#3FEDD9;
+}
+.other p.area{
+	background-color:#5C3219;
+}
+.villa_list p.rank{
+	float:right;
+	line-height:1em;
+	text-align: right;
+	margin-right: 10px;
+}
+
+#rank{
+	width:670px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size:123.1%;
+	margin-bottom:10px;
+	color:#FF9900;
+}
+
+#main{
+	width:670px;
+	overflow:hidden;
+	margin-right: auto;
+	margin-left: auto;
+}
+#main_title{
+	width:570px;
+	float:left;
+	color:#5C7B37;
+	padding-bottom: 10px;
+}
+.category-villa-ubud #main_title{
+	color:#5C7B37;
+}
+.category-villa-seminyak-kerobokan #main_title{
+	color:#F03F46;
+}
+.category-villa-kuta-legian #main_title{
+	color:#D28D47;
+}
+.category-villa-jimbaran-uluwatu #main_title{
+	color:#009999;
+}
+.category-villa-nusadua #main_title{
+	color:#D766B3;
+}
+.category-villa-sanur #main_title{
+	color:#34548E;
+}
+.category-villa-other #main_title{
+	color:#5C3219;
+}
+#main_title h1{
+	font-size:182%;
+	line-height:1.2em;
+	margin-bottom:5px;
+}
+#main_title span{
+	font-size:116%;
+	font-weight: bold;
+}
+#area{
+	width:80px;
+	text-align:center;
+	color:#FFF;
+	font-size:77%;
+	padding-top:3px;
+	padding-bottom:3px;
+	background-color:#5C7B37;
+	float:right;
+	margin-top: 3px;
+}
+.category-villa-ubud #area{
+	background-color:#5C7B37;
+}
+.category-villa-seminyak-kerobokan #area{
+	background-color:#F03F46;
+}
+.category-villa-kuta-legian #area{
+	background-color:#D28D47;
+}
+.category-villa-jimbaran-uluwatu #area{
+	background-color:#009999;
+}
+.category-villa-nusadua #area{
+	background-color:#D766B3;
+}
+.category-villa-sanur #area{
+	background-color:#34548E;
+}
+.category-villa-other #area{
+	background-color:#5C3219;
+}
+#main_img{
+	width:728px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+}
+
+#detail{
+	position: relative;
+}
+
+
+
+/*breadcrumb*/
+#breadcrumb li{
+	line-height:1.231;
+}
+
+
+/*renewel*/
+
+#room_list {
+	margin-bottom: 40px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #333;
+	overflow: hidden;
+}
+#room_date {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+#room_list h4 {
+	font-weight: bold;
+	display: block;
+	float: left;
+}
+
+.category-villa-ubud #room_list h4{
+	color:#5C7B37;
+}
+.category-villa-seminyak-kerobokan #room_list h4{
+	color:#F03F46;
+}
+.category-villa-kuta-legian #room_list h4{
+	color:#D28D47;
+}
+.category-villa-jimbaran-uluwatu #room_list h4{
+	color:#009999;
+}
+.category-villa-nusadua #room_list h4{
+	color:#D766B3;
+}
+.category-villa-sanur #room_list h4{
+	color:#34548E;
+}
+.category-villa-other #room_list h4{
+	color:#5C3219;
+}
+
+#room_list #room_date span {
+	float: right;
+}
+#room_list span {
+	font-size: 77%;
+	font-weight: normal;
+	color: #333;
+	display: block;
+}
+#room_list .box {
+	padding: 0px;
+	margin-bottom: 10px;
+	border-bottom-style: none;
+}
+#room_list .box .list,#room_list .box .right {
+	display: block;
+	height: 200px;
+	width: 330px;
+	padding: 0px;
+}
+#room_list .room_txt {
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+#room_list .room_txt p {
+	line-height: 1.5em;
+	font-size: 93%;
+	display: block;
+	margin-bottom: 15px;
+}
+#room_list table {
+	margin-bottom: 7px;
+}
+#room_list .room_txt th {
+	font-size: 85%;
+	padding-bottom: 6px;
+	padding-top: 6px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #333;
+	text-align: center;
+}
+#room_list .room_txt td {
+	font-size: 85%;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 6px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #333;
+	line-height: 1.5em;
+}
+#room_list .room_txt h5 {
+	font-size: 85%;
+	margin-bottom: 5px;
+}
+#room_list .room_txt .room_gcc {
+	display: block;
+	margin-bottom: 20px;
+}
+#room_list .room_txt .room_gcc li {
+	font-size: 85%;
+	margin-bottom: 4px;
+}
+
+
+.list_img{
+	width:78px;
+	float:left;
+	margin-right:10px;
+}
+.list_img img{
+	width:78px;
+	height:42px;
+}
+.list_name{
+	float:left;
+}
+
+#ubdo_list{
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #333;
+}
+
+
+#villa_list_navi{
+	color:#006666;
+	font-size:85%;
+	line-height:1.5em;
+	margin-bottom:40px;
+	width:680px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#villa_list_navi a{
+	color:#006666;
+}
+#villa_list_title{
+	width:670px;
+	height:30px;
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+	overflow:hidden;
+}
+#villa_list_title h1{
+	float:left;
+	width:328px;
+	height:0px;
+	padding-top:30px;
+	font-size:1em;
+	line-height:2em;
+	overflow:hidden;
+	display:block;
+	background-repeat:no-repeat;
+}
+#info_link{
+	float:right;
+	width:326px;
+	text-align:right;
+	padding-top:5px;
+}
+#list_star{
+	background-image:url(../img/list_star_title.gif);
+}
+#list_villa{
+	background-image:url(../img/list_villa_title.gif);
+}
+#list_hotel{
+	background-image:url(../img/list_hotel_title.gif);
+}
+#list_ubud{
+	background-image:url(../img/list_ubud_title.gif);
+}
+#list_semi{
+	background-image:url(../img/list_semi_title.gif);
+}
+#list_kuta{
+	background-image:url(../img/list_kuta_title.gif);
+}
+#list_jim{
+	background-image:url(../img/list_jim_title.gif);
+}
+#list_nusa{
+	background-image:url(../img/list_nusa_title.gif);
+}
+#list_sanur{
+	background-image:url(../img/list_sanur_title.gif);
+}
+#list_canggu{
+	background-image:url(../img/list_canggu_title.gif);
+}
+#list_candidasa{
+	background-image:url(../img/list_candidasa_title.gif);
+}
+#list_tanahlot{
+	background-image:url(../img/list_tanahlot_title.gif);
+}
+#list_menjangan{
+	background-image:url(../img/list_menjangan_title.gif);
+}
+#list_lovina{
+	background-image:url(../img/list_lovina_title.gif);
+}
+#list_yogyakarta{
+	background-image:url(../img/list_yogyakarta_title.gif);
+}
+#list_lombok{
+	background-image:url(../img/list_lombok_title.gif);
+}
+#list_lembongan{
+	background-image:url(../img/list_lembongan_title.gif);
+}
+#list_other{
+	background-image:url(../img/list_other_title.gif);
+}
+#list_staff{
+	background-image:url(../img/list_staff_title.gif);
+}
+#detail .h2_title{
+	width:670px;
+	margin-left:auto;
+	margin-right:auto;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #333;
+	padding-top:20px;
+	padding-bottom:10px;
+}
+#detail .h2_title h2{
+	font-size:123.1%;
+}
+
+h2.ubud_h2, h2.ubdo_h2{
+	color:#5C7B37;
+}
+h2.sk_h2, h2.semi_h2{
+	color:#F03F46;
+}
+h2.kl_h2, h2.kuta_h2{
+	color:#D28D47;
+}
+h2.ju_h2, h2.jim_h2{
+	color:#009999;
+}
+h2.nusadua_h2, h2.nusa_h2{
+	color:#D766B3;
+}
+h2.sanur_h2, h2.sanu_h2{
+	color:#34548E;
+}
+h2.cang_h2, h2.canggu_h2{
+	color:#FFCB51;
+}
+h2.cand_h2{
+	color:#8C7077;
+}
+h2.tana_h2{
+	color:#ED724B;
+}
+h2.menj_h2{
+	color:#64D13A;
+}
+h2.lovi_h2{
+	color:#4B3A5F;
+}
+h2.yogy_h2{
+	color:#83D0F7;
+}
+h2.lomb_h2{
+	color:#B271EA;
+}
+h2.lemb_h2{
+	color:#3FEDD9;
+}
+h2.other_h2{
+	color:#5C3219;
+}
