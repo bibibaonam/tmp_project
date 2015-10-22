@@ -171,10 +171,10 @@
 <?php if ( is_home() || is_front_page() || is_category('hotels') || (in_category('hotels') && is_single())): ?>
 <div id="footer_tel">
   <ul>
-  	<li><a href="tel:0359564170">東京本社　03-5956-4170</a></li>
-  	<li><a href="tel:0676396590">大阪支店　06-7639-6590</a></li>
-  	<li><a href="tel:0676396590">名古屋支店　052-259-0681</a></li>
-  	<li><a href="tel:0676396590">福岡支店　092-738-2602</a></li>
+    <li><a href="tel:0359564170">東京本社　03-5956-4170</a></li>
+    <li><a href="tel:0676396590">大阪支店　06-7639-6590</a></li>
+    <li><a href="tel:0676396590">名古屋支店　052-259-0681</a></li>
+    <li><a href="tel:0676396590">福岡支店　092-738-2602</a></li>
   </ul>
 </div>
 <?php endif; ?>
@@ -314,7 +314,7 @@ function slide_order_show(){
     <textarea name="message" id="side_message" class="order_area" style="resize:vertical;" placeholder="ご褒美女子旅。ウブドとビーチ滞在希望。
 出発地が違うけど現地合流希望。前半は贅沢に、後半はお買い物メインで立地重視、予算20万円。"></textarea>
     <span><a href="http://www.tabikobo.com/policy/agreement/">「個人情報の取り扱いについて」</a></span>
-    
+
     <button type="submit"><img src="/img/s_order_btn.gif" width="188" height="30" alt="送信" id="s_send_btn" /></button>
   </div>
   <div id="slide_order_btn"><p></p></div>
@@ -344,7 +344,12 @@ function slide_order_show(){
 <?php wp_footer(); ?>
 
 <?php //if( is_category('villa') || is_single('padma-resort-bali-at-legian')): ?>
-<?php if(in_category('hotels') || (in_category('hotels') && is_single())): ?>
+<?php
+
+$arr_cat = array( 'list-kuta', 'list-semi', 'list-nusa', 'list-jim', 'list-ubud', 'list-sanur', 'list-canggu', 'list-candidasa', 'list-tanahlot', 'list-menjangan', 'list-lovina', 'list-yogyakarta', 'list-lombok', 'list-lembongan' );
+$cat = &get_category(get_query_var('cat'));
+if(in_category('hotels') || (in_category('hotels') && is_single()) || in_array($cat->slug, $arr_cat)): ?>
+
 <?php else : ?>
   <!-- UI Calender -->
 
@@ -395,10 +400,10 @@ $(function() {
 <script src="jquery-1.9.0.min.js"></script>
 <script>
 $(document).ready(function() {
-	$("#preparation dd").hide();
-	$("#preparation dt").click(function(){
-		$(this).next().slideToggle();
-	});
+  $("#preparation dd").hide();
+  $("#preparation dt").click(function(){
+    $(this).next().slideToggle();
+  });
 });
 </script>
 <?php endif; ?>
