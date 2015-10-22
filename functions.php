@@ -1344,7 +1344,7 @@ if(function_exists("register_field_group"))
 						'key' => 'field_56260d011dc5b',
 						'label' => '画像',
 						'name' => 'image',
-						'type' => 'text',
+						'type' => 'image',
 						'required' => 1,
 						'column_width' => '',
 						'default_value' => '',

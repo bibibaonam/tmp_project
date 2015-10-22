@@ -11,7 +11,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div id="detaile_h"></div>
 <div id="detail">
-aaaaaaaaaaaaaaa
 <?php if ( 0 === get_query_var( 'page' ) ) : ?>
 <?php /*?>詳細ページ<?php */?>
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
@@ -146,32 +145,22 @@ aaaaaaaaaaaaaaa
                 <th>エリア</th>
                 <td> <?php echo ($areaObj) ? $areaObj->name: '';  ?></td>
             </tr>
-            <?php endif; ?>
-            <?php if(post_custom('base_info_address')): ?>
             <tr>
                 <th>address</th>
                 <td><?php if($base_infos): ?><?php echo $base_infos[0]['address']; ?> <?php endif; ?></td>
             </tr>
-            <?php endif; ?>
-            <?php if(post_custom('base_info_home_page')): ?>
             <tr>
                 <th>公式HP</th>
                 <td><?php if($base_infos): ?><a href="<?php echo $base_infos[0]['homepage']; ?>" target="_blank"><?php echo $base_infos[0]['homepage']; ?></a><?php endif; ?></td>
             </tr>
-            <?php endif; ?>
-            <?php if(post_custom('base_info_staff_japanese')): ?>
             <tr>
                 <th>日本語スタッフ</th>
                 <td><?php if($base_infos): ?><?php echo $base_infos[0]['staff_japanese']; ?> <?php endif; ?></td>
             </tr>
-            <?php endif; ?>
-            <?php if(post_custom('base_info_check_in')): ?>
             <tr>
                 <th>チェックイン</th>
                 <td><?php if($base_infos): ?><?php echo $base_infos[0]['check_in']; ?><?php endif; ?></td>
             </tr>
-            <?php endif; ?>
-            <?php if(post_custom('base_info_check_out')): ?>
             <tr>
                 <th>チェックアウト</th>
                 <td><?php if($base_infos): ?><?php echo $base_infos[0]['check_out']; ?><?php endif; ?></td>
