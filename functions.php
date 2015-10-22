@@ -599,12 +599,13 @@ function get_breadcrumbs(){
 		// Start the UL
 		echo '<ul id="breadcrumb">';
 		// Add the Home link
-		
-	if ( is_page() || in_category() ) {
+
+	// if ( is_page() || in_category() ) {
+	if ( is_page() ) {
 		echo '<li><a href="http://www.plbali.com/">'. バリ旅行HOME .'</a></li>';
-    } else {
+	} else {
 		echo '<li><a href="'. get_settings('home') .'">'. バリ旅行HOME .'</a></li>';
-    }
+	}
 
 		if ( is_category() )
 		{
@@ -646,7 +647,7 @@ function get_breadcrumbs(){
 				echo "<li>&nbsp;＞ウェディング&nbsp;＞&nbsp;".the_title('','', FALSE)."</li>";
 			}
 			elseif ( $post->post_parent == 0 ){
-			
+
 				echo "<li>&nbsp;＞&nbsp;".the_title('','', FALSE)."</li>";
 
 			} else {
@@ -674,3 +675,21 @@ add_filter('postmeta_form_limit','meta_limit_change');
 function meta_limit_change($limit){
 return 100;
 }
+
+function sub_category_template()
+{
+	if (is_category())
+	{
+		$arr_cat = array( 'list-kuta', 'list-semi', 'list-nusa', 'list-jim', 'list-ubud', 'list-sanur', 'list-canggu', 'list-candidasa', 'list-tanahlot', 'list-menjangan', 'list-lovina', 'list-yogyakarta', 'list-lombok', 'list-lembongan' );
+		$cat = &get_category(get_query_var('cat'));
+
+		if (in_array($cat->slug, $arr_cat)){
+			if (file_exists(TEMPLATEPATH . '/category-sub.php'))
+			{
+				include (TEMPLATEPATH . '/category-sub.php');
+				exit;
+			}
+		}
+	}
+}
+add_action('template_redirect', 'sub_category_template');
