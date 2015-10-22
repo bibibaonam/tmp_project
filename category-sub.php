@@ -138,12 +138,15 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 				<div class="list">
 				<div class="list_img">
 					<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
-					<?php
-						$title = get_the_title($post->ID);
-						// the_post_thumbnail(array( 100,100 ),array( 'alt' =>$title, 'title' => $title));
-						$thumb = get_the_post_thumbnail($post->ID, array( 100,100 ), array( 'alt' =>$title, 'title' => $title));
-						echo $thumb;
-					?>
+						<?php
+							// $title = get_the_title($post->ID);
+							// // the_post_thumbnail(array( 100,100 ),array( 'alt' =>$title, 'title' => $title));
+							// $thumb = get_the_post_thumbnail($post->ID, array( 100,100 ), array( 'alt' =>$title, 'title' => $title));
+							// echo $thumb;
+						?>
+						<?php $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true)) ?>
+						<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
+						<img src="<?php echo $thumbnail ?>" title="<?php echo $title ?>" style="max-width:100px;max-height:100px">
 					</a>
 				</div>
 				<div class="list_name">
@@ -157,7 +160,10 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 				<span><?php echo post_custom('copy') ?></span>
 				<a href="<?php echo get_permalink($post->ID) ?>" target="_top"><?php echo $title ?></a>
 				</div>
-				<p class="area"><?php $area = get_post_meta($post->ID, 'area', true); echo $area ?></p>
+				<p class="area"><?php
+					$areaObj = get_term(get_post_meta($post->ID, 'area', true), 'area');
+					echo ($areaObj) ? $areaObj->name: '';
+				?></p>
 				<?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
 					<?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
 					<p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星"></p>
@@ -213,11 +219,14 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 					<div class="list">
 						<div class="list_img">
 							<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
-							<?php
-								$title = get_the_title($post->ID);
-								$thumb = get_the_post_thumbnail($post->ID, array( 100,100 ), array( 'alt' =>$title, 'title' => $title));
-								echo $thumb;
-							?>
+								<?php
+									// $title = get_the_title($post->ID);
+									// $thumb = get_the_post_thumbnail($post->ID, array( 100,100 ), array( 'alt' =>$title, 'title' => $title));
+									// echo $thumb;
+								?>
+								<?php $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true)) ?>
+								<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
+								<img src="<?php echo $thumbnail ?>" title="<?php echo $title ?>" style="max-width:100px;max-height:100px">
 							</a>
 						</div>
 						<div class="list_name">
@@ -232,7 +241,10 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 							<a href="<?php the_permalink() ?>" target="_top"><?php echo $title ?></a>
 						</div>
 
-						<p class="area"><?php $area = get_post_meta($post->ID, 'area', true); echo $area ?></p>
+						<p class="area"><?php
+							$areaObj = get_term(get_post_meta($post->ID, 'area', true), 'area');
+							echo ($areaObj) ? $areaObj->name: '';
+						?></p>
 				<?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
 					<?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
 						<p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星"></p>

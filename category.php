@@ -396,9 +396,7 @@ get_header() ?>
 
 <div class="box">
 
-	<?php foreach ($arr_categories as $key => $category) {
-		$postup = get_posts( 'category_name='.$category['category_name'] ) ?>
-		<?php if ($postup){ ?>
+	<?php foreach ($arr_categories as $key => $category) { ?>
 		<div class="h2_title" id="<?php echo $category['class_color'] ?>_ttl">
 			<h2 class="kl_h2"><a href="/<?php echo $link ?>/list-<?php echo $category['class_villa_list'] ?>/"><?php echo $category['name_villa_list'] ?></a></h2>
 			<div class="info_link"><a href="<?php echo $category['link'] ?>"><img src="/img/villa/list_link_<?php echo $category['class_villa_list'] ?>.gif" height="18" alt="<?php echo $category['link_alt'] ?>"></a></div>
@@ -422,6 +420,10 @@ get_header() ?>
 						if (count($arr_post_id) < 6) {
 							$posts = get_posts('category_name='.$category['category_name'].'&meta_key=hotel_name_jp&orderby=meta_value_num&posts_per_page=6&order=ASC');
 							plbali_show_post_ranking($posts, $arr_post_id);
+							if (count($arr_post_id) < 6) {
+								$posts = get_posts('category_name='.$category['category_name'].'&orderby=title&posts_per_page=6&order=ASC');
+								plbali_show_post_ranking($posts, $arr_post_id);
+							}
 						}
 					}
 
@@ -429,7 +431,7 @@ get_header() ?>
 				</div>
 
 				<div class="box size-m">
-					<?php
+				<?php
 					// ---------------------------- disp_sort -----------------------------
 					$arr_post_id = array();
 
@@ -439,14 +441,16 @@ get_header() ?>
 					if (count($arr_post_id) < 10) {
 						$posts = get_posts('category_name='.$category['category_name'].'&meta_key=hotel_name_jp&orderby=meta_value_num&posts_per_page=10&order=ASC');
 						plbali_show_post_disp_sort($posts, $arr_post_id);
+						if (count($arr_post_id) < 10) {
+							$posts = get_posts('category_name='.$category['category_name'].'&orderby=title&posts_per_page=10&order=ASC');
+							plbali_show_post_disp_sort($posts, $arr_post_id);
+						}
 					}
-				 ?>
-
+				?>
 				</div>
 				<div class="page_top_link"><a href="#top">ページの先頭へ戻る</a></div>
 			</div><!--class=kuta -->
 		</div>
-		<?php } ?>
 	<?php } // end foreach ?>
 </div><!--class=box -->
 
@@ -937,7 +941,8 @@ function plbali_show_post_ranking($posts, &$arr_post_id){
 			<div class="list_img">
 				<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
 
-					<?php $thumbnail = get_post_meta($post->ID, 'thumbnail', true) ?>
+					<?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true)) ?>
+					<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
 					<img src="<?php echo $thumbnail ?>" class="no-hover ImgRanking">
 
 					<div class="list_name">
@@ -956,36 +961,45 @@ function plbali_show_post_ranking($posts, &$arr_post_id){
 			<table border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<th>タイプ</th>
-					<td><?php echo get_post_meta($post->ID, 'hotel_type', true) ?></td>
+					<td><?php
+						$tmp = array(
+							'large_resort'    => '大型リゾート',
+							'small_luxury'    => 'スモールラグジュアリー',
+							'boutique_hotel'  => 'ブディックホテル',
+							'villa'           => 'ヴィラ',
+							'charter_villa'   => '貸切ヴィラ',
+							'wellness_resort' => 'ウェルネスリゾート'
+						);
+						echo $tmp[get_post_meta($post->ID, 'hotel_type', true)] ?></td>
 				</tr>
 				<tr>
 					<th>バリガールランク</th>
 					<td>
-							<?php $baligirl_rank = get_post_meta($post->ID,'baligirl_rank',true) ?>
-							<?php if($baligirl_rank  == '1'): ?>
-							<img src="/img/villa/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星" class="rank1">
-							<?php elseif($baligirl_rank  == '2'): ?>
-							<img src="/img/villa/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星" class="rank2">
-							<?php elseif($baligirl_rank  == '3'): ?>
-							<img src="/img/villa/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星" class="rank3">
-							<?php elseif($baligirl_rank  == '4'): ?>
-							<img src="/img/villa/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星" class="rank4">
-							<?php elseif($baligirl_rank  == '5'): ?>
-							<img src="/img/villa/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星" class="rank5">
-							<?php elseif($baligirl_rank  == '2-3'): ?>
-							<img src="/img/villa/osusume_rank2-3_s.jpg" width="89" height="12" alt="2〜3つ星" class="rank2-3">
-							<?php elseif($baligirl_rank  == '2-4'): ?>
-							<img src="/img/villa/osusume_rank2-4_s.jpg" width="104" height="12" alt="2〜4つ星" class="rank2-4">
-							<?php elseif($baligirl_rank  == '2-5'): ?>
-							<img src="/img/villa/osusume_rank2-5_s.jpg" width="119" height="12" alt="2〜5つ星" class="rank2-5">
-							<?php elseif($baligirl_rank  == '3-4'): ?>
-							<img src="/img/villa/osusume_rank3-4_s.jpg" width="119" height="12" alt="3〜4つ星" class="rank3-4">
-							<?php elseif($baligirl_rank  == '3-5'): ?>
-							<img src="/img/villa/osusume_rank3-5_s.jpg" width="133" height="12" alt="3〜5つ星" class="rank3-5">
-							<?php elseif($baligirl_rank  == '4-5'): ?>
-							<img src="/img/villa/osusume_rank4-5_s.jpg" width="148" height="12" alt="4〜5つ星" class="rank4-5">
-							<?php endif ?>
-						</td>
+						<?php $baligirl_rank = get_post_meta($post->ID,'baligirl_rank',true) ?>
+						<?php if($baligirl_rank  == '1'): ?>
+						<img src="/img/villa/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星" class="rank1">
+						<?php elseif($baligirl_rank  == '2'): ?>
+						<img src="/img/villa/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星" class="rank2">
+						<?php elseif($baligirl_rank  == '3'): ?>
+						<img src="/img/villa/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星" class="rank3">
+						<?php elseif($baligirl_rank  == '4'): ?>
+						<img src="/img/villa/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星" class="rank4">
+						<?php elseif($baligirl_rank  == '5'): ?>
+						<img src="/img/villa/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星" class="rank5">
+						<?php elseif($baligirl_rank  == '2-3'): ?>
+						<img src="/img/villa/osusume_rank2-3_s.jpg" width="89" height="12" alt="2〜3つ星" class="rank2-3">
+						<?php elseif($baligirl_rank  == '2-4'): ?>
+						<img src="/img/villa/osusume_rank2-4_s.jpg" width="104" height="12" alt="2〜4つ星" class="rank2-4">
+						<?php elseif($baligirl_rank  == '2-5'): ?>
+						<img src="/img/villa/osusume_rank2-5_s.jpg" width="119" height="12" alt="2〜5つ星" class="rank2-5">
+						<?php elseif($baligirl_rank  == '3-4'): ?>
+						<img src="/img/villa/osusume_rank3-4_s.jpg" width="119" height="12" alt="3〜4つ星" class="rank3-4">
+						<?php elseif($baligirl_rank  == '3-5'): ?>
+						<img src="/img/villa/osusume_rank3-5_s.jpg" width="133" height="12" alt="3〜5つ星" class="rank3-5">
+						<?php elseif($baligirl_rank  == '4-5'): ?>
+						<img src="/img/villa/osusume_rank4-5_s.jpg" width="148" height="12" alt="4〜5つ星" class="rank4-5">
+						<?php endif ?>
+					</td>
 				</tr>
 			</table>
 			<?php
@@ -1040,7 +1054,9 @@ function plbali_show_post_disp_sort($posts, &$arr_post_id){
 				<div class="list_img">
 					<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
 
-						<?php $thumbnail = get_post_meta($post->ID, 'thumbnail', true) ?>
+						<?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true)) ?>
+						<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
+						<?php //$thumbnail = get_post_meta($post->ID, 'thumbnail', true) ?>
 						<img src="<?php echo $thumbnail ?>" class="no-hover ImgDispSort">
 
 						<div class="list_name">
@@ -1052,7 +1068,16 @@ function plbali_show_post_disp_sort($posts, &$arr_post_id){
 				<table border="0" cellspacing="0" cellpadding="0">
 					<tr>
 						<th>タイプ</th>
-						<td><?php echo get_post_meta($post->ID, 'hotel_type', true) ?></td>
+						<td><?php
+						$tmp = array(
+							'large_resort'    => '大型リゾート',
+							'small_luxury'    => 'スモールラグジュアリー',
+							'boutique_hotel'  => 'ブディックホテル',
+							'villa'           => 'ヴィラ',
+							'charter_villa'   => '貸切ヴィラ',
+							'wellness_resort' => 'ウェルネスリゾート'
+						);
+						echo $tmp[get_post_meta($post->ID, 'hotel_type', true)] ?></td>
 					</tr>
 					<tr>
 						<th>バリガールランク</th>
