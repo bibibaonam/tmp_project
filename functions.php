@@ -724,12 +724,20 @@ function get_area($post_id){
 	return ($areaObj) ? $areaObj->name: '';
 }
 
+
 function is_post_type_hotels(){
 	return get_post_type(get_the_ID()) == 'hotels' ? true : false;
 }
 
 function is_single_hotel() {
 	return (in_category('hotels') && is_single()) || is_post_type_hotels() || checkCatHotels();
+
+add_action( 'save_post', 'afterSavePost' );
+function afterSavePost($postId)
+{
+	$ranking = get_post_meta($postId, 'ranking', true);
+	if ($ranking === "" || $ranking == 0)
+		delete_post_meta($postId, 'ranking');
 }
 
 if(function_exists("register_field_group"))
@@ -871,7 +879,7 @@ if(function_exists("register_field_group"))
 				'label' => '売れすじランキング',
 				'name' => 'ranking',
 				'type' => 'number',
-				'default_value' => '999999',
+				'default_value' => '',
 				'placeholder' => 1,
 				'prepend' => '',
 				'append' => '',
