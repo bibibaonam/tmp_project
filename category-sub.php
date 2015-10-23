@@ -155,28 +155,28 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 						</div>
 
 						<p class="area"><?php echo get_area($post->ID) ?></p>
-				<?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-					<?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
+				<?php if(get_post_meta($post->ID,'baligirl_rank',true)): ?>
+					<?php if(get_post_meta($post->ID,'baligirl_rank',true) == '1'): ?>
 						<p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '2'): ?>
 						<p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '3'): ?>
 						<p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '4'): ?>
 						<p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '5'): ?>
 						<p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '2-3'): ?>
 						<p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2〜3つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '2-4'): ?>
 						<p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2〜4つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '2-5'): ?>
 						<p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2〜5つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '3-4'): ?>
 						<p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3〜4つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '3-5'): ?>
 						<p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3〜5つ星"></p>
-						<?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
+						<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '4-5'): ?>
 						<p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4〜5つ星"></p>
 					<?php endif ?>
 				<?php endif ?>
