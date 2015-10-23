@@ -17,7 +17,7 @@ if ($short_slug == 'ubud') {
 	$short_slug = 'sanu';
 }elseif ($short_slug == 'candidasa') {
 	$short_slug = 'cand';
-}elseif ($short_slug == 'cang') {
+}elseif ($short_slug == 'canggu') {
 	$short_slug = 'cang';
 }elseif ($short_slug == 'tanahlot') {
 	$short_slug = 'tana';
