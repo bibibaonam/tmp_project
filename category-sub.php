@@ -10,7 +10,7 @@
 
 $cat = get_category(get_query_var('cat'));
 
-$short_slug = str_replace('list-', '', $cat->slug);
+$short_slug = $long_slug = str_replace('list-', '', $cat->slug);
 if ($short_slug == 'ubud') {
 	$short_slug = 'ubdo';
 }elseif ($short_slug == 'sanur') {
@@ -56,7 +56,7 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 			</div>
 
 			<div id="villa_list_title">
-				<h1 id="list_tanahlot"><?php echo $cat->name ?></h1>
+				<h1 id="list_<?php echo $long_slug ?>"><?php echo $cat->name ?></h1>
 				<div id="info_link">
 					<a href="/<?php echo str_replace('list-', '', $cat->slug) ?>/"><img src="/img/list_link_<?php echo str_replace('list-', '', $cat->slug) ?>.gif" width="314" height="18" alt="タナロットの基本情報はこちら"></a>
 				</div>
