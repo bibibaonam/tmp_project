@@ -79,7 +79,7 @@
 
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<?php if(is_home() || is_front_page() || in_category('hotels') || checkCatHotels()): ?>
+<?php if(is_home() || is_front_page() || in_category('hotels') || checkCatHotels() || is_single_hotel()): ?>
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 <?php else : ?>
 <meta name="viewport" content="width=device-width" />
@@ -202,7 +202,7 @@
 <meta name="keywords" content="バリ 旅行,<?php the_title(); ?>,プルメリア・バリ,バリ島,海外旅行,ヴィラ,ホテル,スパ,ウェディング,バリ・ガール" />
 <?php endif; ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<?php if(in_category('hotels') || checkCatHotels()): ?>
+<?php if(in_category('hotels') || checkCatHotels() || is_single_hotel()): ?>
 		<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
 <?php elseif( is_home() || is_front_page()): ?>
 	<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
@@ -222,7 +222,7 @@
 <link href="/css/select.css" rel="stylesheet" type="text/css" />
 <?php elseif(is_page('ubud') || is_page('seminyak-kerobokan') || is_page('kuta-legian') || is_page('jimbaran-uluwatu') || is_page('nusadua') || is_page('sanur') || is_page('canggu') || is_page('candidasa') || is_page('tanahlot') || is_page('menjangan') || is_page('lovina') || is_page('yogyakarta') || is_page('lombok') || is_page('lembongan')): ?>
 <link href="/css/city.css" rel="stylesheet" type="text/css" />
-<?php elseif(in_category('hotels') || checkCatHotels()): ?>
+<?php elseif(in_category('hotels') || checkCatHotels() || is_single_hotel()): ?>
 <?php if(is_single()): ?>
 <?php if ( $paged >= 2 || $page >= 2 ): ?>
 <link href="/css/villa-single.css" rel="stylesheet" type="text/css" />

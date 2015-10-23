@@ -625,18 +625,19 @@ function get_breadcrumbs(){
 		{
 			echo "<li> &raquo; 404 Not Found</li>";
 		}
-		elseif ( is_single() && is_category())
+		elseif ( is_single())
 		{
 			$category = get_the_category();
-
-			$category_id = get_cat_ID( $category[0]->cat_name );
-			if ( 0 === get_query_var( 'page' ) ) {
-			echo '<li>&nbsp;＞&nbsp;'. get_category_parents( $category_id, TRUE, "&nbsp;＞&nbsp;" );
-			echo the_title('','', FALSE) ."</li>";
-			}
-			else {
-			echo '<li>&nbsp;＞&nbsp;'. get_category_parents( $category_id, TRUE, "&nbsp;＞&nbsp;" );
-			echo the_title('','', FALSE) ."&nbsp;料金表</li>";
+			if ($category) {
+				$category_id = get_cat_ID( $category[0]->cat_name );
+				if ( 0 === get_query_var( 'page' ) ) {
+				echo '<li>&nbsp;＞&nbsp;'. get_category_parents( $category_id, TRUE, "&nbsp;＞&nbsp;" );
+				echo the_title('','', FALSE) ."</li>";
+				}
+				else {
+				echo '<li>&nbsp;＞&nbsp;'. get_category_parents( $category_id, TRUE, "&nbsp;＞&nbsp;" );
+				echo the_title('','', FALSE) ."&nbsp;料金表</li>";
+				}
 			}
 		}
 		elseif ( is_page() )
@@ -731,6 +732,7 @@ function is_post_type_hotels(){
 
 function is_single_hotel() {
 	return (in_category('hotels') && is_single()) || is_post_type_hotels() || checkCatHotels();
+}
 
 add_action( 'save_post', 'afterSavePost' );
 function afterSavePost($postId)
