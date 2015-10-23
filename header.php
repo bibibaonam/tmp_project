@@ -709,7 +709,7 @@ location.replace('/');
 <?php endif; ?>
 
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
-<?php if(is_single_hotel()): ?>
+<?php if((in_category('hotels') && is_single()) || is_post_type_hotels()): ?>
 <?php if ( $paged >= 2 || $page >= 2 ): ?>
 <?php else : ?>
 <script type="text/javascript" src="/js/villa-single.js"></script>

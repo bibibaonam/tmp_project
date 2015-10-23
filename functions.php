@@ -1558,7 +1558,7 @@ if(function_exists("register_field_group"))
 						'key' => 'field_5626125555a62',
 						'label' => '説明文',
 						'name' => 'content',
-						'type' => 'text',
+						'type' => 'textarea',
 						'required' => 1,
 						'column_width' => '',
 						'default_value' => '',

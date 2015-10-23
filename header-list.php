@@ -549,7 +549,7 @@ pulse: false //エフェクト選択
 <ul>
 <li id="gNavi00"><a href="/order/">オーダーメイド ordermade</a></li>
 <li id="gNavi01"><a href="/select/">セレクト select</a></li>
-<li id="gNavi02"><a href="/villa/">ヴィラ・ホテル villa &amp; hotel</a></li>
+<li id="gNavi02"><a href="/hotels/">ヴィラ・ホテル villa &amp; hotel</a></li>
 <li id="gNavi03"><a href="/spa/">スパ SPA</a></li>
 <li id="gNavi04"><a href="/optional/">オプショナル optional</a></li>
 <li id="gNavi05"><a href="/wedding">ウェディング wedding</a></li>
