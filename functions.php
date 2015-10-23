@@ -742,6 +742,65 @@ function afterSavePost($postId)
 		delete_post_meta($postId, 'ranking');
 }
 
+function shailan_filter_terms( $exclusions, $args ){
+
+	// // IDs of terms to be excluded
+	// $exclude = "3,39"; // CHANGE THIS TO IDs OF YOUR TERMS
+	// // Generation of exclusion SQL code
+	// $exterms = wp_parse_id_list( $exclude );
+	// foreach ( $exterms as $exterm ) {
+	// 	if ( empty($exclusions) )
+	// 		$exclusions = ' AND ( t.term_id <> ' . intval($exterm) . ' ';
+	// 	else
+	// 		$exclusions .= ' AND t.term_id <> ' . intval($exterm) . ' ';
+	// }
+	// // Closing bracket
+	// if ( !empty($exclusions) )
+	// 	$exclusions .= ')';
+
+	// global $pagenow;
+	// if (($pagenow == 'post-new.php' && $_GET['post_type'] == 'hotels') || get_post_type( get_the_ID() ) == 'hotels') {
+
+	global $current_screen;
+	if( 'hotels' == $current_screen->post_type )
+		$exclusions = 'AND ( t.term_id IN (3, 75, 79, 82, 80, 78, 212, 213, 214, 215, 81, 216, 217, 218, 219) )';
+
+	// Return our SQL statement
+	return $exclusions;
+}
+add_filter( 'list_terms_exclusions', 'shailan_filter_terms', 10, 2 );
+
+
+
+function wpse_72603_default_categories()
+{
+	global $current_screen;
+
+	// If not our post type, do nothing
+	if( 'hotels' != $current_screen->post_type )
+		return;
+
+	?>
+	<script language="javascript" type="text/javascript">
+		jQuery(document).ready(function($)
+		{
+			// Hide the "Most used" tab
+			$('#category-tabs .hide-if-no-js').remove();
+
+			// Tick the checkboxes of categories 3
+			$('#in-category-3').attr('checked', true);
+
+			// Disable the clicks in categories 3
+			$('#in-category-3').click(function() { return false; });
+		});
+	</script>
+	<?php
+	// }
+}
+add_action( 'admin_head-post-new.php', 'wpse_72603_default_categories' );
+add_action( 'admin_head-post.php', 'wpse_72603_default_categories' );
+
+
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
