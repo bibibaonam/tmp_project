@@ -763,7 +763,8 @@ function shailan_filter_terms( $exclusions, $args ){
 
 	global $current_screen;
 	if( 'hotels' == $current_screen->post_type )
-		$exclusions = 'AND ( t.term_id IN (3, 75, 79, 82, 80, 78, 212, 213, 214, 215, 81, 216, 217, 218, 219) )';
+		// $exclusions = 'AND ( t.slug IN (3, 75, 79, 82, 80, 78, 212, 213, 214, 215, 81, 216, 217, 218, 219) )';
+		$exclusions = "AND ( t.slug IN ('hotels', 'list-ubud', 'list-semi', 'list-kuta', 'list-jim', 'list-nusa', 'list-sanur', 'list-yogyakarta', 'list-tanahlot', 'list-canggu', 'list-candidasa', 'list-menjangan', 'list-lembongan', 'list-lovina', 'list-lombok') )";
 
 	// Return our SQL statement
 	return $exclusions;
