@@ -757,20 +757,20 @@ function shailan_filter_terms( $exclusions, $args ){
 	// // Closing bracket
 	// if ( !empty($exclusions) )
 	// 	$exclusions .= ')';
-
-	// global $pagenow;
+	// echo "<pre>";
+	// print_r($args);
+	global $pagenow;
 	// if (($pagenow == 'post-new.php' && $_GET['post_type'] == 'hotels') || get_post_type( get_the_ID() ) == 'hotels') {
-
 	global $current_screen;
-	if( 'hotels' == $current_screen->post_type )
+	if($args['taxonomy'] != 'area' && 'hotels' == $current_screen->post_type && in_array($pagenow, array('post-new.php', 'post.php')) ){
 		// $exclusions = 'AND ( t.slug IN (3, 75, 79, 82, 80, 78, 212, 213, 214, 215, 81, 216, 217, 218, 219) )';
-		$exclusions = "AND ( t.slug IN ('hotels', 'list-ubud', 'list-semi', 'list-kuta', 'list-jim', 'list-nusa', 'list-sanur', 'list-yogyakarta', 'list-tanahlot', 'list-canggu', 'list-candidasa', 'list-menjangan', 'list-lembongan', 'list-lovina', 'list-lombok') )";
-
+		// echo $args['taxonomy'];die;
+		$exclusions .= " AND ( t.slug IN ('hotels', 'list-ubud', 'list-semi', 'list-kuta', 'list-jim', 'list-nusa', 'list-sanur', 'list-yogyakarta', 'list-tanahlot', 'list-canggu', 'list-candidasa', 'list-menjangan', 'list-lembongan', 'list-lovina', 'list-lombok') )";
+	}
 	// Return our SQL statement
 	return $exclusions;
 }
 add_filter( 'list_terms_exclusions', 'shailan_filter_terms', 10, 2 );
-
 
 
 function wpse_72603_default_categories()
