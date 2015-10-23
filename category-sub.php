@@ -34,20 +34,20 @@ if ($short_slug == 'ubud') {
 }
 
 $arr_link = array(
-	'kuta'      => '/kuta-legian/',
-	'semi'      => '/seminyak-kerobokan/',
-	'nusa'      => '/nusadua/',
-	'jim'       => '/jimbaran-uluwatu/',
-	'ubdo'      => '/ubud/',
-	'sanur'     => '/sanur/',
-	'canggu'    => '/canggu/',
-	'candidasa' => '/candidasa/',
-	'tanahlot'  => '/tanahlot/',
-	'menjangan' => '/menjangan/',
-	'lovi'      => '/lovina/',
-	'yogy'      => '/yogyakarta/',
-	'lomb'      => '/lombok/',
-	'lemb'      => '/lembongan/'
+	'kuta' => '/kuta-legian/',
+	'semi' => '/seminyak-kerobokan/',
+	'nusa' => '/nusadua/',
+	'jim'  => '/jimbaran-uluwatu/',
+	'ubdo' => '/ubud/',
+	'sanu' => '/sanur/',
+	'cang' => '/canggu/',
+	'cand' => '/candidasa/',
+	'tana' => '/tanahlot/',
+	'menj' => '/menjangan/',
+	'lovi' => '/lovina/',
+	'yogy' => '/yogyakarta/',
+	'lomb' => '/lombok/',
+	'lemb' => '/lembongan/'
 );
 
 
