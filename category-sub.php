@@ -69,19 +69,13 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 				$arr_post_id = array();
 
 				// ranking
-				$posts = get_posts(array('posts_per_page' => 999, 'post_type' => 'hotels',
-					'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'villa' )),
-					'meta_key' => 'ranking', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
+				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'villa' )), 'meta_key' => 'ranking', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ヴィラ一覧');
 				// disp_sort
-				$posts = get_posts(array('posts_per_page' => 999, 'post_type' => 'hotels',
-					'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'villa' )),
-					'meta_key' => 'disp_sort', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
+				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'villa' )), 'meta_key' => 'disp_sort', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ヴィラ一覧');
 				// hotel_name_jp
-				$posts = get_posts(array('posts_per_page' => 999, 'post_type' => 'hotels',
-					'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'villa' )),
-					'meta_key' => 'hotel_name_jp', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
+				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'villa' )), 'meta_key' => 'hotel_name_jp', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ヴィラ一覧');
 				?>
 
@@ -95,19 +89,13 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 				$arr_post_id = array();
 
 				// ranking
-				$posts = get_posts(array('posts_per_page' => 999, 'post_type' => 'hotels',
-					'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'hotel' )),
-					'meta_key' => 'ranking', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
+				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'hotel' )), 'meta_key' => 'ranking', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ホテル一覧');
 				// disp_sort
-				$posts = get_posts(array('posts_per_page' => 999, 'post_type' => 'hotels',
-					'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'hotel' )),
-					'meta_key' => 'disp_sort', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
+				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'hotel' )), 'meta_key' => 'disp_sort', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ホテル一覧');
 				// hotel_name_jp
-				$posts = get_posts(array('posts_per_page' => 999, 'post_type' => 'hotels',
-					'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'hotel' )),
-					'meta_key' => 'hotel_name_jp', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
+				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'hotel' )), 'meta_key' => 'hotel_name_jp', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ホテル一覧');
 				?>
 
