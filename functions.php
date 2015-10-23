@@ -716,6 +716,14 @@ function checkCatHotels(){
 	return $isHotels;
 }
 
+function get_area($post_id){
+	$areaObj = get_term(get_post_meta($post_id, 'area', true), 'area');
+	if ($areaObj->parent > 0) {
+		$areaObj = get_term($areaObj->parent, 'area');
+	}
+	return ($areaObj) ? $areaObj->name: '';
+}
+
 
 if(function_exists("register_field_group"))
 {

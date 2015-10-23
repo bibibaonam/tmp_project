@@ -138,7 +138,7 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 						<div class="list_img">
 							<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
 								<?php
-									// $title = get_the_title($post->ID);
+									$title = get_the_title($post->ID);
 									// $thumb = get_the_post_thumbnail($post->ID, array( 100,100 ), array( 'alt' =>$title, 'title' => $title));
 									// echo $thumb;
 								?>
@@ -156,13 +156,10 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 								<?php } ?>
 							</div>
 							<span><?php echo post_custom('copy') ?></span>
-							<a href="<?php the_permalink() ?>" target="_top"><?php echo $title ?></a>
+							<a href="<?php echo get_permalink($post->ID) ?>" target="_top"><?php echo $title ?></a>
 						</div>
 
-						<p class="area"><?php
-							$areaObj = get_term(get_post_meta($post->ID, 'area', true), 'area');
-							echo ($areaObj) ? $areaObj->name: '';
-						?></p>
+						<p class="area"><?php echo get_area($post->ID) ?></p>
 				<?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
 					<?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
 						<p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星"></p>
