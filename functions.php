@@ -625,7 +625,7 @@ function get_breadcrumbs(){
 		{
 			echo "<li> &raquo; 404 Not Found</li>";
 		}
-		elseif ( is_single() )
+		elseif ( is_single() && is_category())
 		{
 			$category = get_the_category();
 
@@ -724,6 +724,13 @@ function get_area($post_id){
 	return ($areaObj) ? $areaObj->name: '';
 }
 
+function is_post_type_hotels(){
+	return get_post_type(get_the_ID()) == 'hotels' ? true : false;
+}
+
+function is_single_hotel() {
+	return (in_category('hotels') && is_single()) || is_post_type_hotels() || checkCatHotels();
+}
 
 if(function_exists("register_field_group"))
 {
@@ -772,7 +779,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'post',
+					'value' => 'hotels',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -1128,7 +1135,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'post',
+					'value' => 'hotels',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -1190,7 +1197,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'post',
+					'value' => 'hotels',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -1274,7 +1281,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'post',
+					'value' => 'hotels',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -1319,7 +1326,6 @@ if(function_exists("register_field_group"))
 				'label' => 'ラウンジ',
 				'name' => 'lounges',
 				'type' => 'repeater',
-				'required' => 1,
 				'sub_fields' => array (
 					array (
 						'key' => 'field_56260cc31dc59',
@@ -1794,7 +1800,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'post',
+					'value' => 'hotels',
 					'order_no' => 0,
 					'group_no' => 0,
 				),

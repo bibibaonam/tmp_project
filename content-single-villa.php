@@ -14,17 +14,14 @@
 <?php if ( 0 === get_query_var( 'page' ) ) : ?>
 <?php /*?>詳細ページ<?php */?>
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
-<?php if (in_category('hotels') && is_single()): ?>	
+<?php if (is_single_hotel()): ?>	
 <div id="main">
     <div id="main_title">
         <h1><?php echo post_custom('hotel_name_jp'); ?></h1>
         <span><?php echo post_custom('hotel_name_en'); ?></span>
     </div>
     <div id="main_info">
-        <div id="area"><?php 
-			$areaObj = get_term(post_custom('area'), 'area');
-			echo ($areaObj) ? $areaObj->name: ''; ?>
-		</div>
+        <div id="area"><?php echo get_area(get_the_ID());?></div>
         <?php if(post_custom('baligirl_rank')): ?>
         <div id="rank"></div>
         <?php endif; ?>
@@ -53,51 +50,54 @@
 	$hotel_id = get_field('hotel_id');
 	$arrDep = array();
 	$arrHotelID = array();
-	foreach($departureList as $itemList) {
-	    switch($itemList){
-		case '2':
-		    $arrDep[$itemList] ='成田発';
-		    $arrHotelID[$itemList] = $hotel_id;
-		    break;
-		case '3':
-		    $arrDep[$itemList] ='羽田発';
-		    $arrHotelID[$itemList] = $hotel_id;
-		    break;
-		case '5':
-		    $arrDep[$itemList] ='関空発';
-		    $arrHotelID[$itemList] = $hotel_id;
-		    break;
-		case '7':
-		    $arrDep[$itemList] ='名古屋発';
-		    $arrHotelID[$itemList] = $hotel_id;
-		    break;
-		case '8':
-		    $arrDep[$itemList] ='福岡発';
-		    $arrHotelID[$itemList] = $hotel_id;
-		    break;
-		case '10':
-		    $arrDep[$itemList] ='札幌発';
-		    $arrHotelID[$itemList] = $hotel_id;
-		    break;
-		case '11':
-		    $arrDep[$itemList] ='仙台発';
-		    $arrHotelID[$itemList] = $hotel_id;
-		    break;
-		
-	    }
+	if ($departureList) {
+		foreach($departureList as $itemList) {
+			switch($itemList){
+			case '2':
+				$arrDep[$itemList] ='成田発';
+				$arrHotelID[$itemList] = $hotel_id;
+				break;
+			case '3':
+				$arrDep[$itemList] ='羽田発';
+				$arrHotelID[$itemList] = $hotel_id;
+				break;
+			case '5':
+				$arrDep[$itemList] ='関空発';
+				$arrHotelID[$itemList] = $hotel_id;
+				break;
+			case '7':
+				$arrDep[$itemList] ='名古屋発';
+				$arrHotelID[$itemList] = $hotel_id;
+				break;
+			case '8':
+				$arrDep[$itemList] ='福岡発';
+				$arrHotelID[$itemList] = $hotel_id;
+				break;
+			case '10':
+				$arrDep[$itemList] ='札幌発';
+				$arrHotelID[$itemList] = $hotel_id;
+				break;
+			case '11':
+				$arrDep[$itemList] ='仙台発';
+				$arrHotelID[$itemList] = $hotel_id;
+				break;
+			}
+		}
 	}
     ?>
     <ul>
         <li class="tour_read"><strong>現在のツアー最安値</strong>
         燃油サーチャージャー込　その他税別途</li>
+		<?php if ($arrDep):?>
         <?php foreach($arrDep as $key=>$itemList) {?>
-	    <li data-tour-search="hotel_id=<?php echo $arrHotelID[$key] ; ?>&departure_place_id=<?php echo $key ?>">
-		<div data-tour>
-		<strong><?php echo $itemList; ?> <span data-tour-info="price_min"></span>円〜</strong>
-		<div class="btn"><a data-tour-info="code">予約</a></div>
-		</div>
-	    </li>
-	<?php } ?>
+			<li data-tour-search="hotel_id=<?php echo $arrHotelID[$key] ; ?>&departure_place_id=<?php echo $key ?>">
+			<div data-tour>
+			<strong><?php echo $itemList; ?> <span data-tour-info="price_min"></span>円〜</strong>
+			<div class="btn"><a data-tour-info="code">予約</a></div>
+			</div>
+			</li>
+		<?php } ?>
+		<?php endif; ?>
         <?php if(post_custom('hotel_reserve_link')): ?>
         <li class="tour_hotel"><strong>ホテルのみご予約はこちらから</strong><div class="btn"><a href="<?php echo post_custom('hotel_reserve_link'); ?>">詳細</a></div></li>
         <?php endif; ?>
@@ -166,7 +166,7 @@
             </tr>
             <tr>
                 <th>エリア</th>
-                <td> <?php echo ($areaObj) ? $areaObj->name: '';  ?></td>
+                <td><?php echo get_area(get_the_ID());?></td>
             </tr>
             <tr>
                 <th>address</th>
@@ -937,7 +937,7 @@ $levels = array(
 );
 ?>
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
-<?php if(in_category('hotels') && is_single()): ?>
+<?php if(is_single_hotel()): ?>
 <script type="text/javascript">
 $(function(){
   try{
@@ -958,7 +958,7 @@ $(function(){
 
 
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
-<?php if(in_category('hotels') && is_single()): ?>
+<?php if(is_single_hotel()): ?>
 <?php else : ?>
 <?php $post_tags = get_the_tags( $post->ID );
 foreach( $post_tags as $post_tag ) {
@@ -975,7 +975,7 @@ $(function(){
 
 <?php if(post_custom('osusume')): ?>
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
-<?php if(in_category('hotels') && is_single()): ?>
+<?php if(is_single_hotel()): ?>
 <?php else : ?>
 <?php
 $osusume_names = array(
@@ -1007,7 +1007,7 @@ $(function(){
 
 <?php if(post_custom('tokuten1') && !(post_custom('tokuten_txt') && post_custom('tokuten2'))): ?>
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
-<?php if(in_category('hotels') && is_single()): ?>
+<?php if(is_single_hotel()): ?>
 <?php else : ?>
 <?php
 $tokuten_names = array(
@@ -1045,7 +1045,7 @@ $(function(){
 <?php endif; ?>
 
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
-<?php if(in_category('hotels') && is_single()): ?>
+<?php if(is_single_hotel()): ?>
 <?php else : ?>
 <script type="text/javascript">
 $(function(){

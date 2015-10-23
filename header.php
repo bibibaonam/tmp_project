@@ -79,7 +79,7 @@
 
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<?php if(is_home() || is_front_page() || in_category('hotels')): ?>
+<?php if(is_home() || is_front_page() || in_category('hotels') || checkCatHotels()): ?>
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 <?php else : ?>
 <meta name="viewport" content="width=device-width" />
@@ -202,7 +202,7 @@
 <meta name="keywords" content="バリ 旅行,<?php the_title(); ?>,プルメリア・バリ,バリ島,海外旅行,ヴィラ,ホテル,スパ,ウェディング,バリ・ガール" />
 <?php endif; ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<?php if(in_category('hotels')): ?>
+<?php if(in_category('hotels') || checkCatHotels()): ?>
 		<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
 <?php elseif( is_home() || is_front_page()): ?>
 	<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
@@ -222,7 +222,7 @@
 <link href="/css/select.css" rel="stylesheet" type="text/css" />
 <?php elseif(is_page('ubud') || is_page('seminyak-kerobokan') || is_page('kuta-legian') || is_page('jimbaran-uluwatu') || is_page('nusadua') || is_page('sanur') || is_page('canggu') || is_page('candidasa') || is_page('tanahlot') || is_page('menjangan') || is_page('lovina') || is_page('yogyakarta') || is_page('lombok') || is_page('lembongan')): ?>
 <link href="/css/city.css" rel="stylesheet" type="text/css" />
-<?php elseif(in_category('hotels')): ?>
+<?php elseif(in_category('hotels') || checkCatHotels()): ?>
 <?php if(is_single()): ?>
 <?php if ( $paged >= 2 || $page >= 2 ): ?>
 <link href="/css/villa-single.css" rel="stylesheet" type="text/css" />
@@ -460,7 +460,7 @@ $(function () {
 <script language="javascript" type="text/javascript" src="/js/tab.js"></script>
 <script type="text/javascript" src="/js/jquery.lightbox-0.5.js"></script>
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
-<?php if(in_category('hotels') && is_single()): ?>
+<?php if(is_single_hotel()): ?>
 <script type="text/javascript">
 
 
@@ -709,14 +709,14 @@ location.replace('/');
 <?php endif; ?>
 
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
-<?php if(in_category('hotels') && is_single()): ?>
+<?php if(is_single_hotel()): ?>
 <?php if ( $paged >= 2 || $page >= 2 ): ?>
 <?php else : ?>
 <script type="text/javascript" src="/js/villa-single.js"></script>
 <?php endif; ?>
 <?php endif; ?>
 
-<?php if(in_category('hotels') && is_single()): ?>
+<?php if(is_single_hotel()): ?>
 <?php else : ?>
 <script language="javascript" type="text/javascript" src="/js/jquery.page-scroller.js"></script>
 <?php endif; ?>
@@ -983,7 +983,7 @@ location.replace('/');
 </div>
 
 <?php //if( is_home() || is_front_page() || is_single('padma-resort-bali-at-legian')): ?>
-<?php if( is_home() || is_front_page() || (in_category('hotels') && is_single())): ?>	
+<?php if( is_home() || is_front_page() || is_single_hotel()): ?>	
 	
 <div id="gNaviSp">
 <ul>

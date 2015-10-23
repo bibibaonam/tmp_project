@@ -22,7 +22,7 @@ $catslug = $cat[0]->slug;
   <div id="contents" class="<?php echo $catslug; ?>">
     <?php while ( have_posts() ) : the_post(); ?>
     <?php get_breadcrumbs(); ?>
-    <?php if(in_category('hotels')): ?>
+    <?php if(in_category('hotels') || is_post_type_hotels()): ?>
     <!-- ヴィラ -->
     <?php get_template_part('content-single-villa') ?>
     <?php elseif(in_category('spa')): ?>
@@ -43,7 +43,7 @@ $catslug = $cat[0]->slug;
 
   <?php if(! in_category(array('specials','wedding'))): ?>
   <?php //if ( is_single('padma-resort-bali-at-legian') ) : ?>
-   <?php if (in_category('hotels') && is_single()) : ?>
+   <?php if (is_single_hotel()) : ?>
   <?php else : ?>
   <?php get_sidebar(); ?>
   <?php endif; ?>
