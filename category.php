@@ -294,7 +294,7 @@ get_header() ?>
 			'class_color'      => 'mj',
 			'class_villa_list' => 'menjangan',
 			'name_villa_list'  => 'ムンジャンガン',
-			'link'             => '/tanahlot/',
+			'link'             => '/menjangan/',
 			'link_alt'         => 'ムンジャンガンの基本情報はこちら',
 		),
 		array(

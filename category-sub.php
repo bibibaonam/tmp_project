@@ -33,6 +33,23 @@ if ($short_slug == 'ubud') {
 	$short_slug = 'lemb';
 }
 
+$arr_link = array(
+	'kuta'      => '/kuta-legian/',
+	'semi'      => '/seminyak-kerobokan/',
+	'nusa'      => '/nusadua/',
+	'jim'       => '/jimbaran-uluwatu/',
+	'ubud'      => '/ubud/',
+	'sanur'     => '/sanur/',
+	'canggu'    => '/canggu/',
+	'candidasa' => '/candidasa/',
+	'tanahlot'  => '/tanahlot/',
+	'menjangan' => '/menjangan/',
+	'lovi'      => '/lovina/',
+	'yogy'      => '/yogyakarta/',
+	'lomb'      => '/lombok/',
+	'lemb'      => '/lembongan/'
+);
+
 
 $link = 'hotels';
 
@@ -58,7 +75,7 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 			<div id="villa_list_title">
 				<h1 id="list_<?php echo $long_slug ?>"><?php echo $cat->name ?></h1>
 				<div id="info_link">
-					<a href="/<?php echo str_replace('list-', '', $cat->slug) ?>/"><img src="/img/list_link_<?php echo str_replace('list-', '', $cat->slug) ?>.gif" width="314" height="18" alt="タナロットの基本情報はこちら"></a>
+					<a href="<?php echo $arr_link[$short_slug] ?>"><img src="/img/list_link_<?php echo str_replace('list-', '', $cat->slug) ?>.gif" alt="タナロットの基本情報はこちら"></a>
 				</div>
 			</div>
 
