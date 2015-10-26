@@ -154,7 +154,7 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 									// $thumb = get_the_post_thumbnail($post->ID, array( 100,100 ), array( 'alt' =>$title, 'title' => $title));
 									// echo $thumb;
 								?>
-								<?php $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true)) ?>
+								<?php $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true), 'full') ?>
 								<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
 								<img src="<?php echo $thumbnail ?>" title="<?php echo $title ?>" style="max-width:100px;max-height:100px">
 							</a>
@@ -167,7 +167,7 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 								<img src="/img/staff_osusume_icon.gif" width="122" height="17" alt="スタッフおすすめ">
 								<?php } ?>
 							</div>
-							<span><?php echo post_custom('copy') ?></span>
+							<!-- <span><?php echo get_post_meta($post->ID,'copy',true) ?></span> -->
 							<a href="<?php echo get_permalink($post->ID) ?>" target="_top"><?php echo $title ?></a>
 						</div>
 

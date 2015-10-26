@@ -762,7 +762,7 @@ function shailan_filter_terms( $exclusions, $args ){
 	global $pagenow;
 	// if (($pagenow == 'post-new.php' && $_GET['post_type'] == 'hotels') || get_post_type( get_the_ID() ) == 'hotels') {
 	global $current_screen;
-	if((isset($_GET['taxonomy']) && $_GET['taxonomy'] == 'category' && isset($_GET['post_type']) && $_GET['post_type'] == 'hotels') || ($args['taxonomy'] != 'area' && 'hotels' == $current_screen->post_type && in_array($pagenow, array('post-new.php', 'post.php'))) ){
+	if((isset($_GET['post_type']) && $_GET['post_type'] == 'hotels' && isset($args['taxonomy']) && $args['taxonomy'] == 'category') || (isset($_GET['taxonomy']) && $_GET['taxonomy'] == 'category' && isset($_GET['post_type']) && $_GET['post_type'] == 'hotels') || ($args['taxonomy'] != 'area' && 'hotels' == $current_screen->post_type && in_array($pagenow, array('post-new.php', 'post.php'))) ){
 		// $exclusions = 'AND ( t.slug IN (3, 75, 79, 82, 80, 78, 212, 213, 214, 215, 81, 216, 217, 218, 219) )';
 		// echo $args['taxonomy'];die;
 		$exclusions .= " AND ( t.slug IN ('hotels', 'list-ubud', 'list-semi', 'list-kuta', 'list-jim', 'list-nusa', 'list-sanur', 'list-yogyakarta', 'list-tanahlot', 'list-canggu', 'list-candidasa', 'list-menjangan', 'list-lembongan', 'list-lovina', 'list-lombok') )";

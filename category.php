@@ -942,7 +942,7 @@ function plbali_show_post_ranking($posts, &$arr_post_id){
 			<div class="list_img">
 				<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
 
-					<?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true)) ?>
+					<?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true), 'full') ?>
 					<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
 					<img src="<?php echo $thumbnail ?>" class="no-hover ImgRanking">
 
@@ -1059,7 +1059,7 @@ function plbali_show_post_disp_sort($posts, &$arr_post_id){
 				<div class="list_img">
 					<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
 
-						<?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true)) ?>
+						<?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true), 'full') ?>
 						<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
 						<?php //$thumbnail = get_post_meta($post->ID, 'thumbnail', true) ?>
 						<img src="<?php echo $thumbnail ?>" class="no-hover ImgDispSort">
