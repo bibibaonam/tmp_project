@@ -1017,7 +1017,7 @@ function plbali_show_post_ranking($posts, &$arr_post_id){
 			) ?>
 			<ul class="icon_list">
 				<?php
-				if (is_array($icon)) {
+				if (is_array($icon) && in_array('couple', $icon) && in_array('family', $icon) && in_array('girls', $icon)) {
 					if (in_array('couple', $icon))
 						echo '<li><img src="/img/villa/list_osusume_icon01.png" width="46" height="46" alt="女子旅"></li>';
 					if (in_array('family', $icon))
