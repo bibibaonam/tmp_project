@@ -32,7 +32,8 @@
 		?>
         <ul>
         	<?php //$field = get_post_meta($post->ID, 'free_text', false);
-				foreach ( $free_texts as $row ):
+				foreach ( $free_texts as $key => $row ):
+					if ($key == 2) { break; }
 					echo '<li>'.$row['free_text']. '</li>';
 				endforeach;
 			
