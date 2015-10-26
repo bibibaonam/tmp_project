@@ -794,9 +794,7 @@ function wpse_72603_default_categories()
 			// Disable the clicks in categories 3
 			$('#in-category-3').click(function() { return false; });
 
-			$('#tagsdiv-post_tag').hide();
-
-			$('#postimagediv').hide();
+			$('#tagsdiv-post_tag, #areadiv, #postimagediv').hide();
 		});
 	</script>
 	<?php
