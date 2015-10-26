@@ -918,8 +918,8 @@ $(document).ready(function() {
 
 <style type="text/css">
 	img.ImgRanking{
-		width: 288px;
-		height: 192px;
+		width: 288px !important;
+		height: 192px !important;
 	}
 </style>
 <?php
