@@ -94,7 +94,7 @@
         <?php foreach($arrDep as $key=>$itemList) {?>
 			<li data-tour-search="hotel_id=<?php echo $arrHotelID[$key] ; ?>&departure_place_id=<?php echo $key ?>">
 			<div data-tour>
-			<strong><?php echo $itemList; ?> <span data-tour-info="price_min"></span>円〜</strong>
+			<strong><?php echo $itemList; ?> <span data-tour-info="price_min" class="tour-price-val"></span>円〜</strong>
 			<div class="btn"><a data-tour-info="code">予約</a></div>
 			</div>
 			</li>
@@ -107,7 +107,14 @@
     <script src="http://api.tabikobo.com/myapi/js/tourprice-1.0.0.js"></script>
 <script type="text/javascript">
 　　$(document).ready(function(){
-　　  tourprice.searchAndLoad();
+		var rsTourPrice = tourprice.searchAndLoad();
+		rsTourPrice.done(function(){
+			$('.tour-price-val').each(function(){
+				if(!$(this).html()) {
+					$(this).parent().parent().remove();
+				}
+			});
+	   });
 　　});
 </script>
 </div>
