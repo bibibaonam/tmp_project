@@ -431,38 +431,14 @@
 	?>
     <?php if($hotel_images): ?>
     <ul id="hotel_photo">
-    	<?php if(isset($hotel_images[0])): ?>
-    	<li>
-        	<div class="photo"><img src="<?php echo $hotel_images[0]['image']['url']; ?>"></div>
-            <?php if($hotel_images[0]['image']['title']): ?>
-            <span><?php echo $hotel_images[0]['image']['title']; ?></span>
-            <?php endif; ?>
-        </li>
-        <?php endif; ?>
-    	<?php if(isset($hotel_images[1])): ?>
-    	<li>
-        	<div class="photo"><img src="<?php echo $hotel_images[1]['image']['url']; ?>"></div>
-            <?php if($hotel_images[1]['image']['title']): ?>
-            <span><?php echo $hotel_images[1]['image']['title']; ?></span>
-            <?php endif; ?>
-        </li>
-        <?php endif; ?>
-    	<?php if(isset($hotel_images[2])):  ?>
-    	<li>
-        	<div class="photo"><img src="<?php echo $hotel_images[2]['image']['url']; ?>"></div>
-            <?php if($hotel_images[2]['image']['title']): ?>
-            <span><?php echo $hotel_images[2]['image']['title']; ?></span>
-            <?php endif; ?>
-        </li>
-        <?php endif; ?>
-    	<?php if(isset($hotel_images[3])):  ?>
-    	<li>
-        	<div class="photo"><img src="<?php echo $hotel_images[3]['image']['url']; ?>"></div>
-            <?php if($hotel_images[3]['image']['title']): ?>
-            <span><?php echo $hotel_images[3]['image']['title']; ?></span>
-            <?php endif; ?>
-        </li>
-        <?php endif; ?>
+		<?php foreach ($hotel_images as $image):?>
+			<li>
+				<div class="photo"><img src="<?php echo $image['image']['url']; ?>"></div>
+				<?php if($image['title']): ?>
+				<span><?php echo $image['title']; ?></span>
+				<?php endif; ?>
+			</li>
+		<?php endforeach;?>
     </ul>
     <?php endif; ?>
     
