@@ -918,8 +918,8 @@ $(document).ready(function() {
 
 <style type="text/css">
 	img.ImgRanking{
-		max-width: 288px;
-		max-height: 192px;
+		width: 288px;
+		height: 192px;
 	}
 </style>
 <?php
@@ -1018,10 +1018,12 @@ function plbali_show_post_ranking($posts, &$arr_post_id){
 			<ul class="icon_list">
 				<?php
 				if (is_array($icon)) {
-					foreach ($icon as $value) {
-						if(isset($arr_icon[$value][0]))
-						echo '<li><img src="/img/villa/list_osusume_icon'.$arr_icon[$value][0].'.png" width="46" height="46" alt="'.$arr_icon[$value][1].'"></li>';
-					}
+					if (in_array('couple', $icon))
+						echo '<li><img src="/img/villa/list_osusume_icon01.png" width="46" height="46" alt="女子旅"></li>';
+					if (in_array('family', $icon))
+						echo '<li><img src="/img/villa/list_osusume_icon02.png" width="46" height="46" alt="カップル"></li>';
+					if (in_array('girls', $icon))
+						echo '<li><img src="/img/villa/list_osusume_icon03.png" width="46" height="46" alt="ファミリー"></li>';
 				}else{
 					echo '<li style="height:35px">&nbsp;</li>';
 				}
