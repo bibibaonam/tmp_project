@@ -807,40 +807,6 @@ add_action( 'admin_head-post.php', 'wpse_72603_default_categories' );
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'acf_hotel_base',
-		'title' => 'hotel_base',
-		'fields' => array (
-			array (
-				'key' => 'field_5625d77e1bfad',
-				'label' => 'eyecatch',
-				'name' => 'eyecatch',
-				'type' => 'image',
-				'required' => 1,
-				'save_format' => 'url',
-				'preview_size' => 'thumbnail',
-				'library' => 'all',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'hotels',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array (
 		'id' => 'acf_hotel_field_group',
 		'title' => 'hotel_field_group',
 		'fields' => array (

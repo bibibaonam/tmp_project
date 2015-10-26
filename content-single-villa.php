@@ -32,7 +32,8 @@
 		?>
         <ul>
         	<?php //$field = get_post_meta($post->ID, 'free_text', false);
-				foreach ( $free_texts as $row ):
+				foreach ( $free_texts as $key => $row ):
+					if ($key == 2) { break; }
 					echo '<li>'.$row['free_text']. '</li>';
 				endforeach;
 			
@@ -41,10 +42,11 @@
         <?php endif; ?>
     </div>
 </div>
-<?php $image_attributes =  wp_get_attachment_image_src(post_custom('eyecatch'), 'full');?>	
-<?php if ($image_attributes):?>	
-<div id="main_img"><img src="<?php echo $image_attributes ? $image_attributes[0] : ''; ?>" alt="<?php the_title(); ?>" /></div>
-<?php endif;?>
+	
+<?php if(has_post_thumbnail()): ?>	
+<div id="main_img"><?php the_post_thumbnail('full');?></div>
+<?php endif; ?>
+
 <div id="tour1" class="tour">
     <?php $departureList = get_field('tour_link_departure_id');
 	$hotel_id = get_field('hotel_id');
