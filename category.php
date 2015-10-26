@@ -418,13 +418,8 @@ get_header() ?>
 						plbali_show_post_ranking($posts, $arr_post_id);
 
 						if (count($arr_post_id) < 6) {
-							$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&meta_key=hotel_name_jp&orderby=meta_value_num&posts_per_page=6&order=ASC');
+							$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&orderby=title&posts_per_page=6&order=ASC');
 							plbali_show_post_ranking($posts, $arr_post_id);
-							if (count($arr_post_id) < 6) {
-								echo 123;
-								$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&orderby=title&posts_per_page=6&order=ASC');
-								plbali_show_post_ranking($posts, $arr_post_id);
-							}
 						}
 					}
 
@@ -440,12 +435,8 @@ get_header() ?>
 					plbali_show_post_disp_sort($posts, $arr_post_id);
 
 					if (count($arr_post_id) < 10) {
-						$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&meta_key=hotel_name_jp&orderby=meta_value_num&posts_per_page=10&order=ASC');
+						$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&orderby=title&posts_per_page=10&order=ASC');
 						plbali_show_post_disp_sort($posts, $arr_post_id);
-						if (count($arr_post_id) < 10) {
-							$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&orderby=title&posts_per_page=10&order=ASC');
-							plbali_show_post_disp_sort($posts, $arr_post_id);
-						}
 					}
 				?>
 				</div>

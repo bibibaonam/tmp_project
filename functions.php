@@ -740,6 +740,10 @@ function afterSavePost($postId)
 	$ranking = get_post_meta($postId, 'ranking', true);
 	if ($ranking === "" || $ranking == 0)
 		delete_post_meta($postId, 'ranking');
+
+	$disp_sort = get_post_meta($postId, 'disp_sort', true);
+	if ($disp_sort === "" || $disp_sort == 0)
+		delete_post_meta($postId, 'disp_sort');
 }
 
 function shailan_filter_terms( $exclusions, $args ){

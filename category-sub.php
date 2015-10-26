@@ -91,8 +91,8 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 				// disp_sort
 				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'villa' )), 'meta_key' => 'disp_sort', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ヴィラ一覧');
-				// hotel_name_jp
-				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'villa' )), 'meta_key' => 'hotel_name_jp', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
+				// title
+				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'orderby' => 'title', 'order' => 'ASC', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'villa' ))));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ヴィラ一覧');
 				?>
 
@@ -111,8 +111,8 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 				// disp_sort
 				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'hotel' )), 'meta_key' => 'disp_sort', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ホテル一覧');
-				// hotel_name_jp
-				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'hotel' )), 'meta_key' => 'hotel_name_jp', 'orderby' => 'meta_value_num', 'order' => 'ASC'));
+				// title
+				$posts = get_posts(array('category_name' => $cat->slug, 'posts_per_page' => 999, 'post_type' => 'hotels', 'orderby' => 'title', 'order' => 'ASC', 'meta_query' => array(array('key' => 'villa_or_hotel', 'value' => 'hotel' ))));
 				plbali_show_post($posts, $arr_post_id, $short_slug, 'ホテル一覧');
 				?>
 
