@@ -17,8 +17,8 @@
 <?php if (is_single_hotel()): ?>	
 <div id="main">
     <div id="main_title">
-        <h1><?php echo post_custom('hotel_name_jp'); ?></h1>
-        <span><?php echo post_custom('hotel_name_en'); ?></span>
+        <h1><?php echo the_title(); ?></h1>
+        <span><?php echo post_custom('title_en'); ?></span>
     </div>
     <div id="main_info">
         <div id="area"><?php echo get_area(get_the_ID());?></div>
@@ -162,7 +162,7 @@
         <table border="0" cellspacing="0" cellpadding="0">
             <tr>
                 <th>ホテル名</th>
-                <td><?php echo post_custom('title'); ?><span>(<?php echo post_custom('title_en'); ?>)</span></td>
+                <td><?php echo the_title(); ?><span>(<?php echo post_custom('title_en'); ?>)</span></td>
             </tr>
             <tr>
                 <th>エリア</th>
