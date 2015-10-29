@@ -104,6 +104,7 @@
         <li class="tour_hotel"><strong>ホテルのみご予約はこちらから</strong><div class="btn"><a href="<?php echo post_custom('hotel_reserve_link'); ?>">詳細</a></div></li>
         <?php endif; ?>
     </ul>
+	<div style="clear:both;"></div>
     <script src="http://api.tabikobo.com/myapi/js/tourprice-1.0.0.js"></script>
 <script type="text/javascript">
 　　$(document).ready(function(){
@@ -111,7 +112,7 @@
 		rsTourPrice.done(function(){
 			$('.tour-price-val').each(function(){
 				if(!$(this).html()) {
-					$(this).parent().parent().remove();
+					$(this).parent().parent().parent().remove();
 				}
 			});
 	   });
@@ -441,8 +442,8 @@
 		<?php foreach ($hotel_images as $image):?>
 			<li>
 				<div class="photo"><img src="<?php echo $image['image']['url']; ?>"></div>
-				<?php if($image['title']): ?>
-				<span><?php echo $image['title']; ?></span>
+				<?php if($image['image']['caption']): ?>
+				<span><?php echo $image['image']['caption']; ?></span>
 				<?php endif; ?>
 			</li>
 		<?php endforeach;?>
@@ -510,8 +511,10 @@
 				<div class="left">
 					<div class="photo"><a href="<?php echo $row['image']['url'] ? $row['image']['url'] : ''; ?>"><img src="<?php echo $row['image']['url'] ? $row['image']['url'] : ''; ?>"></a></div>
 					<span>モダンバリスタイルのお部屋。バスルームのスライドが開放的。</span>
-					<div class="photo"><a href="<?php echo $row['image']['url'] ? $row['layout_image']['url'] : ''; ?>"><img src="<?php echo $row['image']['url'] ? $row['layout_image']['url'] : ''; ?>"></a></div>
+					<?php if ($row['layout_image']['url']):?>
+					<div class="photo"><a href="<?php echo $row['layout_image']['url'] ? $row['layout_image']['url'] : ''; ?>"><img src="<?php echo $row['layout_image']['url'] ? $row['layout_image']['url'] : ''; ?>"></a></div>
 					<span>間取り図</span>
+					<?php endif; ?>
 					<div class="btn"><a href="<?php echo $row['plan_link']; ?>" target="_blank">このお部屋のプランを見る</a></div>
 				</div>
 			</li>
@@ -542,8 +545,10 @@
 				<div class="left">
 					<div class="photo"><a href="<?php echo $row['image']['url'] ? $row['image']['url'] : ''; ?>"><img src="<?php echo $row['image']['url'] ? $row['image']['url'] : ''; ?>"></a></div>
 					<span>モダンバリスタイルのお部屋。バスルームのスライドが開放的。</span>
-					<div class="photo"><a href="<?php echo $row['image']['url'] ? $row['layout_image']['url'] : ''; ?>"><img src="<?php echo $row['image']['url'] ? $row['layout_image']['url'] : ''; ?>"></a></div>
+					<?php if ($row['layout_image']['url']):?>
+					<div class="photo"><a href="<?php echo $row['layout_image']['url'] ? $row['layout_image']['url'] : ''; ?>"><img src="<?php echo $row['layout_image']['url'] ? $row['layout_image']['url'] : ''; ?>"></a></div>
 					<span>間取り図</span>
+					<?php endif; ?>
 					<div class="btn"><a href="<?php echo $row['plan_link']; ?>" target="_blank">このお部屋のプランを見る</a></div>
 				</div>
 			</li>
@@ -584,7 +589,7 @@
 			</div>
 		</div>
     
-        <h4>マンダラパッケージ</h4>
+        <h4><?php echo $spas[0]['package_name']?></h4>
 		<?php if(isset($spas[0]['packages']) && $spas[0]['packages']): ?>
 			<ul>
 				<?php foreach ($spas[0]['packages'] as $pa): ?>
@@ -627,7 +632,7 @@
 					 <?php endif; ?>
 				 </div>
 			</div>
-			<h4>マンダラパッケージ</h4>
+			<h4><?php echo $row['package_name']?></h4>
 			<?php if(isset($row['packages']) && $row['packages']): ?>
 				<ul>
 					<?php foreach ($row['packages'] as $pa): ?>

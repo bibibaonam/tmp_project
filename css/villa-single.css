@@ -131,6 +131,7 @@
 }
 .tour li.pr0{
 	padding-right:0%;
+	float: right;
 }
 .tour li.tour_read,
 .tour li.tour_hotel{
