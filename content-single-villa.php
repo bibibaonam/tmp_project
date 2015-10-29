@@ -440,12 +440,14 @@
     <?php if($hotel_images): ?>
     <ul id="hotel_photo">
 		<?php foreach ($hotel_images as $image):?>
+			<?php if ($image['image']['url']): ?>
 			<li>
 				<div class="photo"><img src="<?php echo $image['image']['url']; ?>"></div>
 				<?php if($image['image']['caption']): ?>
 				<span><?php echo $image['image']['caption']; ?></span>
 				<?php endif; ?>
 			</li>
+			<?php endif;?>
 		<?php endforeach;?>
     </ul>
     <?php endif; ?>
