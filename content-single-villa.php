@@ -44,7 +44,7 @@
 </div>
 	
 <?php if(has_post_thumbnail()): ?>	
-<div id="main_img"><?php the_post_thumbnail('full');?></div>
+<div id="main_img_detail"><?php the_post_thumbnail('size_958_x395');?></div>
 <?php endif; ?>
 
 <div id="tour1" class="tour">
@@ -95,7 +95,7 @@
 			<li data-tour-search="hotel_id=<?php echo $arrHotelID[$key] ; ?>&departure_place_id=<?php echo $key ?>">
 			<div data-tour>
 			<strong><?php echo $itemList; ?> <span data-tour-info="price_min" class="tour-price-val"></span>円〜</strong>
-			<div class="btn"><a data-tour-info="code">予約</a></div>
+			<div class="btn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo get_field('hotel_id'); ?>">予約</a></div>
 			</div>
 			</li>
 		<?php } ?>

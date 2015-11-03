@@ -102,6 +102,14 @@
 	height:auto;
 }
 
+#main_img_detail{
+	margin:0px 1px 20px;
+}
+#main_img_detail img{
+	width: 958px;
+	height:395px;
+}
+
 .tour{
 	margin-left:30px;
 	margin-right:30px;
