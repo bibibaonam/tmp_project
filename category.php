@@ -403,62 +403,31 @@ get_header() ?>
 			</div>
 			<div class="villa_list box">
 				<div class="<?php echo $category['class_villa_list'] ?>">
-				<div class="box">
-					<?php
-
-					// ---------------------------- ranking -----------------------------
-					$arr_post_id = array();
-					
-					$query = array(
-						'post_type' => 'hotels',
-						'category_name' => $category['category_name'],
-						'meta_query' => array(
-							'ranking_key' => array(
-								'key' => 'ranking'
-							),
-							'disp_sort_key' => array(
-								'key' => 'disp_sort'
-							)
-						),
-						'orderby' => array(
-							'ranking_key' => 'ASC',
-							'disp_sort_key' => 'ASC',
-							'post_modified' => 'DESC'
-						),
-						'posts_per_page' => 6
-					);
-					$posts = get_posts($query);
-					//$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&meta_key=ranking&orderby=meta_value_num&posts_per_page=6&order=ASC');
-					plbali_show_post_ranking($posts, $arr_post_id);
-
-					/*if (count($arr_post_id) < 6) {
-
-						$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&meta_key=disp_sort&orderby=meta_value_num&posts_per_page=6&order=ASC');
-						plbali_show_post_ranking($posts, $arr_post_id);
-
-						if (count($arr_post_id) < 6) {
-							$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&orderby=title&posts_per_page=6&order=ASC');
-							plbali_show_post_ranking($posts, $arr_post_id);
-						}
-					}*/
-
-					?>
-				</div>
-
-				<div class="box size-m">
 				<?php
-					// ---------------------------- disp_sort -----------------------------
-					$arr_post_id = array();
-
-					$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&meta_key=disp_sort&orderby=meta_value_num&posts_per_page=10&order=ASC');
-					plbali_show_post_disp_sort($posts, $arr_post_id);
-
-					if (count($arr_post_id) < 10) {
-						$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&orderby=title&posts_per_page=10&order=ASC');
-						plbali_show_post_disp_sort($posts, $arr_post_id);
-					}
+				$query = array(
+					'post_type' => 'hotels',
+					'category_name' => $category['category_name'],
+					'meta_query' => array(
+						'ranking_key' => array(
+							'key'  => 'ranking',
+							'type' => 'NUMERIC'
+						),
+						'disp_sort_key' => array(
+							'key'  => 'disp_sort',
+							'type' => 'NUMERIC'
+						)
+					),
+					'orderby' => array(
+						'ranking_key'   => 'ASC',
+						'disp_sort_key' => 'ASC',
+						'post_modified' => 'DESC'
+					),
+					'posts_per_page' => 10
+				);
+				$posts = get_posts($query);
 				?>
-				</div>
+				<div class="box"><?php plbali_show_post_ranking($posts) ?></div>
+				<div class="box size-m"><?php plbali_show_post_disp_sort($posts) ?></div>
 				<div class="page_top_link"><a href="#top">ページの先頭へ戻る</a></div>
 			</div><!--class=kuta -->
 		</div>
@@ -933,16 +902,16 @@ $(document).ready(function() {
 	}
 </style>
 <?php
-function plbali_show_post_ranking($posts, &$arr_post_id){
+function plbali_show_post_ranking($posts){
 	foreach($posts as $key => $post){
 		setup_postdata($post);
 
-		if (isset($arr_post_id[$post->ID]) || count($arr_post_id) == 6) {
-			continue;
-		}
+		if ($key >= 6)
+			break;
+
 		$arr_post_id[$post->ID] = $post->ID;
 
-		if(count($arr_post_id) === 3 || count($arr_post_id) === 6): ?>
+		if($key === 2 || count($arr_post_id) === 5): ?>
 		<div class="list mr0">
 		<?php else : ?>
 		<div class="list">
@@ -1056,12 +1025,7 @@ function plbali_show_post_disp_sort($posts, &$arr_post_id){
 	foreach($posts as $key => $post){
 		setup_postdata($post);
 
-		if (isset($arr_post_id[$post->ID]) || count($arr_post_id) == 10) {
-			continue;
-		}
-		$arr_post_id[$post->ID] = $post->ID;
-
-		if(count($arr_post_id) === 5 || count($arr_post_id) === 10){ ?>
+		if($key === 4 || $key === 9){ ?>
 			<div class="list mr0">
 			<?php }else{ ?>
 			<div class="list">
