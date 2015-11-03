@@ -735,16 +735,46 @@ function is_single_hotel() {
 	return (in_category('hotels') && is_single()) || is_post_type_hotels() || checkCatHotels();
 }
 
+define('DEFAULT_NULL', 9999);
+define('DEFAULT_ZEZO', 99999);
 add_action( 'save_post', 'afterSavePost' );
 function afterSavePost($postId)
 {
 	$ranking = get_post_meta($postId, 'ranking', true);
-	if ($ranking === "" || $ranking == 0)
-		delete_post_meta($postId, 'ranking');
-
+	if ($ranking === "" || $ranking == 0){
+		if ($ranking === "") { 
+			update_post_meta($postId, 'ranking', DEFAULT_NULL);
+		} else if($ranking == 0){
+			update_post_meta($postId, 'ranking', DEFAULT_ZEZO);
+		}	
+		//delete_post_meta($postId, 'ranking');
+	}	
 	$disp_sort = get_post_meta($postId, 'disp_sort', true);
-	if ($disp_sort === "" || $disp_sort == 0)
-		delete_post_meta($postId, 'disp_sort');
+	if ($disp_sort === "" || $disp_sort == 0) {
+		if ($ranking === "") { 
+			update_post_meta($postId, 'disp_sort', DEFAULT_NULL);
+		} else if($ranking == 0){
+			update_post_meta($postId, 'disp_sort', DEFAULT_ZEZO);
+		}		
+		//delete_post_meta($postId, 'disp_sort');
+	}	
+}
+
+add_filter('get_post_metadata', 'custom_get_post_metadata', true, 4);
+function custom_get_post_metadata($metadata, $post_id, $meta_key, $single){
+	if (is_admin()) {
+		if ((isset($meta_key) && $meta_key == 'ranking') || (isset($meta_key) && $meta_key == 'disp_sort')) {
+			global $wpdb;
+			$value = $wpdb->get_var( "SELECT meta_value FROM $wpdb->postmeta WHERE post_id = $post_id AND  meta_key = '".$meta_key."'" );
+			if ($value == DEFAULT_NULL) {
+				return '';
+			} else if ($value == DEFAULT_ZEZO) {
+				return 0;
+			}
+		} 
+	}
+
+	return $metadata;
 }
 
 function shailan_filter_terms( $exclusions, $args ){

@@ -408,11 +408,30 @@ get_header() ?>
 
 					// ---------------------------- ranking -----------------------------
 					$arr_post_id = array();
-
-					$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&meta_key=ranking&orderby=meta_value_num&posts_per_page=6&order=ASC');
+					
+					$query = array(
+						'post_type' => 'hotels',
+						'category_name' => $category['category_name'],
+						'meta_query' => array(
+							'ranking_key' => array(
+								'key' => 'ranking'
+							),
+							'disp_sort_key' => array(
+								'key' => 'disp_sort'
+							)
+						),
+						'orderby' => array(
+							'ranking_key' => 'ASC',
+							'disp_sort_key' => 'ASC',
+							'post_modified' => 'DESC'
+						),
+						'posts_per_page' => 6
+					);
+					$posts = get_posts($query);
+					//$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&meta_key=ranking&orderby=meta_value_num&posts_per_page=6&order=ASC');
 					plbali_show_post_ranking($posts, $arr_post_id);
 
-					if (count($arr_post_id) < 6) {
+					/*if (count($arr_post_id) < 6) {
 
 						$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&meta_key=disp_sort&orderby=meta_value_num&posts_per_page=6&order=ASC');
 						plbali_show_post_ranking($posts, $arr_post_id);
@@ -421,7 +440,7 @@ get_header() ?>
 							$posts = get_posts('post_type=hotels&category_name='.$category['category_name'].'&orderby=title&posts_per_page=6&order=ASC');
 							plbali_show_post_ranking($posts, $arr_post_id);
 						}
-					}
+					}*/
 
 					?>
 				</div>
