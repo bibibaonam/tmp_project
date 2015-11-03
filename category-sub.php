@@ -107,7 +107,7 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 					'orderby' => array(
 						'ranking_key'   => 'ASC',
 						'disp_sort_key' => 'ASC',
-						'title'         => 'DESC'
+						'title'         => 'ASC'
 					),
 					'posts_per_page' => 999
 				);
@@ -144,7 +144,7 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 					'orderby' => array(
 						'ranking_key'   => 'ASC',
 						'disp_sort_key' => 'ASC',
-						'title'         => 'DESC'
+						'title'         => 'ASC'
 					),
 					'posts_per_page' => 999
 				);
