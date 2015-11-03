@@ -456,7 +456,7 @@ $(function () {
 
 
 </script>
-<?php elseif(in_category('hotels') || in_category('spa')): ?>
+<?php elseif(in_category('hotels') || in_category('spa') || is_post_type_hotels()): ?>
 <script language="javascript" type="text/javascript" src="/js/tab.js"></script>
 <script type="text/javascript" src="/js/jquery.lightbox-0.5.js"></script>
 <?php //if(is_single('padma-resort-bali-at-legian')): ?>
