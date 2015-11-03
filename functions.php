@@ -751,9 +751,9 @@ function afterSavePost($postId)
 	}	
 	$disp_sort = get_post_meta($postId, 'disp_sort', true);
 	if ($disp_sort === "" || $disp_sort == 0) {
-		if ($ranking === "") { 
+		if ($disp_sort === "") { 
 			update_post_meta($postId, 'disp_sort', DEFAULT_NULL);
-		} else if($ranking == 0){
+		} else if($disp_sort == 0){
 			update_post_meta($postId, 'disp_sort', DEFAULT_ZEZO);
 		}		
 		//delete_post_meta($postId, 'disp_sort');
