@@ -80,10 +80,7 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 			</div>
 
 			<div class="box">
-				<div class="h2_title"><h2 class="<?php echo $short_slug ?>_h2">ヴィラ一覧</h2></div>
-				<div class="villa_list box">
-					<div class="<?php echo $short_slug ?>">
-						<div class="box">
+
 				<?php
 
 				// ---------------------------- VILLA -----------------------------
@@ -111,18 +108,20 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 					),
 					'posts_per_page' => 999
 				);
-				plbali_show_post(get_posts($query));
-				?>
-						</div>
-					</div>
-				</div>
 
-				<div class="h2_title"><h2 class="<?php echo $short_slug ?>_h2">ホテル一覧</h2></div>
+				$posts = get_posts($query);
+				if ($posts) { ?>
+				<div class="h2_title"><h2 class="<?php echo $short_slug ?>_h2">ヴィラ一覧</h2></div>
 				<div class="villa_list box">
 					<div class="<?php echo $short_slug ?>">
 						<div class="box">
-				<?php
+							<?php plbali_show_post($posts); ?>
+						</div>
+					</div>
+				</div>
+				<?php } ?>
 
+				<?php
 				// ---------------------------- HOTEL ----------------------------
 				$query = array(
 					'post_type' => 'hotels',
@@ -148,11 +147,18 @@ include( TEMPLATEPATH . '/header-list.php' ) ?>
 					),
 					'posts_per_page' => 999
 				);
-				plbali_show_post(get_posts($query));
-				?>
+
+				$posts = get_posts($query);
+				if ($posts) { ?>
+				<div class="h2_title"><h2 class="<?php echo $short_slug ?>_h2">ホテル一覧</h2></div>
+				<div class="villa_list box">
+					<div class="<?php echo $short_slug ?>">
+						<div class="box">
+							<?php plbali_show_post($posts) ?>
 						</div>
 					</div>
 				</div>
+				<?php } ?>
 			</div>
 		</div><!-- id=detaile -->
 		<div id="detaile_f"></div>
