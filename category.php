@@ -398,7 +398,11 @@ get_header() ?>
 
 	<?php foreach ($arr_categories as $key => $category) { ?>
 		<div class="h2_title" id="<?php echo $category['class_color'] ?>_ttl">
-			<h2 class="kl_h2"><a href="/<?php echo $link ?>/list-<?php echo $category['class_villa_list'] ?>/"><?php echo $category['name_villa_list'] ?></a></h2>
+			<?php
+				$category_link = get_category_by_slug( $category['category_name'] );
+				$category_link = get_category_link( $category_link->term_id );
+			?>
+			<h2 class="kl_h2"><a href="<?php echo esc_url( $category_link ); ?>"><?php echo $category['name_villa_list'] ?></a></h2>
 			<div class="info_link"><a href="<?php echo $category['link'] ?>"><img src="/img/villa/list_link_<?php echo $category['class_villa_list'] ?>.gif" height="18" alt="<?php echo $category['link_alt'] ?>"></a></div>
 			</div>
 			<div class="villa_list box">
