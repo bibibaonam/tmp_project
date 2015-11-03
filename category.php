@@ -960,27 +960,27 @@ function plbali_show_post_ranking($posts){
 					<th>バリガールランク</th>
 					<td>
 						<?php $baligirl_rank = get_post_meta($post->ID,'baligirl_rank',true) ?>
-						<?php if($baligirl_rank  == '1'): ?>
+						<?php if($baligirl_rank == '1'): ?>
 						<img src="/img/villa/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星" class="rank1">
-						<?php elseif($baligirl_rank  == '2'): ?>
+						<?php elseif($baligirl_rank == '2'): ?>
 						<img src="/img/villa/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星" class="rank2">
-						<?php elseif($baligirl_rank  == '3'): ?>
+						<?php elseif($baligirl_rank == '3'): ?>
 						<img src="/img/villa/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星" class="rank3">
-						<?php elseif($baligirl_rank  == '4'): ?>
+						<?php elseif($baligirl_rank == '4'): ?>
 						<img src="/img/villa/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星" class="rank4">
-						<?php elseif($baligirl_rank  == '5'): ?>
+						<?php elseif($baligirl_rank == '5'): ?>
 						<img src="/img/villa/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星" class="rank5">
-						<?php elseif($baligirl_rank  == '2-3'): ?>
+						<?php elseif($baligirl_rank == '2-3'): ?>
 						<img src="/img/villa/osusume_rank2-3_s.jpg" width="89" height="12" alt="2〜3つ星" class="rank2-3">
-						<?php elseif($baligirl_rank  == '2-4'): ?>
+						<?php elseif($baligirl_rank == '2-4'): ?>
 						<img src="/img/villa/osusume_rank2-4_s.jpg" width="104" height="12" alt="2〜4つ星" class="rank2-4">
-						<?php elseif($baligirl_rank  == '2-5'): ?>
+						<?php elseif($baligirl_rank == '2-5'): ?>
 						<img src="/img/villa/osusume_rank2-5_s.jpg" width="119" height="12" alt="2〜5つ星" class="rank2-5">
-						<?php elseif($baligirl_rank  == '3-4'): ?>
+						<?php elseif($baligirl_rank == '3-4'): ?>
 						<img src="/img/villa/osusume_rank3-4_s.jpg" width="119" height="12" alt="3〜4つ星" class="rank3-4">
-						<?php elseif($baligirl_rank  == '3-5'): ?>
+						<?php elseif($baligirl_rank == '3-5'): ?>
 						<img src="/img/villa/osusume_rank3-5_s.jpg" width="133" height="12" alt="3〜5つ星" class="rank3-5">
-						<?php elseif($baligirl_rank  == '4-5'): ?>
+						<?php elseif($baligirl_rank == '4-5'): ?>
 						<img src="/img/villa/osusume_rank4-5_s.jpg" width="148" height="12" alt="4〜5つ星" class="rank4-5">
 						<?php endif ?>
 					</td>
@@ -1068,27 +1068,27 @@ function plbali_show_post_disp_sort($posts, &$arr_post_id){
 						<th>バリガールランク</th>
 						<td>
 							<?php $baligirl_rank = get_post_meta($post->ID,'baligirl_rank',true) ?>
-							<?php if($baligirl_rank  == '1'): ?>
+							<?php if($baligirl_rank == '1'): ?>
 							<img src="/img/villa/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星" class="rank1">
-							<?php elseif($baligirl_rank  == '2'): ?>
+							<?php elseif($baligirl_rank == '2'): ?>
 							<img src="/img/villa/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星" class="rank2">
-							<?php elseif($baligirl_rank  == '3'): ?>
+							<?php elseif($baligirl_rank == '3'): ?>
 							<img src="/img/villa/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星" class="rank3">
-							<?php elseif($baligirl_rank  == '4'): ?>
+							<?php elseif($baligirl_rank == '4'): ?>
 							<img src="/img/villa/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星" class="rank4">
-							<?php elseif($baligirl_rank  == '5'): ?>
+							<?php elseif($baligirl_rank == '5'): ?>
 							<img src="/img/villa/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星" class="rank5">
-							<?php elseif($baligirl_rank  == '2-3'): ?>
+							<?php elseif($baligirl_rank == '2-3'): ?>
 							<img src="/img/villa/osusume_rank2-3_s.jpg" width="89" height="12" alt="2〜3つ星" class="rank2-3">
-							<?php elseif($baligirl_rank  == '2-4'): ?>
+							<?php elseif($baligirl_rank == '2-4'): ?>
 							<img src="/img/villa/osusume_rank2-4_s.jpg" width="104" height="12" alt="2〜4つ星" class="rank2-4">
-							<?php elseif($baligirl_rank  == '2-5'): ?>
+							<?php elseif($baligirl_rank == '2-5'): ?>
 							<img src="/img/villa/osusume_rank2-5_s.jpg" width="119" height="12" alt="2〜5つ星" class="rank2-5">
-							<?php elseif($baligirl_rank  == '3-4'): ?>
+							<?php elseif($baligirl_rank == '3-4'): ?>
 							<img src="/img/villa/osusume_rank3-4_s.jpg" width="119" height="12" alt="3〜4つ星" class="rank3-4">
-							<?php elseif($baligirl_rank  == '3-5'): ?>
+							<?php elseif($baligirl_rank == '3-5'): ?>
 							<img src="/img/villa/osusume_rank3-5_s.jpg" width="133" height="12" alt="3〜5つ星" class="rank3-5">
-							<?php elseif($baligirl_rank  == '4-5'): ?>
+							<?php elseif($baligirl_rank == '4-5'): ?>
 							<img src="/img/villa/osusume_rank4-5_s.jpg" width="148" height="12" alt="4〜5つ星" class="rank4-5">
 							<?php endif ?>
 						</td>
