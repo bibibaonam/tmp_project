@@ -409,8 +409,10 @@
 	margin-bottom:3px;
 }
 #hotel_photo li .photo img{
-	width:100%;
-	height:auto;
+	/*width:100%;
+	height:auto;*/
+	width:437px;
+	height:259px;
 }
 #hotel_photo li span{
 	display:block;
@@ -429,8 +431,10 @@
 	margin-right:3%;
 }
 #lounge ul li .photo img{
-	width:100%;
-	height:auto;
+	/*width:100%;
+	height:auto;*/
+	width:437px;
+	height:259px;
 }
 #lounge ul li .txt{
 	margin-left:52%;
@@ -466,8 +470,10 @@
 	margin-bottom:3px;
 }
 #rooms li .left .photo img{
-	width:100%;
-	height:auto;
+	/*width:100%;
+	height:auto;*/
+	width:315px;
+	height:187px;
 }
 #rooms li .left span{
 	font-size:85%;
@@ -531,8 +537,10 @@
 	float:left;
 }
 #spa_main .photo img{
-	width:100%;
-	height:auto;
+	/*width:100%;
+	height:auto;*/
+	width:437px;
+	height:259px;
 }
 #spa_main .txt{
 	float:right;
@@ -624,8 +632,10 @@
 	float:left;
 }
 #restaurant .photo img{
-	width:100%;
-	height:auto;
+	/*width:100%;
+	height:auto;*/
+	width:437px;
+	height:259px;
 }
 #restaurant .txt{
 	float:right;
