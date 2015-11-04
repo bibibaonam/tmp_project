@@ -426,7 +426,7 @@ get_header() ?>
 						'disp_sort_key' => 'ASC',
 						'post_modified' => 'DESC'
 					),
-					'posts_per_page' => 10
+					'posts_per_page' => 16
 				);
 				$posts = get_posts($query);
 				?>
@@ -1028,8 +1028,9 @@ function plbali_show_post_ranking($posts){
 function plbali_show_post_disp_sort($posts, &$arr_post_id){
 	foreach($posts as $key => $post){
 		setup_postdata($post);
-
-		if($key === 4 || $key === 9){ ?>
+			if ($key < 6)
+				continue;
+			if($key === 10 || $key === 15){ ?>
 			<div class="list mr0">
 			<?php }else{ ?>
 			<div class="list">
