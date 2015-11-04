@@ -906,6 +906,7 @@ $(document).ready(function() {
 	}
 </style>
 <?php
+
 function plbali_show_post_ranking($posts){
 	foreach($posts as $key => $post){
 		setup_postdata($post);
