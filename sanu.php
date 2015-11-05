@@ -75,7 +75,7 @@ get_header(); ?>
 <div id="villa">
 <div class="h3_title"><h3>ホテルで決める旅 ヴィラ・ホテル villa &amp; hotel</h3></div>
     <div class="box">
-      <?php $category_slug = 'list-sanur'; require_once 'hotel_villa.php'; ?>
+      <?php $category_slug = 'list-sanur'; html_hotel_villa($category_slug); ?>
       <div style="clear:both"></div>
     </div>
 </div><!-- id=villa -->
