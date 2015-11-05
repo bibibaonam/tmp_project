@@ -370,22 +370,12 @@ get_header() ?>
 
 <ul id="villa_list_navi">
 	<?php foreach ($arr_categories as $key => $category) { ?>
-	<li id="ac_<?php echo $category['class_villa_list'] ?>"><a href="/<?php echo $link ?>/list-<?php echo $category['class_villa_list'] ?>/"><span><?php echo isset($category['name_villa_tag'])?$category['name_villa_tag']:str_replace('／', '/', $category['name_villa_list']) ?></span></a></li>
+	<?php
+		$category_link = get_category_by_slug( $category['category_name'] );
+		$category_link = get_category_link( $category_link->term_id );
+	?>
+	<li id="ac_<?php echo $category['class_villa_list'] ?>"><a href="<?php echo esc_url( $category_link ); ?>"><span><?php echo isset($category['name_villa_tag'])?$category['name_villa_tag']:str_replace('／', '/', $category['name_villa_list']) ?></span></a></li>
 	<?php }	?>
-	<!-- <li id="ac_kuta"><a href="/<?php echo $link ?>/list-kuta/"><span>クタ/レギャン</span></a></li>
-	<li id="ac_semi"><a href="/<?php echo $link ?>/list-semi/"><span>スミニャック/クロボカン</span></a></li>
-	<li id="ac_nusa"><a href="/<?php echo $link ?>/list-nusa/"><span>ヌサドゥア</span></a></li>
-	<li id="ac_jim"><a href="/<?php echo $link ?>/list-jim/"><span>ジンバラン/ウルワツ</span></a></li>
-	<li id="ac_ubud"><a href="/<?php echo $link ?>/list-ubud/"><span>ウブド</span></a></li>
-	<li id="ac_sanur"><a href="/<?php echo $link ?>/list-sanur/"><span>サヌール</span></a></li>
-	<li id="ac_canggu"><a href="/<?php echo $link ?>/list-canggu/"><span>チャングー</span></a></li>
-	<li id="ac_candidasa"><a href="/<?php echo $link ?>/list-candidasa/"><span>チャンディダサ</span></a></li>
-	<li id="ac_tanahlot"><a href="/<?php echo $link ?>/list-candidasa/"><span>タナロット</span></a></li>
-	<li id="ac_menjangan"><a href="/<?php echo $link ?>/list-menjangan/"><span>ムンジャンガン</span></a></li>
-	<li id="ac_lovina"><a href="/<?php echo $link ?>/list-lovina/"><span>ロビナ</span></a></li>
-	<li id="ac_yogyakarta"><a href="/<?php echo $link ?>/list-yogyakarta/"><span>ジョグジャカルタ</span></a></li>
-	<li id="ac_lombok"><a href="/<?php echo $link ?>/list-lombok/"><span>ロンボク島</span></a></li>
-	<li id="ac_lembongan"><a href="/<?php echo $link ?>/list-lembongan/"><span>レンボンガン島</span></a></li> -->
 </ul>
 
 <ul id="osusume_list">
