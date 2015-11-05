@@ -370,11 +370,7 @@ get_header() ?>
 
 <ul id="villa_list_navi">
 	<?php foreach ($arr_categories as $key => $category) { ?>
-	<?php
-		$category_link = get_category_by_slug( $category['category_name'] );
-		$category_link = get_category_link( $category_link->term_id );
-	?>
-	<li id="ac_<?php echo $category['class_villa_list'] ?>"><a href="<?php echo esc_url( $category_link ); ?>"><span><?php echo isset($category['name_villa_tag'])?$category['name_villa_tag']:str_replace('／', '/', $category['name_villa_list']) ?></span></a></li>
+	<li id="ac_<?php echo $category['class_villa_list'] ?>"><a href="#<?php echo $category['class_color'] ?>_ttl"><span><?php echo isset($category['name_villa_tag'])?$category['name_villa_tag']:str_replace('／', '/', $category['name_villa_list']) ?></span></a></li>
 	<?php }	?>
 </ul>
 
