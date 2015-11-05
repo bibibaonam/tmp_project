@@ -36,12 +36,12 @@ get_header(); ?>
 <div id="plan1">
 <h3>プラン１　ホテルの中で過ごすバリ</h3>
 <p><strong>ホテル：アヤナリゾートホテル</strong><br />
-憧れのアヤナリゾートの過ごし方。<br />		
+憧れのアヤナリゾートの過ごし方。<br />
 お勧めはクラブルーム。宿泊者限定のラウンジでゆったりとした空間。<br />
-なんと言ってもパノラマオーシャンビュー。<br />		
-ティータイムやカクテルタイムもあるので、気が向けばドリンクを飲みながらのんびり。	
-ホテルの敷地内にプールやレストランが何軒もあり、さらに、バリのオシャレなショップから		
-取り寄せたセレクトショップも。<br />	
+なんと言ってもパノラマオーシャンビュー。<br />
+ティータイムやカクテルタイムもあるので、気が向けばドリンクを飲みながらのんびり。
+ホテルの敷地内にプールやレストランが何軒もあり、さらに、バリのオシャレなショップから
+取り寄せたセレクトショップも。<br />
 断然人気は、断崖絶壁に立つホテルだからこその、オーシャンビーチプールとロックバー。波の迫力で気分が晴れるかも。</p>
 </div>
 
@@ -71,7 +71,7 @@ get_header(); ?>
   <img src="http://wp.tabikobo.com/wp-content/uploads/2013/08/jim_report.jpg" width="400" height="30"><p>
 <a href="http://www.tabikobo.com/bali/report/spa/kububali/" target="blank">・クブバリ スパ（スパ）</a><br>
 </p>
-　</td></tr>  
+　</td></tr>
 </table>
 </div>
 
@@ -81,30 +81,9 @@ get_header(); ?>
 
 <div id="villa">
 <div class="h3_title"><h3>ホテルで決める旅 ヴィラ・ホテル villa &amp; hotel</h3></div>
-
     <div class="box">
-<?php $myposts = get_posts('category_name=villa-jimbaran-uluwatu-pickup&posts_per_page=999');/*VILLA記事ピックアップリスティング*/ ?>
-<?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
-    <div class="left">
-    <a href="<?php the_permalink(); ?>" target="_top"><?php echo post_custom('cityThumb'); ?></a>
-    <span><?php echo post_custom('copy'); ?></span>
-	<a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a>
-    </div>
-<?php endforeach; ?>
-
-<div class="list">
-<ul>
-<?php $myposts = get_posts('category_name=villa-jimbaran-uluwatu&posts_per_page=999');/*VILLA記事ピックアップ以外リスティング*/ ?>
-<?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
-    <?php if( in_category('villa-jimbaran-uluwatu-pickup')): ?>
-    <?php else : ?>
-    <li><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></li>
-    <?php endif; ?>
-<?php endforeach; ?>
-</ul>
-</div>
+      <?php $category_slug = 'list-jim'; require_once 'hotel_villa.php'; ?>
+      <div style="clear:both"></div>
     </div>
 </div><!-- id=villa -->
 
@@ -114,10 +93,10 @@ get_header(); ?>
 <div class="box">
 <?php $myposts = get_posts('category_name=spa-jimbaran-uluwatu-pickup&posts_per_page=999');/*SPA記事ピックアップリスティング*/ ?>
 <?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
+  <?php setup_postdata($post); ?>
     <div class="left">
     <a href="<?php the_permalink(); ?>" target="_top"><?php echo post_custom('cityThumb'); ?></a>
-	<a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a>
+  <a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a>
     </div>
 <?php endforeach; ?>
 
@@ -125,7 +104,7 @@ get_header(); ?>
 <ul>
 <?php $myposts = get_posts('category_name=spa-jimbaran-uluwatu&posts_per_page=999');/*SPA記事ピックアップ以外リスティング*/ ?>
 <?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
+  <?php setup_postdata($post); ?>
     <?php if( in_category('spa-jimbaran-uluwatu-pickup')): ?>
     <?php else : ?>
     <li><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></li>

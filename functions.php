@@ -742,22 +742,22 @@ function afterSavePost($postId)
 {
 	$ranking = get_post_meta($postId, 'ranking', true);
 	if ($ranking === "" || $ranking == 0){
-		if ($ranking === "") { 
+		if ($ranking === "") {
 			update_post_meta($postId, 'ranking', DEFAULT_NULL);
 		} else if($ranking == 0){
 			update_post_meta($postId, 'ranking', DEFAULT_ZEZO);
-		}	
+		}
 		//delete_post_meta($postId, 'ranking');
-	}	
+	}
 	$disp_sort = get_post_meta($postId, 'disp_sort', true);
 	if ($disp_sort === "" || $disp_sort == 0) {
-		if ($disp_sort === "") { 
+		if ($disp_sort === "") {
 			update_post_meta($postId, 'disp_sort', DEFAULT_NULL);
 		} else if($disp_sort == 0){
 			update_post_meta($postId, 'disp_sort', DEFAULT_ZEZO);
-		}		
+		}
 		//delete_post_meta($postId, 'disp_sort');
-	}	
+	}
 }
 
 add_filter('get_post_metadata', 'custom_get_post_metadata', true, 4);
@@ -771,7 +771,7 @@ function custom_get_post_metadata($metadata, $post_id, $meta_key, $single){
 			} else if ($value == DEFAULT_ZEZO) {
 				return 0;
 			}
-		} 
+		}
 	}
 
 	return $metadata;
@@ -1165,7 +1165,19 @@ if(function_exists("register_field_group"))
 				'layout' => 'table',
 				'button_label' => 'Add Row',
 			),
+			array (
+				'key' => 'field_562432sd97ec',
+				'label' => 'ピックアップ',
+				'name' => 'pick_up',
+				'type' => 'checkbox',
+				'choices' => array (
+					'pick_up' => 'ピックアップ',
+				),
+				'default_value' => '',
+				'layout' => 'vertical',
+			)
 		),
+
 		'location' => array (
 			array (
 				array (

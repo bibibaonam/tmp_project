@@ -381,46 +381,45 @@ get_header() ?>
 </ul>
 
 <div class="box">
-
 	<?php foreach ($arr_categories as $key => $category) { ?>
-		<div class="h2_title" id="<?php echo $category['class_color'] ?>_ttl">
-			<?php
-				$category_link = get_category_by_slug( $category['category_name'] );
-				$category_link = get_category_link( $category_link->term_id );
-			?>
-			<h2 class="kl_h2"><a href="<?php echo esc_url( $category_link ); ?>"><?php echo $category['name_villa_list'] ?></a></h2>
-			<div class="info_link"><a href="<?php echo $category['link'] ?>"><img src="/img/villa/list_link_<?php echo $category['class_villa_list'] ?>.gif" height="18" alt="<?php echo $category['link_alt'] ?>"></a></div>
-			</div>
-			<div class="villa_list box">
-				<div class="<?php echo $category['class_villa_list'] ?>">
-				<?php
-				$query = array(
-					'post_type' => 'hotels',
-					'category_name' => $category['category_name'],
-					'meta_query' => array(
-						'ranking_key' => array(
-							'key'  => 'ranking',
-							'type' => 'NUMERIC'
-						),
-						'disp_sort_key' => array(
-							'key'  => 'disp_sort',
-							'type' => 'NUMERIC'
-						)
-					),
-					'orderby' => array(
-						'ranking_key'   => 'ASC',
-						'disp_sort_key' => 'ASC',
-						'post_modified' => 'DESC'
-					),
-					'posts_per_page' => 16
-				);
-				$posts = get_posts($query);
-				?>
-				<div class="box"><?php plbali_show_post_ranking($posts) ?></div>
-				<div class="box size-m"><?php plbali_show_post_disp_sort($posts) ?></div>
-				<div class="page_top_link"><a href="#top">ページの先頭へ戻る</a></div>
-			</div><!--class=kuta -->
+	<div class="h2_title" id="<?php echo $category['class_color'] ?>_ttl">
+		<?php
+			$category_link = get_category_by_slug( $category['category_name'] );
+			$category_link = get_category_link( $category_link->term_id );
+		?>
+		<h2 class="kl_h2"><a href="<?php echo esc_url( $category_link ); ?>"><?php echo $category['name_villa_list'] ?></a></h2>
+		<div class="info_link"><a href="<?php echo $category['link'] ?>"><img src="/img/villa/list_link_<?php echo $category['class_villa_list'] ?>.gif" height="18" alt="<?php echo $category['link_alt'] ?>"></a></div>
 		</div>
+		<div class="villa_list box">
+			<div class="<?php echo $category['class_villa_list'] ?>">
+			<?php
+			$query = array(
+				'post_type' => 'hotels',
+				'category_name' => $category['category_name'],
+				'meta_query' => array(
+					'ranking_key' => array(
+						'key'  => 'ranking',
+						'type' => 'NUMERIC'
+					),
+					'disp_sort_key' => array(
+						'key'  => 'disp_sort',
+						'type' => 'NUMERIC'
+					)
+				),
+				'orderby' => array(
+					'ranking_key'   => 'ASC',
+					'disp_sort_key' => 'ASC',
+					'post_modified' => 'DESC'
+				),
+				'posts_per_page' => 16
+			);
+			$posts = get_posts($query);
+			?>
+			<div class="box"><?php plbali_show_post_ranking($posts) ?></div>
+			<div class="box size-m"><?php plbali_show_post_disp_sort($posts) ?></div>
+			<div class="page_top_link"><a href="#top">ページの先頭へ戻る</a></div>
+		</div><!--class=kuta -->
+	</div>
 	<?php } // end foreach ?>
 </div><!--class=box -->
 

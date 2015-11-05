@@ -73,7 +73,7 @@ get_header(); ?>
 <a href="http://www.tabikobo.com/bali/report/restaurant/grocergrind/" target="blank">・グローシャー＆グラインド（レストラン）</a><br>
 <a href="http://www.tabikobo.com/bali/report/spot/gula/" target="blank">・グラ（雑貨屋）</a>
 </p>
-　</td></tr>  
+　</td></tr>
 </table>
 </div>
 
@@ -83,30 +83,9 @@ get_header(); ?>
 
 <div id="villa">
 <div class="h3_title"><h3>ホテルで決める旅 ヴィラ・ホテル villa &amp; hotel</h3></div>
-
     <div class="box">
-<?php $myposts = get_posts('category_name=villa-seminyak-kerobokan-pickup&posts_per_page=999');/*VILLA記事ピックアップリスティング*/ ?>
-<?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
-    <div class="left">
-    <a href="<?php the_permalink(); ?>" target="_top"><?php echo post_custom('cityThumb'); ?></a>
-    <span><?php echo post_custom('copy'); ?></span>
-	<a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a>
-    </div>
-<?php endforeach; ?>
-
-<div class="list">
-<ul>
-<?php $myposts = get_posts('category_name=villa-seminyak-kerobokan&posts_per_page=999');/*VILLA記事ピックアップ以外リスティング*/ ?>
-<?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
-    <?php if( in_category('villa-seminyak-kerobokan-pickup')): ?>
-    <?php else : ?>
-    <li><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></li>
-    <?php endif; ?>
-<?php endforeach; ?>
-</ul>
-</div>
+      <?php $category_slug = 'list-semi'; require_once 'hotel_villa.php'; ?>
+      <div style="clear:both"></div>
     </div>
 </div><!-- id=villa -->
 
@@ -116,10 +95,10 @@ get_header(); ?>
 <div class="box">
 <?php $myposts = get_posts('category_name=spa-seminyak-kerobokan-pickup&posts_per_page=999');/*SPA記事ピックアップリスティング*/ ?>
 <?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
+  <?php setup_postdata($post); ?>
     <div class="left">
     <a href="<?php the_permalink(); ?>" target="_top"><?php echo post_custom('cityThumb'); ?></a>
-	<a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a>
+  <a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a>
     </div>
 <?php endforeach; ?>
 
@@ -127,7 +106,7 @@ get_header(); ?>
 <ul>
 <?php $myposts = get_posts('category_name=spa-seminyak-kerobokan&posts_per_page=999');/*SPA記事ピックアップ以外リスティング*/ ?>
 <?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
+  <?php setup_postdata($post); ?>
     <?php if( in_category('spa-seminyak-kerobokan-pickup')): ?>
     <?php else : ?>
     <li><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></li>

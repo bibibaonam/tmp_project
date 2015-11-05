@@ -58,11 +58,11 @@ get_header(); ?>
 <div class="h2_title2"><h2>おすすめオプショナルツアー</h2></div>
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><a href="http://www.plbali.com/optional/balikanko01/">・朝から夜までバリ島満喫コース</a></td>
-    <td><a href="http://www.plbali.com/optional/balihalfday02/">・★バリフルコース★<br/ >　ウルワツでケチャック＆ディナー＆スパ</a></td>
+	<td><a href="http://www.plbali.com/optional/balikanko01/">・朝から夜までバリ島満喫コース</a></td>
+	<td><a href="http://www.plbali.com/optional/balihalfday02/">・★バリフルコース★<br/ >　ウルワツでケチャック＆ディナー＆スパ</a></td>
   </tr>
   <tr>
-    <td colspan="2"><a href="http://www.plbali.com/optional/%E3%82%B9%E3%83%9F%E3%83%8B%E3%83%A3%E3%83%83%E3%82%AF%E3%81%AE%E4%BA%BA%E6%B0%97%E3%83%B4%E3%82%A3%E3%83%A9%E3%80%8C%E3%83%B4%E3%82%A3%E3%83%A9%E3%80%80%E3%82%A2%E3%82%A4%E3%83%AB%E3%80%8D%E3%81%AE/">・スミニャックの人気ヴィラ「ヴィラ　アイル」の帰国日プラン</a></td>
+	<td colspan="2"><a href="http://www.plbali.com/optional/%E3%82%B9%E3%83%9F%E3%83%8B%E3%83%A3%E3%83%83%E3%82%AF%E3%81%AE%E4%BA%BA%E6%B0%97%E3%83%B4%E3%82%A3%E3%83%A9%E3%80%8C%E3%83%B4%E3%82%A3%E3%83%A9%E3%80%80%E3%82%A2%E3%82%A4%E3%83%AB%E3%80%8D%E3%81%AE/">・スミニャックの人気ヴィラ「ヴィラ　アイル」の帰国日プラン</a></td>
   </tr>
   <tr>
   <td colspan="3"><br>
@@ -80,31 +80,10 @@ get_header(); ?>
 
 <div id="villa">
 <div class="h3_title"><h3>ホテルで決める旅 ヴィラ・ホテル villa &amp; hotel</h3></div>
-
-    <div class="box">
-<?php $myposts = get_posts('category_name=villa-kuta-legian-pickup&posts_per_page=999');/*VILLA記事ピックアップリスティング*/ ?>
-<?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
-    <div class="left">
-    <a href="<?php the_permalink(); ?>" target="_top"><?php echo post_custom('cityThumb'); ?></a>
-    <span><?php echo post_custom('copy'); ?></span>
-	<a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a>
-    </div>
-<?php endforeach; ?>
-
-<div class="list">
-<ul>
-<?php $myposts = get_posts('category_name=villa-kuta-legian&posts_per_page=999');/*VILLA記事ピックアップ以外リスティング*/ ?>
-<?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
-    <?php if( in_category('villa-kuta-legian-pickup')): ?>
-    <?php else : ?>
-    <li><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></li>
-    <?php endif; ?>
-<?php endforeach; ?>
-</ul>
-</div>
-    </div>
+	<div class="box">
+		<?php $category_slug = 'list-kuta'; require_once 'hotel_villa.php'; ?>
+		<div style="clear:both"></div>
+	</div>
 </div><!-- id=villa -->
 
 <div id="spa">
@@ -113,22 +92,22 @@ get_header(); ?>
 <div class="box">
 <?php $myposts = get_posts('category_name=spa-kuta-legian-pickup&posts_per_page=999');/*SPA記事ピックアップリスティング*/ ?>
 <?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
-    <div class="left">
-    <a href="<?php the_permalink(); ?>" target="_top"><?php echo post_custom('cityThumb'); ?></a>
-	<a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a>
-    </div>
+  <?php setup_postdata($post); ?>
+	<div class="left">
+	<a href="<?php the_permalink(); ?>" target="_top"><?php echo post_custom('cityThumb'); ?></a>
+  <a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a>
+	</div>
 <?php endforeach; ?>
 
 <div class="list">
 <ul>
 <?php $myposts = get_posts('category_name=spa-kuta-legian&posts_per_page=999');/*SPA記事ピックアップ以外リスティング*/ ?>
 <?php foreach($myposts as $post): ?>
-	<?php setup_postdata($post); ?>
-    <?php if( in_category('spa-kuta-legian-pickup')): ?>
-    <?php else : ?>
-    <li><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></li>
-    <?php endif; ?>
+  <?php setup_postdata($post); ?>
+	<?php if( in_category('spa-kuta-legian-pickup')): ?>
+	<?php else : ?>
+	<li><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></li>
+	<?php endif; ?>
 <?php endforeach; ?>
 </ul>
 </div>
