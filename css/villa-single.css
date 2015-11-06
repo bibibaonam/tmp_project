@@ -341,6 +341,7 @@
 }
 #hotel_txt .txt{
 	margin-right:210px;
+	min-height: 120px;
 }
 #hotel_txt #villa_trip{
 	width:190px;
