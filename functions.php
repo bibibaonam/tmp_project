@@ -684,12 +684,21 @@ function sub_category_template()
 	if (is_category())
 	{
 		$arr_cat = array( 'list-kuta', 'list-semi', 'list-nusa', 'list-jim', 'list-ubud', 'list-sanur', 'list-canggu', 'list-candidasa', 'list-tanahlot', 'list-menjangan', 'list-lovina', 'list-yogyakarta', 'list-lombok', 'list-lembongan' );
+
+		$arr_cat_2 = array( 'list-staff', 'list-star', 'list-villa', 'list-hotel' );
+
 		$cat = &get_category(get_query_var('cat'));
 
 		if (in_array($cat->slug, $arr_cat)){
 			if (file_exists(TEMPLATEPATH . '/category-sub.php'))
 			{
 				include (TEMPLATEPATH . '/category-sub.php');
+				exit;
+			}
+		}elseif (in_array($cat->slug, $arr_cat_2)){
+			if (file_exists(TEMPLATEPATH . '/category-sub_2.php'))
+			{
+				include (TEMPLATEPATH . '/category-sub_2.php');
 				exit;
 			}
 		}
