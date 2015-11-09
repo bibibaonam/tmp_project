@@ -512,10 +512,10 @@
 				<!-- 画像・プラン -->
 				<div class="left">
 					<div class="photo"><a href="<?php echo $row['image']['url'] ? $row['image']['url'] : ''; ?>"><img src="<?php echo $row['image']['url'] ? $row['image']['url'] : ''; ?>"></a></div>
-					<span>モダンバリスタイルのお部屋。バスルームのスライドが開放的。</span>
+					<span><?php echo $row['image']['caption'] ? $row['image']['caption'] : ''; ?></span>
 					<?php if ($row['layout_image']['url']):?>
 					<div class="photo"><a href="<?php echo $row['layout_image']['url'] ? $row['layout_image']['url'] : ''; ?>"><img src="<?php echo $row['layout_image']['url'] ? $row['layout_image']['url'] : ''; ?>"></a></div>
-					<span>間取り図</span>
+					<span><span><?php echo $row['layout_image']['caption'] ? $row['layout_image']['caption'] : ''; ?></span></span>
 					<?php endif; ?>
 					<div class="btn"><a href="<?php echo $row['plan_link']; ?>" target="_blank">このお部屋のプランを見る</a></div>
 				</div>
@@ -546,10 +546,10 @@
 				<!-- 画像・プラン -->
 				<div class="left">
 					<div class="photo"><a href="<?php echo $row['image']['url'] ? $row['image']['url'] : ''; ?>"><img src="<?php echo $row['image']['url'] ? $row['image']['url'] : ''; ?>"></a></div>
-					<span>モダンバリスタイルのお部屋。バスルームのスライドが開放的。</span>
+					<span><?php echo $row['image']['caption'] ? $row['image']['caption'] : ''; ?></span>
 					<?php if ($row['layout_image']['url']):?>
 					<div class="photo"><a href="<?php echo $row['layout_image']['url'] ? $row['layout_image']['url'] : ''; ?>"><img src="<?php echo $row['layout_image']['url'] ? $row['layout_image']['url'] : ''; ?>"></a></div>
-					<span>間取り図</span>
+					<span><?php echo $row['layout_image']['caption'] ? $row['layout_image']['caption'] : ''; ?></span>
 					<?php endif; ?>
 					<div class="btn"><a href="<?php echo $row['plan_link']; ?>" target="_blank">このお部屋のプランを見る</a></div>
 				</div>
@@ -756,7 +756,7 @@
 			<?php foreach ($faqs as $key => $row): ?>
 			<li>
 				<h3><?php echo nl2br($row['question'])?></h3>
-				<p><strong>回答が入ります。</strong><br>
+				<p><strong>&nbsp;</strong><br>
 				<?php echo nl2br($row['answer'])?>
 			</li>
 			<?php endforeach; ?>
