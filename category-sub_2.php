@@ -374,7 +374,7 @@ $arr_categories = array(
 			$short_cat = 'lemb';
 		}
 	?>
-	<div class="h2_title"><h2 class="<?php echo $category['class_villa_list'] ?>_h2"><?php echo $category['name_villa_list'] ?></h2></div>
+	<div class="h2_title"><h2 class="<?php echo $short_cat ?>_h2"><?php echo $category['name_villa_list'] ?></h2></div>
 	<div class="villa_list box">
 
 		<div class="<?php echo $short_cat ?>">
