@@ -327,7 +327,8 @@ $arr_categories = array(
 	<?php }	?>
 </ul>
 
-<div id="villa_list_title"><h1 id="list_staff"><?php echo $arr_cat_2[$cat->slug][0] ?></h1></div>
+<?php $cat = get_category(get_query_var('cat')); ?>
+<div id="villa_list_title"><h1 id="<?php echo str_replace('-', '_', $cat->slug) ?>"><?php echo $arr_cat_2[$cat->slug][0] ?></h1></div>
 <?php foreach ($arr_categories as $category) { ?>
 <div class="box" id="<?php echo $category['class_color'] ?>_ttl">
 	<?php
