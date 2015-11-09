@@ -696,9 +696,9 @@ function sub_category_template()
 				exit;
 			}
 		}elseif (in_array($cat->slug, $arr_cat_2)){
-			if (file_exists(TEMPLATEPATH . '/category-sub_2.php'))
+			if (file_exists(TEMPLATEPATH . '/category-sub-filter.php'))
 			{
-				include (TEMPLATEPATH . '/category-sub_2.php');
+				include (TEMPLATEPATH . '/category-sub-filter.php');
 				exit;
 			}
 		}
