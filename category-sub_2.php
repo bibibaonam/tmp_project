@@ -167,7 +167,7 @@ $arr_categories = array(
 	#detail .list_villa_list_navi a{
 		color:#FFF;
 		display:block;
-		padding:10px 30px 10px 10px;
+		padding:10px 5px 10px 5px;
 		text-decoration:none;
 		border-radius: 6px;
 		-moz-border-radius: 6px;
@@ -275,7 +275,7 @@ $arr_categories = array(
 		margin-right:20px;
 	}
 	#detail .list_villa_list_navi li{
-		width:24.7%;
+		width:19.7%;
 		margin-left:0.15%;
 		margin-right:0.15%;
 	}
@@ -290,8 +290,9 @@ $arr_categories = array(
 		}
 	}
 	#detail .list_villa_list_navi{
-		margin-left:15px;
+		margin-left:22px;
 		margin-right:15px;
+		padding-bottom: 15px;
 	}
 	#detail .list_villa_list_navi li{
 		font-size:10px;
@@ -299,7 +300,9 @@ $arr_categories = array(
 	#detail .list_villa_list_navi li a{
 		background-image:url(/img/villa/bg_anchor_sp.png);
 		background-size:20px 11px;
+		background-position: 102% 50%;
 	}
+	#villa_list_navi {margin-bottom: 8px !important;}
 	@media screen and (max-width: 580px) {
 		#detail .list_villa_list_navi li{
 			width:49.2%;
