@@ -197,6 +197,7 @@
 	box-shadow:rgba(218, 210, 182, 0.4) 2px 2px 2px 2px;
 	-webkit-box-shadow:rgba(218, 210, 182, 0.4) 2px 2px 2px 2px;
 	-moz-box-shadow:rgba(218, 210, 182, 0.4) 2px 2px 2px 2px;
+	width: 958px;
 }
 #ie8 #lNavi.active{
 }
@@ -213,8 +214,9 @@
 	display:inline-block;
     *display : inline;
     *zoom : 1;
-	width:auto;
+	width:159px;
 	font-weight:bold;
+	text-align:center;
 }
 #ie8 #lNavi ul li.lNavi1,
 #ie8 #lNavi ul li.lNavi4{
@@ -233,7 +235,7 @@
 #lNavi ul li a{
 	border-left:solid 1px #5e3219;
 	display:block;
-	padding:15px 20px 30px;
+	padding:15px 0 30px;
 	font-size:13px;
 	line-height:1.2em;
 }
