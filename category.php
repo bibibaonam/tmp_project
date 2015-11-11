@@ -380,6 +380,37 @@ get_header() ?>
 		<li><img src="/img/villa/list_osusume_icon03.png" width="35" height="35" alt="女子旅"><span>女子旅に<br>おすすめ</span></li>
 </ul>
 
+<style type="text/css">
+.slide_btn {
+
+	font-size: 108%;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 1.2em;
+	text-align: center;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.slide_btn a {
+	font-size: 13px;
+	display: inline-block;
+	width: 100%;
+	color: #FFF;
+	padding: 10px 0px 22px;
+	background-color: #5e3219;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-image: url(/img/villa/bg_slide_btn.gif);
+	background-repeat: no-repeat;
+	background-position: center 30px;
+	cursor: pointer;
+}
+.slide_btn a.active {
+	background-image: url(/img/villa/bg_slide_btn_close.gif);
+}
+</style>
 <div class="box">
 	<?php foreach ($arr_categories as $key => $category) { ?>
 	<div class="h2_title" id="<?php echo $category['class_color'] ?>_ttl">
@@ -387,7 +418,7 @@ get_header() ?>
 			$category_link = get_category_by_slug( $category['category_name'] );
 			$category_link = get_category_link( $category_link->term_id );
 		?>
-		<h2 class="kl_h2"><a href="<?php echo esc_url( $category_link ); ?>"><?php echo $category['name_villa_list'] ?></a></h2>
+		<h2 class="kl_h2" style="color:#fff"><?php echo $category['name_villa_list'] ?><!-- <a href="<?php //echo esc_url( $category_link ); ?>"><?php echo $category['name_villa_list'] ?></a> --></h2>
 		<div class="info_link"><a href="<?php echo $category['link'] ?>"><img src="/img/villa/list_link_<?php echo $category['class_villa_list'] ?>.gif" height="18" alt="<?php echo $category['link_alt'] ?>"></a></div>
 		</div>
 		<div class="villa_list box">
@@ -411,7 +442,7 @@ get_header() ?>
 					'disp_sort_key' => 'ASC',
 					'post_modified' => 'DESC'
 				),
-				'posts_per_page' => 16
+				'posts_per_page' => 999
 			);
 			$posts = get_posts($query);
 			?>
@@ -899,9 +930,7 @@ function plbali_show_post_ranking($posts){
 		if ($key >= 6)
 			break;
 
-		$arr_post_id[$post->ID] = $post->ID;
-
-		if($key === 2 || count($arr_post_id) === 5): ?>
+		if($key > 0 && $key%3 == 2): ?>
 		<div class="list mr0">
 		<?php else : ?>
 		<div class="list">
@@ -1011,78 +1040,100 @@ function plbali_show_post_ranking($posts){
 	}
 </style>
 <?php
-function plbali_show_post_disp_sort($posts, &$arr_post_id){
+function plbali_show_post_disp_sort($posts){
 	foreach($posts as $key => $post){
 		setup_postdata($post);
-			if ($key < 6)
-				continue;
-			if($key === 10 || $key === 15){ ?>
-			<div class="list mr0">
-			<?php }else{ ?>
-			<div class="list">
-			<?php } ?>
+		if ($key < 6)
+			continue;
 
-				<?php $title = get_the_title($post->ID) ?>
-				<div class="list_img">
-					<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
+		if($key == 16)
+			echo '<div style="display:none">';
 
-						<?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true), 'full') ?>
-						<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
-						<?php //$thumbnail = get_post_meta($post->ID, 'thumbnail', true) ?>
-						<img src="<?php echo $thumbnail ?>" class="no-hover ImgDispSort">
+		if($key%5 == 0){ ?>
+		<div class="list mr0">
+		<?php }else{ ?>
+		<div class="list">
+		<?php } ?>
 
-						<div class="list_name">
-								<p><?php echo get_post_meta($post->ID, 'catch_copy', true) ?></p>
-								<h3><?php echo $title ?></h3>
-						</div>
-					</a>
-				</div>
-				<table border="0" cellspacing="0" cellpadding="0">
-					<tr>
-						<th>タイプ</th>
-						<td><?php
-						$tmp = array(
-							'large_resort'    => '大型リゾート',
-							'small_luxury'    => 'スモールラグジュアリー',
-							'boutique_hotel'  => 'ブディックホテル',
-							'villa'           => 'ヴィラ',
-							'charter_villa'   => '貸切ヴィラ',
-							'wellness_resort' => 'ウェルネスリゾート'
-						);
-						echo $tmp[get_post_meta($post->ID, 'hotel_type', true)] ?></td>
-					</tr>
-					<tr>
-						<th>バリガールランク</th>
-						<td>
-							<?php $baligirl_rank = get_post_meta($post->ID,'baligirl_rank',true) ?>
-							<?php if($baligirl_rank == '1'): ?>
-							<img src="/img/villa/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星" class="rank1">
-							<?php elseif($baligirl_rank == '2'): ?>
-							<img src="/img/villa/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星" class="rank2">
-							<?php elseif($baligirl_rank == '3'): ?>
-							<img src="/img/villa/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星" class="rank3">
-							<?php elseif($baligirl_rank == '4'): ?>
-							<img src="/img/villa/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星" class="rank4">
-							<?php elseif($baligirl_rank == '5'): ?>
-							<img src="/img/villa/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星" class="rank5">
-							<?php elseif($baligirl_rank == '2-3'): ?>
-							<img src="/img/villa/osusume_rank2-3_s.jpg" width="89" height="12" alt="2〜3つ星" class="rank2-3">
-							<?php elseif($baligirl_rank == '2-4'): ?>
-							<img src="/img/villa/osusume_rank2-4_s.jpg" width="104" height="12" alt="2〜4つ星" class="rank2-4">
-							<?php elseif($baligirl_rank == '2-5'): ?>
-							<img src="/img/villa/osusume_rank2-5_s.jpg" width="119" height="12" alt="2〜5つ星" class="rank2-5">
-							<?php elseif($baligirl_rank == '3-4'): ?>
-							<img src="/img/villa/osusume_rank3-4_s.jpg" width="119" height="12" alt="3〜4つ星" class="rank3-4">
-							<?php elseif($baligirl_rank == '3-5'): ?>
-							<img src="/img/villa/osusume_rank3-5_s.jpg" width="133" height="12" alt="3〜5つ星" class="rank3-5">
-							<?php elseif($baligirl_rank == '4-5'): ?>
-							<img src="/img/villa/osusume_rank4-5_s.jpg" width="148" height="12" alt="4〜5つ星" class="rank4-5">
-							<?php endif ?>
-						</td>
-					</tr>
-				</table>
+			<?php $title = get_the_title($post->ID) ?>
+			<div class="list_img">
+				<a href="<?php echo get_permalink($post->ID) ?>" target="_top">
+
+					<?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true), 'full') ?>
+					<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
+					<?php //$thumbnail = get_post_meta($post->ID, 'thumbnail', true) ?>
+					<img src="<?php echo $thumbnail ?>" class="no-hover ImgDispSort">
+
+					<div class="list_name">
+							<p><?php echo get_post_meta($post->ID, 'catch_copy', true) ?></p>
+							<h3><?php echo $title ?></h3>
+					</div>
+				</a>
 			</div>
-	<?php } ?>
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th>タイプ</th>
+					<td><?php
+					$tmp = array(
+						'large_resort'    => '大型リゾート',
+						'small_luxury'    => 'スモールラグジュアリー',
+						'boutique_hotel'  => 'ブディックホテル',
+						'villa'           => 'ヴィラ',
+						'charter_villa'   => '貸切ヴィラ',
+						'wellness_resort' => 'ウェルネスリゾート'
+					);
+					echo $tmp[get_post_meta($post->ID, 'hotel_type', true)] ?></td>
+				</tr>
+				<tr>
+					<th>バリガールランク</th>
+					<td>
+						<?php $baligirl_rank = get_post_meta($post->ID,'baligirl_rank',true) ?>
+						<?php if($baligirl_rank == '1'): ?>
+						<img src="/img/villa/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星" class="rank1">
+						<?php elseif($baligirl_rank == '2'): ?>
+						<img src="/img/villa/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星" class="rank2">
+						<?php elseif($baligirl_rank == '3'): ?>
+						<img src="/img/villa/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星" class="rank3">
+						<?php elseif($baligirl_rank == '4'): ?>
+						<img src="/img/villa/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星" class="rank4">
+						<?php elseif($baligirl_rank == '5'): ?>
+						<img src="/img/villa/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星" class="rank5">
+						<?php elseif($baligirl_rank == '2-3'): ?>
+						<img src="/img/villa/osusume_rank2-3_s.jpg" width="89" height="12" alt="2〜3つ星" class="rank2-3">
+						<?php elseif($baligirl_rank == '2-4'): ?>
+						<img src="/img/villa/osusume_rank2-4_s.jpg" width="104" height="12" alt="2〜4つ星" class="rank2-4">
+						<?php elseif($baligirl_rank == '2-5'): ?>
+						<img src="/img/villa/osusume_rank2-5_s.jpg" width="119" height="12" alt="2〜5つ星" class="rank2-5">
+						<?php elseif($baligirl_rank == '3-4'): ?>
+						<img src="/img/villa/osusume_rank3-4_s.jpg" width="119" height="12" alt="3〜4つ星" class="rank3-4">
+						<?php elseif($baligirl_rank == '3-5'): ?>
+						<img src="/img/villa/osusume_rank3-5_s.jpg" width="133" height="12" alt="3〜5つ星" class="rank3-5">
+						<?php elseif($baligirl_rank == '4-5'): ?>
+						<img src="/img/villa/osusume_rank4-5_s.jpg" width="148" height="12" alt="4〜5つ星" class="rank4-5">
+						<?php endif ?>
+					</td>
+				</tr>
+			</table>
+		</div>
+	<?php }
+
+		if($key >= 16){
+			echo '</div><div class="slide_btn"><a class="abc">すべてのレストラン情報をみる</a></div>';
+		}
+	?>
 <?php
 	}
 ?>
+
+
+<script type="text/javascript">
+$(".slide_btn").click(function(){
+	if($(this).prev("div").css("display")=="none"){
+		$(this).prev("div").slideDown("normal");
+		$(this).children("a").addClass("active");
+	}else{
+		$(this).prev("div").slideUp("normal");
+		$(this).children("a").removeClass("active");
+	}
+});
+</script>
