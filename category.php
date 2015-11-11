@@ -1118,7 +1118,7 @@ function plbali_show_post_disp_sort($posts){
 	<?php }
 
 		if($key >= 16){
-			echo '</div><div class="slide_btn"><a class="abc">すべてのレストラン情報をみる</a></div>';
+			echo '</div><div class="slide_btn"><a class="abc">すべてのホテルをみ</a></div>';
 		}
 	?>
 <?php
