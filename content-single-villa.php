@@ -92,7 +92,7 @@
         燃油サーチャージャー込　その他税別途</li>
 		<?php if ($arrDep):?>
         <?php foreach($arrDep as $key=>$itemList) {?>
-			<li data-tour-search="hotel_id=<?php echo $arrHotelID[$key] ; ?>&departure_place_id=<?php echo $key ?>">
+			<li class="data-tour-search" data-tour-search="hotel_id=<?php echo $arrHotelID[$key] ; ?>&departure_place_id=<?php echo $key ?>">
 			<div data-tour>
 			<strong><?php echo $itemList; ?> <span data-tour-info="price_min" class="tour-price-val"></span>円〜</strong>
 			<div class="btn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo get_field('hotel_id'); ?>">予約</a></div>
@@ -101,7 +101,7 @@
 		<?php } ?>
 		<?php endif; ?>
         <?php if(post_custom('hotel_reserve_link')): ?>
-        <li class="tour_hotel"><strong>ホテルのみご予約はこちらから</strong><div class="btn"><a href="<?php echo post_custom('hotel_reserve_link'); ?>">詳細</a></div></li>
+        <li class="tour_hotel pr0"><strong>ホテルのみご予約はこちらから</strong><div class="btn"><a href="<?php echo post_custom('hotel_reserve_link'); ?>">詳細</a></div></li>
         <?php endif; ?>
     </ul>
 	<div style="clear:both;"></div>
@@ -110,11 +110,23 @@
 　　$(document).ready(function(){
 		var rsTourPrice = tourprice.searchAndLoad();
 		rsTourPrice.done(function(){
+			//「ツアー最安値」の項目が取得できない場合、「ツアー最安値」の項目を非表示する
 			$('.tour-price-val').each(function(){
 				if(!$(this).html()) {
 					$(this).parent().parent().parent().remove();
 				}
 			});
+			////
+			// 現在のツアー最安値」が１件も取得できない場合、「現在のツアー最安値」を非表示にする
+			var data_tour_search = $('.data-tour-search');
+			var tour_hotel = $('.tour_hotel');
+			if (data_tour_search.length == 0) {
+				$('.tour_read').remove();
+				if (tour_hotel.length > 0) {tour_hotel.remove()}
+				$('#tour1').removeClass('tour');
+				$('#tour2').removeClass('tour');
+			}
+			////
 	   });
 　　});
 </script>
@@ -135,7 +147,7 @@
             <li class="lNavi3 line1"><p>スパ</p></li>
             <?php endif; ?>
             <?php if(post_custom('restaurants')): ?>
-            <li class="lNavi4"><a href="#restaurant">レスト<br>ラン</a></li>
+            <li class="lNavi4"><a href="#restaurant">レスト<br>ラン<br>&nbsp;</a></li>
             <?php else : ?>
             <li class="lNavi4"><p>レスト<br>ラン</p></li>
             <?php endif; ?>

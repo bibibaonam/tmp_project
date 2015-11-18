@@ -106,7 +106,7 @@
 	margin:0px 1px 20px;
 }
 #main_img_detail img{
-	width: 958px;
+	width: 100%;
 	height:395px;
 }
 
@@ -199,6 +199,7 @@
 	-moz-box-shadow:rgba(218, 210, 182, 0.4) 2px 2px 2px 2px;
 	width: 958px;
 }
+
 #ie8 #lNavi.active{
 }
 #lNavi ul{
@@ -212,9 +213,9 @@
 }
 #lNavi ul li{
 	display:inline-block;
-    *display : inline;
-    *zoom : 1;
-	width:159px;
+    /*display : inline;
+    *zoom : 1;*/
+	width:16.666%;
 	font-weight:bold;
 	text-align:center;
 }
@@ -414,7 +415,7 @@
 #hotel_photo li .photo img{
 	/*width:100%;
 	height:auto;*/
-	width:437px;
+	width:100%;
 	height:259px;
 }
 #hotel_photo li span{
@@ -436,7 +437,7 @@
 #lounge ul li .photo img{
 	/*width:100%;
 	height:auto;*/
-	width:437px;
+	width:100%;
 	height:259px;
 }
 #lounge ul li .txt{
@@ -475,7 +476,7 @@
 #rooms li .left .photo img{
 	/*width:100%;
 	height:auto;*/
-	width:315px;
+	width:100%;
 	height:187px;
 }
 #rooms li .left span{
@@ -542,7 +543,7 @@
 #spa_main .photo img{
 	/*width:100%;
 	height:auto;*/
-	width:437px;
+	width:100%;
 	height:259px;
 }
 #spa_main .txt{
@@ -637,7 +638,7 @@
 #restaurant .photo img{
 	/*width:100%;
 	height:auto;*/
-	width:437px;
+	width:100%;
 	height:259px;
 }
 #restaurant .txt{
@@ -1415,6 +1416,15 @@
 #lNavi{
 	margin:0px;
 }
+	
+#lNavi.active {
+    left: 0;
+    width: 100% !important;
+}
+#lNavi.active ul {
+    margin: 0;
+    width: 100% !important;
+}
 
 .section{
 	margin-left:20px;
@@ -1468,6 +1478,13 @@
 #lNavi ul li p,
 #lNavi ul li a{
 	padding:15px 15px 30px;
+}
+#lNavi ul li p {
+	line-height: none;
+}
+#lNavi ul li a {
+	line-height: 4.8em;
+    padding: 8px 10px 7px;
 }
 }
 
@@ -1542,6 +1559,7 @@
 	font-size:12px;
 	height:26px;
 	padding:11px 5px 24px;
+	line-height: 1.2em;
 }
 #lNavi ul li a{
 	background-image:url(/img/villa/bg_lnavi_btn_sp.png);
