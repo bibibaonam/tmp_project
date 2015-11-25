@@ -630,14 +630,21 @@ function get_breadcrumbs(){
 		{
 			$category = get_the_category();
 			if ($category) {
-				$category_id = get_cat_ID( $category[0]->cat_name );
-				if ( 0 === get_query_var( 'page' ) ) {
-				echo '<li>&nbsp;＞&nbsp;'. get_category_parents( $category_id, TRUE, "&nbsp;＞&nbsp;" );
-				echo the_title('','', FALSE) ."</li>";
-				}
-				else {
-				echo '<li>&nbsp;＞&nbsp;'. get_category_parents( $category_id, TRUE, "&nbsp;＞&nbsp;" );
-				echo the_title('','', FALSE) ."&nbsp;料金表</li>";
+				$post_type = get_post_type(get_the_ID());
+				if ($post_type == 'hotels') {
+					$hotelsCat = get_category_by_slug($post_type);
+					echo '<li>&nbsp;＞&nbsp;'. '<a href="' . esc_url( get_category_link( $hotelsCat->term_id ) ) . '">'.$hotelsCat->name.'</a>'.'&nbsp;＞&nbsp;';
+					echo the_title('','', FALSE) ."</li>";
+				} else {
+					$category_id = get_cat_ID( $category[0]->cat_name );
+					if ( 0 === get_query_var( 'page' ) ) {
+					echo '<li>&nbsp;＞&nbsp;'. get_category_parents( $category_id, TRUE, "&nbsp;＞&nbsp;" );
+					echo the_title('','', FALSE) ."</li>";
+					}
+					else {
+					echo '<li>&nbsp;＞&nbsp;'. get_category_parents( $category_id, TRUE, "&nbsp;＞&nbsp;" );
+					echo the_title('','', FALSE) ."&nbsp;料金表</li>";
+					}
 				}
 			}
 		}
