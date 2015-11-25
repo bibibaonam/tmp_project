@@ -7,7 +7,15 @@
  * @since Twenty Eleven 1.0
  */
 ?>
-
+<?php $category = get_the_category();
+	if ($category) {
+		$post_type = get_post_type(get_the_ID());
+		if ($post_type == 'hotels') {
+			echo '<style>#gNavi02 .jQblend span{background-position: -275px -60px !important;}</style>';
+		}	
+	} 
+?>			
+				
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div id="detaile_h"></div>
 <div id="detail">
