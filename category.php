@@ -60,7 +60,7 @@ get_header() ?>
 </div>
 <div class="list">
 <ul>
-<?php $myposts = get_posts('post_type=hotels&category_name=spa-ubud&posts_per_page=999');/*SPA記事リスティング*/ ?>
+<?php $myposts = get_posts('category_name=spa-ubud&posts_per_page=999');/*SPA記事リスティング*/ ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<li><a href="<?php the_permalink() ?>" target="_top"><?php the_title() ?></a></li>
@@ -77,7 +77,7 @@ get_header() ?>
 </div>
 <div class="list">
 <ul>
-<?php $myposts = get_posts('post_type=hotels&category_name=spa-seminyak-kerobokan&posts_per_page=999');/*SPA記事リスティング*/ ?>
+<?php $myposts = get_posts('category_name=spa-seminyak-kerobokan&posts_per_page=999');/*SPA記事リスティング*/ ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<li><a href="<?php the_permalink() ?>" target="_top"><?php the_title() ?></a></li>
@@ -96,7 +96,7 @@ get_header() ?>
 </div>
 <div class="list">
 <ul>
-<?php $myposts = get_posts('post_type=hotels&category_name=spa-kuta-legian&posts_per_page=999');/*SPA記事リスティング*/ ?>
+<?php $myposts = get_posts('category_name=spa-kuta-legian&posts_per_page=999');/*SPA記事リスティング*/ ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<li><a href="<?php the_permalink() ?>" target="_top"><?php the_title() ?></a></li>
@@ -113,7 +113,7 @@ get_header() ?>
 </div>
 <div class="list">
 <ul>
-<?php $myposts = get_posts('post_type=hotels&category_name=spa-jimbaran-uluwatu&posts_per_page=999');/*SPA記事リスティング*/ ?>
+<?php $myposts = get_posts('category_name=spa-jimbaran-uluwatu&posts_per_page=999');/*SPA記事リスティング*/ ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<li><a href="<?php the_permalink() ?>" target="_top"><?php the_title() ?></a></li>
@@ -132,7 +132,7 @@ get_header() ?>
 </div>
 <div class="list">
 <ul>
-<?php $myposts = get_posts('post_type=hotels&category_name=spa-nusadua&posts_per_page=999');/*SPA記事リスティング*/ ?>
+<?php $myposts = get_posts('category_name=spa-nusadua&posts_per_page=999');/*SPA記事リスティング*/ ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<li><a href="<?php the_permalink() ?>" target="_top"><?php the_title() ?></a></li>
@@ -149,7 +149,7 @@ get_header() ?>
 </div>
 <div class="list">
 <ul>
-<?php $myposts = get_posts('post_type=hotels&category_name=spa-sanur&posts_per_page=999');/*SPA記事リスティング*/ ?>
+<?php $myposts = get_posts('category_name=spa-sanur&posts_per_page=999');/*SPA記事リスティング*/ ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<li><a href="<?php the_permalink() ?>" target="_top"><?php the_title() ?></a></li>
@@ -520,7 +520,7 @@ $(document).ready(function() {
 <div class="optional_list" id="20th">
 <h3 style="background-color:#9B1815;">20周年記念 オプショナルツアー</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=20th&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=20th&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -535,7 +535,7 @@ $(document).ready(function() {
 <div class="optional_list" id="osusume">
 <h3>プルメリアおすすめ</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=osusume&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=osusume&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -550,7 +550,7 @@ $(document).ready(function() {
 <div class="optional_list" id="balikanko">
 <h3>バリ１日観光</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=balikanko&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=balikanko&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -565,7 +565,7 @@ $(document).ready(function() {
 <div class="optional_list" id="balihalfday">
 <h3>バリ半日観光</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=balihalfday&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=balihalfday&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -580,7 +580,7 @@ $(document).ready(function() {
 <div class="optional_list" id="ubudkanko">
 <h3>ウブド観光</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=ubudkanko&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=ubudkanko&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -595,7 +595,7 @@ $(document).ready(function() {
 <div class="optional_list" id="mountainandriver">
 <h3>山・川遊び</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=mountainandriver&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=mountainandriver&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -610,7 +610,7 @@ $(document).ready(function() {
 <div class="optional_list" id="cruise">
 <h3>クルーズ</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=cruise&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=cruise&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -625,7 +625,7 @@ $(document).ready(function() {
 <div class="optional_list" id="marineactivity">
 <h3>マリンアクティビティ</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=marineactivity&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=marineactivity&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -640,7 +640,7 @@ $(document).ready(function() {
 <div class="optional_list" id="diving">
 <h3>ダイビング</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=diving&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=diving&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -655,7 +655,7 @@ $(document).ready(function() {
 <div class="optional_list" id="mealmain">
 <h3>お食事メイン</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=mealmain&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=mealmain&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -670,7 +670,7 @@ $(document).ready(function() {
 <div class="optional_list" id="themepark">
 <h3>テーマパーク</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=themepark&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=themepark&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -685,7 +685,7 @@ $(document).ready(function() {
 <div class="optional_list" id="golf">
 <h3>ゴルフ</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=golf&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=golf&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -700,7 +700,7 @@ $(document).ready(function() {
 <!-- <div class="optional_list" id="firstday-type1">
 <h3>到着日プラン（お部屋利用）</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=firstday-type1&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=firstday-type1&posts_per_page=100') ?>
 
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
@@ -716,7 +716,7 @@ $(document).ready(function() {
 <!-- <div class="optional_list" id="firstday-type2">
 <h3>到着日プラン（お部屋利用なし）</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=firstday-type2&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=firstday-type2&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -731,7 +731,7 @@ $(document).ready(function() {
 <div class="optional_list" id="finalday-type1">
 <h3>最終日の過ごし方（お部屋利用）</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=finalday-type1&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=finalday-type1&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -746,7 +746,7 @@ $(document).ready(function() {
 <div class="optional_list" id="finalday-type2">
 <h3>最終日の過ごし方（お部屋利用なし）</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=finalday-type2&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=finalday-type2&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -761,7 +761,7 @@ $(document).ready(function() {
 <div class="optional_list" id="romanticdinner">
 <h3>ロマンティックディナー</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=romanticdinner&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=romanticdinner&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -776,7 +776,7 @@ $(document).ready(function() {
 <div class="optional_list" id="op-wedding">
 <h3>ウェディング</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=op-wedding&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=op-wedding&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -791,7 +791,7 @@ $(document).ready(function() {
 <div class="optional_list" id="otherislands">
 <h3>他島へ</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=otherislands&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=otherislands&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -806,7 +806,7 @@ $(document).ready(function() {
 <div class="optional_list">
 <h3>ヨガ</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=yoga&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=yoga&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -821,7 +821,7 @@ $(document).ready(function() {
 <div class="optional_list" id="exercise">
 <h3>お稽古</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=exercise&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=exercise&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
@@ -836,7 +836,7 @@ $(document).ready(function() {
 <div class="optional_list mb_0" id="balitradition">
 <h3>バリ伝統芸能鑑賞</h3>
 <div class="box">
-<?php $myposts = get_posts('post_type=hotels&category_name=balitradition&posts_per_page=100') ?>
+<?php $myposts = get_posts('category_name=balitradition&posts_per_page=100') ?>
 <?php foreach($myposts as $post){ ?>
 	<?php setup_postdata($post) ?>
 		<div class="left">
