@@ -346,7 +346,7 @@ get_header() ?>
 			<td>
 				<h2>地図から都市の情報・ツアーを探す</h2>
 				<div id="map">
-					<div id="mBtn1"><a href="/kuta-legian/">クタ・レギャン</a></div>
+					<div id="mBtn1"><a href="/kuta-legian/">クタ／レギャン</a></div>
 					<div id="mBtn2"><a href="/seminyak-kerobokan/">スミニャック／クロボカン</a></div>
 					<div id="mBtn3"><a href="/nusadua/">ヌサドゥア／ベノア</a></div>
 					<div id="mBtn4"><a href="/jimbaran-uluwatu/">ジンバラン</a></div>

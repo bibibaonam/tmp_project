@@ -736,9 +736,9 @@ function checkCatHotels(){
 
 function get_area($post_id){
 	$areaObj = get_term(get_post_meta($post_id, 'area', true), 'area');
-	if ($areaObj->parent > 0) {
+	/*if ($areaObj->parent > 0) {
 		$areaObj = get_term($areaObj->parent, 'area');
-	}
+	}*/
 	return ($areaObj) ? $areaObj->name: '';
 }
 
@@ -840,12 +840,19 @@ function wpse_72603_default_categories()
 			$('#category-tabs .hide-if-no-js').remove();
 
 			// Tick the checkboxes of categories 3
-			$('#in-category-3').attr('checked', true);
+			//$('#in-category-3').attr('checked', true);
 
 			// Disable the clicks in categories 3
 			$('#in-category-3').click(function() { return false; });
 
 			$('#tagsdiv-post_tag, #areadiv').hide();
+			
+			var els = $('#categorychecklist').find('input[type=checkbox]');
+			if (els.length > 0) {
+				for (var i = 0; i < els.length; i++) {
+					$(els[i]).attr('type', 'radio');
+				}
+			}
 		});
 	</script>
 	<?php
