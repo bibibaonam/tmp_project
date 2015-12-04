@@ -742,7 +742,7 @@
           <div id="mBtn10"><a href="/menjangan/">ムンジャンガン</a></div>
           <div id="mBtn11"><a href="/lovina/">ロビナ</a></div>
           <div id="mBtn12"><a href="/yogyakarta/">ジョグジャカルタ</a></div>
-          <!--<div id="mBtn13"><a href="/lombok/">ロンボク島</a></div> -->
+          <div id="mBtn13"><a href="/lombok/">ロンボク島</a></div>
           <div id="mBtn14"><a href="/lembongan/">レンボンガン島</a></div>
         </div>
       </td>
@@ -765,61 +765,188 @@
       </div>-->
       <div class="box">
         <div id="hotel">
+          <?php 
+			$areaData = array(
+				array(
+					'area_link' => '/kuta-legian/',
+					'class' => 'kuta',
+					'image_src' => '/img/villa_title01.gif',
+					'image_alt' => 'クタ レギャン',
+					'category_name' => 'list-kuta'
+				),
+				array(
+					'area_link' => '/seminyak-kerobokan/',
+					'class' => 'semi',
+					'image_src' => '/img/villa_title02.gif',
+					'image_alt' => 'スミニャック クロボカン',
+					'category_name' => 'list-semi'
+				),
+				array(
+					'area_link' => '/nusadua/',
+					'class' => 'nusa',
+					'image_src' => '/img/villa_title03.gif',
+					'image_alt' => 'ヌサドゥア',
+					'category_name' => 'list-nusa'
+				),
+				array(
+					'area_link' => '/jimbaran-uluwatu/',
+					'class' => 'jim',
+					'image_src' => '/img/villa_title04.gif',
+					'image_alt' => 'ジンバラン ウルワツ',
+					'category_name' => 'list-jim'
+				),
+				array(
+					'area_link' => '/ubud/',
+					'class' => 'ubdo',
+					'image_src' => '/img/villa_title05.gif',
+					'image_alt' => 'ウブド',
+					'category_name' => 'list-ubud'
+				),
+				array(
+					'area_link' => '/sanur/',
+					'class' => 'sanu',
+					'image_src' => '/img/villa_title06.gif',
+					'image_alt' => 'サヌール',
+					'category_name' => 'list-sanur'
+				),
+				array(
+					'area_link' => '/canggu/',
+					'class' => 'canggu',
+					'image_src' => '/img/villa_title07.gif',
+					'image_alt' => 'チャングー',
+					'category_name' => 'list-canggu'
+				),
+				array(
+					'area_link' => '/candidasa/',
+					'class' => 'candidasa',
+					'image_src' => '/img/villa_title08.gif',
+					'image_alt' => 'チャンディダサ（マンギス）',
+					'category_name' => 'list-candidasa'
+				),
+				array(
+					'area_link' => '/tanahlot/',
+					'class' => 'tanahlot',
+					'image_src' => '/img/villa_title09.gif',
+					'image_alt' => 'タナロット（タバナン）',
+					'category_name' => 'list-tanahlot'
+				),
+				array(
+					'area_link' => '/menjangan/',
+					'class' => 'menjangan',
+					'image_src' => '/img/villa_title10.gif',
+					'image_alt' => 'ムンジャンガン',
+					'category_name' => 'list-menjangan'
+				),
+				array(
+					'area_link' => '/lovina/',
+					'class' => 'lovina',
+					'image_src' => '/img/villa_title11.gif',
+					'image_alt' => 'ロビナ',
+					'category_name' => 'list-lovina'
+				),
+				array(
+					'area_link' => '/yogyakarta/',
+					'class' => 'yogyakarta',
+					'image_src' => '/img/villa_title12.gif',
+					'image_alt' => 'ジョグジャカルタ',
+					'category_name' => 'list-yogyakarta'
+				),
+				array(
+					'area_link' => '/lombok/',
+					'class' => 'lombok',
+					'image_src' => '/img/villa_title13.gif',
+					'image_alt' => 'ロンボク島',
+					'category_name' => 'list-lombok'
+				),
+				array(
+					'area_link' => '/lembongan/',
+					'class' => 'lembongan',
+					'image_src' => '/img/villa_title14.gif',
+					'image_alt' => 'レンボンガン島',
+					'category_name' => 'list-lembongan'
+				)
+			);
+		  ?>
           
-          <div class="column">
-          <div class="kuta">
+		 <?php foreach($areaData as $key => $area):?>
+			<?php if ($key%2 == 0) : ?> 
+			  <div class="column">
+			<?php endif; ?>  
+			<?php
+				$category_link = get_category_by_slug( $area['category_name'] );
+				$category_link = get_category_link( $category_link->term_id );
+			?>
+          <div class="<?php echo $area['class']; ?>">
             <div class="h4_title">
-              <h4><a href="/kuta-legian/"><img src="/img/villa_title01.gif" width="330" height="20" alt="クタ レギャン"></a></h4>
+              <h4><a href="<?php echo $area['area_link']; ?>"><img src="<?php echo $area['image_src']; ?>" width="330" height="20" alt="<?php echo $area['image_alt']; ?>"></a></h4>
             </div>
-            <div class="more"><a href="/villa/list-kuta/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-kuta-legian&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
+            <div class="more"><a href="<?php echo $category_link;?>">ホテル一覧を見る（全
+            <?php $site_count = query_posts ('post_type=hotels&category_name='.$area['category_name'].'&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
             <?php endforeach;wp_reset_query(); ?>
             <?php echo $site_cnt ?> 件）</a></div>
+			  
             <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-kuta-legian',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-              <?php setup_postdata($post); ?>
+            <?php 
+				$query = array(
+					'post_type' => 'hotels',
+					'category_name' => $area['category_name'],
+					'meta_query'    => array(
+						'pick_up_top_key' => array(
+							'key'   => 'pick_up_top',
+							'value' => 'a:1:{i:0;s:11:"pick_up_top";}'
+						)
+					),
+					'orderby' => array(
+						'post_modified' => 'DESC'
+					),
+					'posts_per_page' => 2
+				);
+				$myposts = get_posts($query);
+			?>
+            
+			<?php foreach($myposts as $post): ?>
+                <?php setup_postdata($post); ?>
+				<?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true), 'full') ?>
+				<?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>
               <div class="left">
               <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
               <div class="left" data-tour>
               	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
+						 <?php $title= get_the_title(); ?>
+						<img src="<?php echo $thumbnail ?>" title="<?php echo $title;?>" alt="<?php echo $title;?>" width="157" height="85">
+					</a>
                 </div>
                 <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
+				<div data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>">
+					<div data-tour><ul><li><dt>ツアー代金</dt><strong><span data-tour-info="price_min"></span>円～</strong></ul></div>
+				</div>
+                <!--<p class="price">
                   <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
+                </p>-->
+                <?php if(get_post_meta($post->ID,'baligirl_rank',true)): ?>
+					<?php if(get_post_meta($post->ID,'baligirl_rank',true) == '1'): ?>
+						<p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '2'): ?>
+						<p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '3'): ?>
+						<p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '4'): ?>
+						<p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '5'): ?>
+						<p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '2-3'): ?>
+						<p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '2-4'): ?>
+						<p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '2-5'): ?>
+						<p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '3-4'): ?>
+						<p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '3-5'): ?>
+						<p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
+					<?php elseif(get_post_meta($post->ID,'baligirl_rank',true) == '4-5'): ?>
+						<p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
+					<?php endif; ?>
                 <?php endif; ?>
                 <div class="link">
                   <div class="tourBtn">
@@ -835,891 +962,11 @@
             <?php endforeach; ?>
             </div><!-- /box -->
           </div>
-            
-          <div class="semi">
-            <div class="h4_title">
-              <h4><a href="/seminyak-kerobokan/"><img src="/img/villa_title02.gif" width="330" height="20" alt="スミニャック クロボカン"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-semi/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-seminyak-kerobokan&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-seminyak-kerobokan',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>            
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-            <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
-                  <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn">
-                    <a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-               </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-            </div>
-            </div>
-          </div>
-          
-          <div class="column">
-          <div class="nusa">
-            <div class="h4_title">
-              <h4><a href="/nusadua/"><img src="/img/villa_title03.gif" width="330" height="20" alt="ヌサドゥア"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-nusa/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-nusadua&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-nusadua',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>            
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-            <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-            <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-            </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
-                  <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          
-          <div class="jim">
-            <div class="h4_title">
-              <h4><a href="/jimbaran-uluwatu/"><img src="/img/villa_title04.gif" width="330" height="20" alt="ジンバラン ウルワツ"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-jim/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-jimbaran-uluwatu&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-jimbaran-uluwatu',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-              <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
-                  <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          </div>
-          
-          <div class="column">
-          <div class="ubdo">
-            <div class="h4_title">
-              <h4><a href="/ubud/"><img src="/img/villa_title05.gif" width="330" height="20" alt="ウブド"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-ubud/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-ubud&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-ubud',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-              <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
-                  <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-
-				<?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          
-          <div class="sanu">
-            <div class="h4_title">
-              <h4><a href="/sanur/"><img src="/img/villa_title06.gif" width="330" height="20" alt="サヌール"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-sanur/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-sanur&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-sanur',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>            
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-            <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
-                  <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          </div>
-          
-          <div class="column">
-          <div class="canggu">
-            <div class="h4_title">
-              <h4><a href="/canggu/"><img src="/img/villa_title07.gif" width="330" height="20" alt="チャングー"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-canggu/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-canggu&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-canggu',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>            
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-            <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
-                  <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-
-            </div>
-          </div>
-          
-          <div class="candidasa">
-            <div class="h4_title">
-              <h4><a href="/candidasa/"><img src="/img/villa_title08.gif" width="330" height="20" alt="チャンディダサ（マンギス）"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-candidasa/">ホテル一覧を見る（全
-<?php $site_count = query_posts ('category_name=villa-candidasa&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-              <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-candidasa',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>
-              <?php $myposts = get_posts($query); ?>
-              <?php foreach($myposts as $post): ?>
-              <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-				<?php $title= get_the_title(); the_post_thumbnail(array( 330,330 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price"><dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'tour_code',true)): ?>
-                <p class="price">コード：<?php echo post_custom('tour_code'); ?></p>
-                <?php endif; ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-
-
-
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-             </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          </div>
-          
-          <div class="column">
-          <div class="tanahlot">
-            <div class="h4_title">
-              <h4><a href="/tanahlot/"><img src="/img/villa_title09.gif" width="330" height="20" alt="タナロット（タバナン）"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-tanahlot/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-tanahlot&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-tanahlot',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>            
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-            <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price"><dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          
-          <div class="menjangan">
-            <div class="h4_title">
-              <h4><a href="/menjangan/"><img src="/img/villa_title10.gif" width="330" height="20" alt="ムンジャンガン"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-menjangan/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-menjangan&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-menjangan',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>            
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-            <?php setup_postdata($post); ?>
-              <div class="left">
-             <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>  
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 330,330 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                  </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
-                  <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          </div>
-          
-          <div class="column">
-          <div class="lovina">
-            <div class="h4_title">
-              <h4><a href="/lovina/"><img src="/img/villa_title11.gif" width="330" height="20" alt="ロビナ"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-lovina/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-lovina&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-			<?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-lovina',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>
-			  <?php $myposts = get_posts($query); ?>
-              <?php foreach($myposts as $post): ?>
-              <?php setup_postdata($post); ?>
-              <div class="one">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-              <?php $title= get_the_title(); the_post_thumbnail(array( 330,330 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price"><dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          
-          <div class="yogyakarta">
-            <div class="h4_title">
-              <h4><a href="/yogyakarta/"><img src="/img/villa_title12.gif" width="330" height="20" alt="ジョグジャカルタ"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-yogyakarta/">ホテル一覧を見る（全
-            <?php $site_count = query_posts ('category_name=villa-yogyakarta&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-yogyakarta',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>            
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-            <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
-                  <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          </div>
-          
-          <!-- 
-          <div class="column">
-          <div class="lombok">
-            <div class="h4_title">
-              <h4><a href="/lombok/"><img src="/img/villa_title13.gif" width="330" height="20" alt="ロンボク島"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-lombok/">ホテル一覧を見る（全
-            <?php /* $site_count = query_posts ('category_name=villa-lombok&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-            <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-lombok',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?>            
-            <?php $myposts = get_posts($query); ?>
-            <?php foreach($myposts as $post): ?>
-            <?php setup_postdata($post); ?>
-              <div class="left">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                  <?php $title= get_the_title(); the_post_thumbnail(array( 157,157 ),array( 'alt' =>$title, 'title' => $title)); ?></a>
-                </div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price">
-                  <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
-                </p>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; /* ?>
-            </div>
-          </div>
-          -->
-          
-        <!--  
-          <div class="lembongan">
-            <div class="h4_title">
-              <h4><a href="/lembongan/"><img src="/img/villa_title14.gif" width="330" height="20" alt="レンボンガン島"></a></h4>
-            </div>
-            <div class="more"><a href="/villa/list-lembongan/">ホテル一覧を見る（全
-            <?php /*? $site_count = query_posts ('category_name=villa-lembongan&posts_per_page=-1'); $site_cnt=0; foreach($site_count as $post): $site_cnt++; ?>
-            <?php endforeach;wp_reset_query(); ?>
-            <?php echo $site_cnt ?> 件）</a></div>
-            <div class="box">
-              <?php $query = array('tag'=>'top-pickup',
-			  'category_name'=>'villa-lembongan',
-              'meta_key'=>'hotel_id',
-			  'meta_value'=>null,
-              'meta_compare'=>'!=',
-              'orderby'=>'rand',
-              'posts_per_page'=>3) ?> 
-			  <?php $myposts = get_posts($query); ?>
-              <?php foreach($myposts as $post): ?>
-              <?php setup_postdata($post); ?>
-              <div class="one">
-              <span data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
-              <div class="left" data-tour>              
-              	<div class="thumb"><a href="<?php the_permalink(); ?>" target="_top">
-                <?php $title= get_the_title(); the_post_thumbnail(array( 330,330 ),array( 'alt' =>$title, 'title' => $title)); ?></a></div>
-                <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-                <p class="price"><dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong></p>
-                <?php if(get_post_meta($post->ID,'tour_code',true)): ?>
-                <p class="price">コード：<?php echo post_custom('tour_code'); ?></p>
-                <?php endif; ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true)): ?>
-                <?php if(get_post_meta($post->ID,'hotel_stars',true) == '1'): ?>
-                <p class="rank"><img src="/img/osusume_rank1_s.jpg" width="12" height="12" alt="1つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2'): ?>
-                <p class="rank"><img src="/img/osusume_rank2_s.jpg" width="27" height="12" alt="2つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3'): ?>
-                <p class="rank"><img src="/img/osusume_rank3_s.jpg" width="42" height="12" alt="3つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4'): ?>
-                <p class="rank"><img src="/img/osusume_rank4_s.jpg" width="57" height="12" alt="4つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '5'): ?>
-                <p class="rank"><img src="/img/osusume_rank5_s.jpg" width="72" height="12" alt="5つ星 "></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-3'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-3_s.jpg" width="89" height="12" alt="2～ 3つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-4_s.jpg" width="104" height="12" alt="2 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '2-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank2-5_s.jpg" width="119" height="12" alt="2 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-4'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-4_s.jpg" width="119" height="12" alt="3 ～4つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '3-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank3-5_s.jpg" width="133" height="12" alt="3 ～5つ星"></p>
-                <?php elseif(get_post_meta($post->ID,'hotel_stars',true) == '4-5'): ?>
-                <p class="rank"><img src="/img/osusume_rank4-5_s.jpg" width="148" height="12" alt="4 ～5つ星"></p>
-                <?php endif; ?>
-                <?php endif; ?>
-                <div class="link">
-                    <div class="tourBtn"><a href="//www.tabikobo.com/tour/tourresult?hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a>
-                    </div>
-                    <div class="hotelLink"><a href="<?php the_permalink(); ?>">ホテル詳細はこちら</a></div>
-                </div>
-              </div>
-              </span>
-              </div>
-              <?php endforeach; */ ?>
-            </div>
-          </div>
-          </div>
-          -->
-          
-          
+			<?php if ($key%2 != 0) : ?> 
+			  </div>
+			<?php endif; ?> 		  
+          <?php endforeach; ?>
+		
           <?php /*?><div class="column">
           <div class="other">
             <div class="h4_title">

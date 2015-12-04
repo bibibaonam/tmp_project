@@ -358,7 +358,7 @@ get_header() ?>
 					<div id="mBtn10"><a href="/menjangan/">ムンジャンガン</a></div>
 					<div id="mBtn11"><a href="/lovina/">ロビナ</a></div>
 					<div id="mBtn12"><a href="/yogyakarta/">ジョグジャカルタ</a></div>
-				 <!-- <div id="mBtn13"><a href="/lombok/">ロンボク島</a></div> -->
+					<div id="mBtn13"><a href="/lombok/">ロンボク島</a></div>
 					<div id="mBtn14"><a href="/lembongan/">レンボンガン島</a></div>
 				</div>
 			</td>
@@ -917,7 +917,6 @@ $(document).ready(function() {
 
 <style type="text/css">
 	img.ImgRanking{
-		width: 288px !important;
 		height: 192px !important;
 	}
 </style>
@@ -1015,7 +1014,7 @@ function plbali_show_post_ranking($posts){
 			) ?>
 			<ul class="icon_list">
 				<?php
-				if (is_array($icon) && in_array('couple', $icon) && in_array('family', $icon) && in_array('girls', $icon)) {
+				if (is_array($icon)) {
 					if (in_array('couple', $icon))
 						echo '<li><img src="/img/villa/list_osusume_icon01.png" width="46" height="46" alt="女子旅"></li>';
 					if (in_array('family', $icon))

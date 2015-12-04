@@ -1228,6 +1228,17 @@ if(function_exists("register_field_group"))
 				),
 				'default_value' => '',
 				'layout' => 'vertical',
+			),
+			array (
+				'key' => 'field_562432sd97ec1',
+				'label' => 'ピックアップトップ',
+				'name' => 'pick_up_top',
+				'type' => 'checkbox',
+				'choices' => array (
+					'pick_up_top' => 'ピックアップトップ',
+				),
+				'default_value' => '',
+				'layout' => 'vertical',
 			)
 		),
 
