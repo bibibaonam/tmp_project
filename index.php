@@ -689,30 +689,43 @@
   <div id="tour">
     <h2><img src="/img/tour_title.gif" alt="コンシェルジュ お勧めツアー recommended tour" width="227" height="36" /></h2>
     <ul>
-      <?php $query = array('tag'=>'recommended',
-	    'meta_key'=>'hotel_id',
-		'meta_value'=>null,
-		'meta_compare'=>'!=',
-		'orderby'=>'rand',
-		'posts_per_page'=>3) ?>
-	  <?php $myposts = get_posts($query); ?>
+      <?php 
+		$queryRecommended = array(
+			'post_type' => 'hotels',
+			'meta_query'    => array(
+				'concierge_recommendation_key' => array(
+					'key'   => 'concierge_recommendation',
+					'value' => 'a:1:{i:0;s:24:"concierge_recommendation";}'
+				)
+			),
+			'orderby' => 'rand',
+			'posts_per_page' => 3
+		);
+	  ?>
+	  <?php $myposts = get_posts($queryRecommended); ?>
       <?php foreach($myposts as $post): ?>
       <?php setup_postdata($post); ?>
-      <li data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=ttl_price_asc">
+	  <?php $image_attributes =  wp_get_attachment_image_src(get_post_meta($post->ID, 'thumbnail', true), 'full') ?>
+	  <?php $thumbnail = $image_attributes ? $image_attributes[0] : ''; ?>	
+      <li data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=price_asc">
         <div class="img"><a href="<?php the_permalink(); ?>" target="_top">
-		<?php $title= get_the_title(); the_post_thumbnail(array( 226,226 ),array( 'alt' =>$title, 'title' => $title)); ?></a></div>
+			<?php $title= get_the_title();?>
+			<img src="<?php echo $thumbnail ?>" title="<?php echo $title;?>" alt="<?php echo $title;?>" width="226" height="226">
+			</a>
+		</div>
         <h3><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></h3>
-        <p><?php echo post_custom('recommended_copy'); ?></p>
+        <p><?php echo nl2br(post_custom('concierge_recommendation_comment')); ?></p>
         <div class="price" data-tour>
           <span data-tour-info="duration">X</span>日間<br>
           <dd><span data-tour-info="price_min">X,XXX,XXX</span>円〜</dd>
         </div>
-        <div class="more"><a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a></div>
+        <div class="more"><a href="http://www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">ツアー詳細へ</a></div>
       </li>
       <?php endforeach; ?>
     </ul>
   </div>
-        
+   <!-- end tour -->
+   
   <div id="spacial">
     <h2><img src="/img/info_title.gif" alt="おすすめ特集 recommended special edition" width="267" height="37" /></h2>
     <a href="http://www.tabikobo.com/special/bali/kurakura/"target="_blank"><img src="img/kurakura_224x48.jpg" alt="アクティブ派必見！クラクラバスに揺られるバス旅行" width="224" height="48" /></a>
@@ -772,98 +785,112 @@
 					'class' => 'kuta',
 					'image_src' => '/img/villa_title01.gif',
 					'image_alt' => 'クタ レギャン',
-					'category_name' => 'list-kuta'
+					'category_name' => 'list-kuta',
+					'hash_name' => '#kl_ttl'
 				),
 				array(
 					'area_link' => '/seminyak-kerobokan/',
 					'class' => 'semi',
 					'image_src' => '/img/villa_title02.gif',
 					'image_alt' => 'スミニャック クロボカン',
-					'category_name' => 'list-semi'
+					'category_name' => 'list-semi',
+					'hash_name' => '#sm_ttl'
 				),
 				array(
 					'area_link' => '/nusadua/',
 					'class' => 'nusa',
 					'image_src' => '/img/villa_title03.gif',
 					'image_alt' => 'ヌサドゥア',
-					'category_name' => 'list-nusa'
+					'category_name' => 'list-nusa',
+					'hash_name' => '#ns_ttl'
 				),
 				array(
 					'area_link' => '/jimbaran-uluwatu/',
 					'class' => 'jim',
 					'image_src' => '/img/villa_title04.gif',
 					'image_alt' => 'ジンバラン ウルワツ',
-					'category_name' => 'list-jim'
+					'category_name' => 'list-jim',
+					'hash_name' => '#jm_ttl'
 				),
 				array(
 					'area_link' => '/ubud/',
 					'class' => 'ubdo',
 					'image_src' => '/img/villa_title05.gif',
 					'image_alt' => 'ウブド',
-					'category_name' => 'list-ubud'
+					'category_name' => 'list-ubud',
+					'hash_name' => '#ud_ttl'
 				),
 				array(
 					'area_link' => '/sanur/',
 					'class' => 'sanu',
 					'image_src' => '/img/villa_title06.gif',
 					'image_alt' => 'サヌール',
-					'category_name' => 'list-sanur'
+					'category_name' => 'list-sanur',
+					'hash_name' => '#sn_ttl'
 				),
 				array(
 					'area_link' => '/canggu/',
 					'class' => 'canggu',
 					'image_src' => '/img/villa_title07.gif',
 					'image_alt' => 'チャングー',
-					'category_name' => 'list-canggu'
+					'category_name' => 'list-canggu',
+					'hash_name' => '#cng_ttl'
 				),
 				array(
 					'area_link' => '/candidasa/',
 					'class' => 'candidasa',
 					'image_src' => '/img/villa_title08.gif',
 					'image_alt' => 'チャンディダサ（マンギス）',
-					'category_name' => 'list-candidasa'
+					'category_name' => 'list-candidasa',
+					'hash_name' => '#cnd_ttl'
 				),
 				array(
 					'area_link' => '/tanahlot/',
 					'class' => 'tanahlot',
 					'image_src' => '/img/villa_title09.gif',
 					'image_alt' => 'タナロット（タバナン）',
-					'category_name' => 'list-tanahlot'
+					'category_name' => 'list-tanahlot',
+					'hash_name' => '#tnl_ttl'
 				),
 				array(
 					'area_link' => '/menjangan/',
 					'class' => 'menjangan',
 					'image_src' => '/img/villa_title10.gif',
 					'image_alt' => 'ムンジャンガン',
-					'category_name' => 'list-menjangan'
+					'category_name' => 'list-menjangan',
+					'hash_name' => '#mj_ttl'
 				),
 				array(
 					'area_link' => '/lovina/',
 					'class' => 'lovina',
 					'image_src' => '/img/villa_title11.gif',
 					'image_alt' => 'ロビナ',
-					'category_name' => 'list-lovina'
+					'category_name' => 'list-lovina',
+					'hash_name' => '#lb_ttl'
 				),
 				array(
 					'area_link' => '/yogyakarta/',
 					'class' => 'yogyakarta',
 					'image_src' => '/img/villa_title12.gif',
 					'image_alt' => 'ジョグジャカルタ',
-					'category_name' => 'list-yogyakarta'
+					'category_name' => 'list-yogyakarta',
+					'hash_name' => '#yg_ttl'
 				),
 				array(
 					'area_link' => '/lombok/',
 					'class' => 'lombok',
 					'image_src' => '/img/villa_title13.gif',
 					'image_alt' => 'ロンボク島',
-					'category_name' => 'list-lombok'
+					'category_name' => 'list-lombok',
+					'hash_name' => '#lmb_ttl'
 				),
 				array(
 					'area_link' => '/lembongan/',
 					'class' => 'lembongan',
 					'image_src' => '/img/villa_title14.gif',
 					'image_alt' => 'レンボンガン島',
-					'category_name' => 'list-lembongan'
+					'category_name' => 'list-lembongan',
+					'hash_name' => '#lem_ttl'
 				)
 			);
 		  ?>
@@ -873,8 +900,9 @@
 			  <div class="column">
 			<?php endif; ?>  
 			<?php
-				$category_link = get_category_by_slug( $area['category_name'] );
-				$category_link = get_category_link( $category_link->term_id );
+				$category_link = '/hotels/'.$area['hash_name'];
+				//$category_link = get_category_by_slug( $area['category_name'] );
+				//$category_link = get_category_link( $category_link->term_id );
 			?>
           <div class="<?php echo $area['class']; ?>">
             <div class="h4_title">
@@ -917,9 +945,15 @@
 					</a>
                 </div>
                 <div class="name"><a href="<?php the_permalink(); ?>" target="_top"><?php the_title(); ?></a></div>
-				<div data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>">
-					<div data-tour><ul><li><dt>ツアー代金</dt><strong><span data-tour-info="price_min"></span>円～</strong></ul></div>
+				
+				<div data-tour-search="hotel_id=<?php echo post_custom('hotel_id'); ?>&order=price_asc">
+					<div data-tour>
+						<ul>
+							<li><dt>ツアー代金</dt><strong><span data-tour-info="price_min"></span>円～</strong></li>
+						</ul>
+					</div>
 				</div>
+				
                 <!--<p class="price">
                   <dt>ツアー代金</dt><strong><span data-tour-info="price_min">X,XXX,XXX</span>円～</strong>
                 </p>-->
@@ -950,7 +984,7 @@
                 <?php endif; ?>
                 <div class="link">
                   <div class="tourBtn">
-                    <a href="//www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">
+                    <a href="http://www.tabikobo.com/tour/tourresult?media=plumeriabali&region_id=1&country_id=3&hotel_id=<?php echo post_custom('hotel_id'); ?>">
                       ツアー詳細へ
                     </a>
                   </div>

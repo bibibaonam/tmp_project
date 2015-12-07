@@ -1239,6 +1239,28 @@ if(function_exists("register_field_group"))
 				),
 				'default_value' => '',
 				'layout' => 'vertical',
+			),
+			array (
+				'key' => 'field_562432sd97ec2',
+				'label' => 'concierge_recommendation',
+				'name' => 'concierge_recommendation',
+				'type' => 'checkbox',
+				'choices' => array (
+					'concierge_recommendation' => 'concierge_recommendation',
+				),
+				'default_value' => '',
+				'layout' => 'vertical',
+			),
+			array (
+				'key' => 'field_561f6a1e830b3',
+				'label' => 'concierge_recommendation_comment',
+				'name' => 'concierge_recommendation_comment',
+				'type' => 'textarea',
+				'default_value' => '',
+				'placeholder' => 'concierge_recommendation_comment',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'br',
 			)
 		),
 
