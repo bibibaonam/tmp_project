@@ -1002,7 +1002,7 @@ function plbali_show_post_ranking($posts){
 			</table>
 			<?php
 
-			$icon = get_post_meta($post->ID,'icon',true);
+			$icon = get_post_meta($post->ID,'icon_disp',true);
 			$arr_icon = array(
 				'couple'     => array('01', '女子旅'),
 				// 'alone'     => array('02', 'ひとり旅'),

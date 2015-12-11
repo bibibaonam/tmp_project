@@ -14,6 +14,70 @@
 			echo '<style>#gNavi02 .jQblend span{background-position: -275px -60px !important;}</style>';
 		}	
 	} 
+	
+	function renderEntity($val) {
+		if ($val == 'yes') { echo '○'; }
+		else if ($val == 'no') { echo '×'; }
+		else if ($val == 'notice') { echo '※'; }
+	}
+	function renderServiceRemarks($val) {
+		switch ($val){
+			case 'shuttle':
+				echo '※シャトルサービス'; break;
+			case 'fitness':
+				echo '※フィットネスジム'; break;
+			case 'room_service':
+				echo '※ルームサービス'; break;
+			case 'laundry':
+				echo '※ランドリーサービス'; break;
+			case 'public_pool':
+				echo '※パブリックプール'; break;
+			case 'kids_room':
+				echo '※キッズルーム'; break;
+			case 'baby_sitter':
+				echo '※ベビーシッター'; break;
+			case 'lounge':
+				echo '※デパーチャーラウンジ'; break;
+			case 'wifi':
+				echo '※WIFI'; break;
+			case 'activity':
+				echo '※アクティビティ'; break;
+			default:
+				echo '';
+		}
+	}
+	function renderAmenityRemarks($val) {
+		switch ($val){
+			case 'air_conditioner':
+				echo '※エアコン'; break;
+			case 'bathtub':
+				echo '※バスタブ'; break;
+			case 'bath_item':
+				echo '※石けん・シャンプー etc.'; break;
+			case 'toothbrush':
+				echo '※歯ブラシ'; break;
+			case 'tv':
+				echo '※テレビ'; break;
+			case 'audio_player':
+				echo '※CD/DVDプレイヤー'; break;
+			case 'fridge':
+				echo '※冷蔵庫'; break;
+			case 'towel':
+				echo '※タオル'; break;
+			case 'bar':
+				echo '※ミニバー'; break;
+			case 'bathrobe':
+				echo '※バスローブ（ゆかた）'; break;
+			case 'safety_box':
+				echo '※セーフティボックス'; break;
+			case 'hair_dryer':
+				echo '※ヘアードライヤー'; break;
+			case 'kettle_pot':
+				echo '※湯沸しポット'; break;
+			default:
+				echo '';
+		}
+	}
 ?>			
 				
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -225,190 +289,122 @@
     <div id="hotel_info2" class="box">
     	<div class="left">
         	<h3>基本サービス</h3>
-			<?php $services = get_field('service');
-				$shuttle = '×'; $fitness = '×';$room_service = '×'; $laundry = '×'; $public_pool = '×'; $kids_room = '×'; $baby_sitter = '×'; $lounge = '×'; $wifi = '×'; $activity = '×';
-				if ($services) {
-					foreach ($services as $val) {
-						switch ($val) {
-							case 'shuttle':
-								$shuttle = '○';
-								break;
-							case 'fitness':
-								$fitness = '○';
-								break;
-							case 'room_service':
-								$room_service = '○';
-								break;
-							case 'laundry':
-								$laundry = '○';
-								break;
-							case 'public_pool':
-								$public_pool = '○';
-								break;
-							case 'kids_room':
-								$kids_room = '○';
-								break;
-							case 'baby_sitter':
-								$baby_sitter = '○';
-								break;
-							case 'lounge':
-								$lounge = '○';
-								break;
-							case 'wifi':
-								$wifi = '○';
-								break;
-							case 'activity':
-								$activity = '○';
-								break;
-							default:
-								break;
-						}
-					}
-				}
-			?>
             <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <th>シャトルサービス</th>
-                    <td><?php echo $shuttle;?></td>
+                    <td><?php renderEntity(get_field('shuttle')); ?></td>
                 </tr>
                 <tr>
                     <th>フットネスジム</th>
-                    <td><?php echo $fitness;?></td>
+                    <td><?php renderEntity(get_field('fitness')); ?></td>
                 </tr>
                 <tr>
                     <th>ルームサービス</th>
-                    <td><?php echo $room_service;?></td>
+                    <td><?php renderEntity(get_field('room_service')); ?></td>
                 </tr>
                 <tr>
                     <th>ランドリーサービス</th>
-                    <td><?php echo $laundry;?></td>
+                    <td><?php renderEntity(get_field('laundry')); ?></td>
                 </tr>
                 <tr>
                     <th>パブリックプール</th>
-                    <td><?php echo $public_pool;?></td>
+                    <td><?php renderEntity(get_field('public_pool')); ?></td>
                 </tr>
                 <tr>
                     <th>キッズルーム</th>
-                    <td><?php echo $kids_room;?></td>
+                    <td><?php renderEntity(get_field('kids_room')); ?></td>
                 </tr>
                 <tr>
                     <th>ベビーシッター</th>
-                    <td><?php echo $baby_sitter;?></td>
+                    <td><?php renderEntity(get_field('baby_sitter')); ?></td>
                 </tr>
                 <tr>
                     <th>デバーチャーラウンジ</th>
-                    <td><?php echo $lounge;?></td>
+                    <td><?php renderEntity(get_field('lounge')); ?></td>
                 </tr>
                 <tr>
                     <th>WIFI</th>
-                    <td><?php echo $wifi;?></td>
+                    <td><?php renderEntity(get_field('wifi')); ?></td>
                 </tr>
                 <tr>
                     <th>アクティビティー</th>
-                    <td><?php echo $activity;?></td>
+                    <td><?php renderEntity(get_field('activity')); ?></td>
                 </tr>
 				
             </table>
         </div>
     	<div class="right">
         	<h3>ホテル基本設備</h3>
-			<?php $amenites  = get_field('amenity');
-				$air_conditione = '×';$bathtub = '×';$bath_item = '×';$toothbrush = '×';$tv = '×';$audio_player = '×';$fridge = '×';$towel = '×';
-				$bar = '×';$bathrobe = '×';$safety_box = '×';$hair_dryer = '×';$kettle_pot = '×';
-				if ($amenites) {
-					foreach ($amenites as $val) {
-						switch ($val) {
-							case 'air_conditione':
-								$air_conditione = '○';
-								break;
-							case 'bathtub':
-								$bathtub = '○';
-								break;
-							case 'bath_item':
-								$bath_item = '○';
-								break;
-							case 'toothbrush':
-								$toothbrush = '○';
-								break;
-							case 'tv':
-								$tv = '○';
-								break;
-							case 'audio_player':
-								$audio_player = '○';
-								break;
-							case 'fridge':
-								$fridge = '○';
-								break;
-							case 'towel':
-								$towel = '○';
-								break;
-							case 'bar':
-								$bar = '○';
-								break;
-							case 'bathrobe':
-								$bathrobe = '○';
-								break;
-							case 'safety_box':
-								$safety_box = '○';
-								break;
-							case 'hair_dryer':
-								$hair_dryer = '○';
-								break;
-							case 'kettle_pot':
-								$kettle_pot = '○';
-								break;
-							default:
-								break;
-						}
-					}
-				}	
-				
-			?>
             <table border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <th>エアコン</th> <td><?php echo $air_conditione; ?></td>
+                    <th>エアコン</th> <td><?php renderEntity(get_field('air_conditioner')); ?></td>
                 </tr>
                 <tr>
-                    <th>バスタブ</th><td><?php echo $bathtub; ?></td>
+                    <th>バスタブ</th><td><?php renderEntity(get_field('bathtub')); ?></td>
                 </tr>
                 <tr>
-                    <th>石けん・シャンプー・コンディショナー</th><td><?php echo $bath_item; ?></td>
+                    <th>石けん・シャンプー・コンディショナー</th><td><?php renderEntity(get_field('bath_item')); ?></td>
                 </tr>
                 <tr>
-                    <th>歯ブラシ</th><td><?php echo $toothbrush; ?></td>
+                    <th>歯ブラシ</th><td><?php renderEntity(get_field('toothbrush')); ?></td>
                 </tr>
                 <tr>
-                    <th>テレビ</th><td><?php echo $tv; ?></td>
+                    <th>テレビ</th><td><?php renderEntity(get_field('tv')); ?></td>
                 </tr>
                 <tr>
-                    <th>CD/DVDプレイヤー</th><td><?php echo $audio_player; ?></td>
+                    <th>CD/DVDプレイヤー</th><td><?php renderEntity(get_field('audio_player')); ?></td>
                 </tr>
                 <tr>
-                    <th>冷蔵庫</th><td><?php echo $fridge; ?></td>
+                    <th>冷蔵庫</th><td><?php renderEntity(get_field('fridge')); ?></td>
                 </tr>
                 <tr>
-                    <th>タオル</th><td><?php echo $towel; ?></td>
+                    <th>タオル</th><td><?php renderEntity(get_field('towel')); ?></td>
                 </tr>
                 <tr>
-                    <th>ミニバー</th><td><?php echo $bar; ?></td>
+                    <th>ミニバー</th><td><?php renderEntity(get_field('bar')); ?></td>
                 </tr>
                 <tr>
-                    <th>バスローブ（ゆかた）</th><td><?php echo $bathrobe; ?></td>
+                    <th>バスローブ（ゆかた）</th><td><?php renderEntity(get_field('bathrobe')); ?></td>
                 </tr>
                 <tr>
-                    <th>セーフティーボックス</th><td><?php echo $safety_box; ?></td>
+                    <th>セーフティーボックス</th><td><?php renderEntity(get_field('safety_box')); ?></td>
                 </tr>
                 <tr>
-                    <th>ヘアードライヤー</th><td><?php echo $hair_dryer; ?></td>
+                    <th>ヘアードライヤー</th><td><?php renderEntity(get_field('hair_dryer')); ?></td>
                 </tr>
                 <tr>
-                    <th>湯沸かしポット</th><td><?php echo $kettle_pot; ?></td>
+                    <th>湯沸かしポット</th><td><?php renderEntity(get_field('kettle_pot')); ?></td>
                 </tr>
             </table>
         </div>
     </div>
     
-	<?php $icons = get_field('icon');
+	<div>
+		<h3>備考</h3>
+		<?php 
+			$service_remarks = get_field('service_remarks');
+			$amenity_remarks = get_field('amenity_remarks');
+		?>
+		<ul class="remarks_list">
+			<?php 
+			if (!$service_remarks && !$amenity_remarks) {
+				echo '--------'; 
+			} else {
+				if ($service_remarks) {
+					foreach ($service_remarks as $remark) { ?>
+						<li><?php renderServiceRemarks($remark['element'])?>:<?php echo $remark['note'];?></li>
+				<?php	}
+				}
+				if ($amenity_remarks) { 
+					foreach ($amenity_remarks as $remark) { ?>
+						<li><?php renderAmenityRemarks($remark['element'])?>:<?php echo $remark['note'];?></li>
+				<?php	}
+				}
+			}
+			?>
+		</ul>
+	</div>
+	<?php $icons = get_field('icon_disp');
 		$girls = false; $alone = false; $couple = false; $family = false; $group = false; $honeymoon = false; $premium = false;
 		if ($icons) {
 			foreach ($icons as $row) {
@@ -490,7 +486,6 @@
 						<p><?php echo nl2br($row['content']); ?></p>
 						<ul>
 							<li>■営業時間：<?php echo nl2br($row['business_hours']); ?></li>
-							<li>■最終入場時間：<?php echo nl2br($row['last_admission_time']); ?></li>
 						</ul>
 					</div>
 				</div>
@@ -701,6 +696,9 @@
 				<!-- テキスト情報 -->
 				<div class="txt">
 				<h3><?php echo $restaurants[0]['name']; ?></h3>
+				<?php if ($restaurants[0]['name_en']):?>
+				<span><?php echo $restaurants[0]['name_en']; ?></span>
+				<?php endif;?>
 				<p><?php echo nl2br($restaurants[0]['content']); ?></p>
 				<table border="0" cellspacing="0" cellpadding="0">
 					<tr>
@@ -731,6 +729,9 @@
 					<!-- テキスト情報 -->
 					<div class="txt">
 					<h3><?php echo $row['name']; ?></h3>
+					<?php if ($row['name_en']):?>
+					<span><?php echo $row['name_en']; ?></span>
+					<?php endif;?>
 					<p><?php echo nl2br($row['content']); ?></p>
 					<table border="0" cellspacing="0" cellpadding="0">
 						<tr>
