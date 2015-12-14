@@ -965,6 +965,8 @@ function plbali_show_post_ranking($posts){
 							'small_luxury'    => 'スモールラグジュアリー',
 							'boutique_hotel'  => 'ブディックホテル',
 							'villa'           => 'ヴィラ',
+							'hotel'           => 'ホテル',
+							'villa_hotel'     => 'ヴィラ/ホテル',
 							'charter_villa'   => '貸切ヴィラ',
 							'wellness_resort' => 'ウェルネスリゾート'
 						);
@@ -1078,6 +1080,8 @@ function plbali_show_post_disp_sort($posts){
 						'small_luxury'    => 'スモールラグジュアリー',
 						'boutique_hotel'  => 'ブディックホテル',
 						'villa'           => 'ヴィラ',
+						'hotel'           => 'ホテル',
+						'villa_hotel'     => 'ヴィラ/ホテル',
 						'charter_villa'   => '貸切ヴィラ',
 						'wellness_resort' => 'ウェルネスリゾート'
 					);

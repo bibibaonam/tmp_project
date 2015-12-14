@@ -202,9 +202,9 @@
 <meta name="keywords" content="バリ 旅行,<?php the_title(); ?>,プルメリア・バリ,バリ島,海外旅行,ヴィラ,ホテル,スパ,ウェディング,バリ・ガール" />
 <?php endif; ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<?php if(in_category('hotels') || checkCatHotels() || is_single_hotel()): ?>
-		<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
-<?php elseif( is_home() || is_front_page()): ?>
+<?php if( is_home() || is_front_page()): ?>
+	<link href="/css/global.css" rel="stylesheet" type="text/css" />
+<?php elseif(in_category('hotels') || checkCatHotels() || is_single_hotel()): ?>
 	<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
 <?php else : ?>
 <link href="/css/global.css" rel="stylesheet" type="text/css" />
@@ -914,7 +914,7 @@ location.replace('/');
 </p>
 </div>
 <?php endif; ?>
-<div id="h_dial"><img src="/img/h_dial.gif" alt="ナビダイヤル 03-5956-4170　06-4861-7263 営業時間 月〜金（10:00〜18:30）土（10:00〜15:00）日・祝（休み） bali@tabikobo.com" width="448" height="42" border="0" usemap="#Map2" />
+<div id="h_dial"><img src="/img/h_dial.gif" alt="ナビダイヤル 03-5956-4170　06-4861-7263 営業時間 月〜金（10:00〜18:30）土・日（11:00～17:00） 祝（休み） bali@tabikobo.com" width="448" height="42" border="0" usemap="#Map2" />
 <map name="Map2" id="Map2">
 <area shape="rect" coords="43,0,222,24" href="tel:0359564170">
 <area shape="rect" coords="283,0,462,24" href="tel:0648617263">

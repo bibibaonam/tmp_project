@@ -605,7 +605,6 @@
 			</div>
 		</div>
     
-        <h4><?php echo $spas[0]['package_name']?></h4>
 		<?php if(isset($spas[0]['packages']) && $spas[0]['packages']): ?>
 			<ul>
 				<?php foreach ($spas[0]['packages'] as $pa): ?>
@@ -648,7 +647,6 @@
 					 <?php endif; ?>
 				 </div>
 			</div>
-			<h4><?php echo $row['package_name']?></h4>
 			<?php if(isset($row['packages']) && $row['packages']): ?>
 				<ul>
 					<?php foreach ($row['packages'] as $pa): ?>
