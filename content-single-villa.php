@@ -379,31 +379,30 @@
         </div>
     </div>
     
+	<?php 
+		$service_remarks = get_field('service_remarks');
+		$amenity_remarks = get_field('amenity_remarks');
+	?>
+	<?php if ($service_remarks || $amenity_remarks): ?>
 	<div>
 		<h3>備考</h3>
-		<?php 
-			$service_remarks = get_field('service_remarks');
-			$amenity_remarks = get_field('amenity_remarks');
-		?>
 		<ul class="remarks_list">
 			<?php 
-			if (!$service_remarks && !$amenity_remarks) {
-				echo '--------'; 
-			} else {
-				if ($service_remarks) {
-					foreach ($service_remarks as $remark) { ?>
-						<li><?php renderServiceRemarks($remark['element'])?>:<?php echo $remark['note'];?></li>
-				<?php	}
-				}
-				if ($amenity_remarks) { 
-					foreach ($amenity_remarks as $remark) { ?>
-						<li><?php renderAmenityRemarks($remark['element'])?>:<?php echo $remark['note'];?></li>
-				<?php	}
-				}
+			if ($service_remarks) {
+				foreach ($service_remarks as $remark) { ?>
+					<li><?php renderServiceRemarks($remark['element'])?>:<?php echo $remark['note'];?></li>
+			<?php	}
 			}
+			if ($amenity_remarks) { 
+				foreach ($amenity_remarks as $remark) { ?>
+					<li><?php renderAmenityRemarks($remark['element'])?>:<?php echo $remark['note'];?></li>
+			<?php	}
+			}
+			
 			?>
 		</ul>
 	</div>
+	<?php endif;?>
 	<?php $icons = get_field('icon_disp');
 		$girls = false; $alone = false; $couple = false; $family = false; $group = false; $honeymoon = false; $premium = false;
 		if ($icons) {
