@@ -215,7 +215,7 @@
 </div><!-- id=footer_group -->
 
 <?php //if( is_page('order') || is_category('villa') || is_single('padma-resort-bali-at-legian')): ?>
-<?php if( is_page('order') || in_category('hotels') || is_single_hotel()): ?>
+<?php if( is_page('order') || in_category('hotels') || is_single_hotel() || in_category('hotel_price') || get_post_type(get_the_ID()) == 'hotel_price'): ?>
 <?php else : ?>
 <script type="text/javascript">
 $(document).ready(function(){

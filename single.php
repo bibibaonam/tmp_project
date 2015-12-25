@@ -34,7 +34,10 @@ $catslug = $cat[0]->slug;
     <?php elseif(in_category('specials')): ?>
     <!-- 特集 -->
     <?php get_template_part('content-single-specials') ?>
-    <?php else : ?>
+    <?php elseif(in_category('hotel_price') || get_post_type(get_the_ID()) == 'hotel_price'): ?>
+    <!-- ホテル料金 -->
+    <?php get_template_part('content-single-hotel-price') ?>
+	<?php else : ?>
     <?php get_template_part( 'content', 'single' ); ?>
     <?php endif; ?>
     <?php endwhile; // end of the loop. ?>
@@ -43,7 +46,7 @@ $catslug = $cat[0]->slug;
 
   <?php if(! in_category(array('specials','wedding'))): ?>
   <?php //if ( is_single('padma-resort-bali-at-legian') ) : ?>
-   <?php if (is_single_hotel()) : ?>
+   <?php if (is_single_hotel() || in_category('hotel_price') || get_post_type(get_the_ID()) == 'hotel_price') : ?>
   <?php else : ?>
   <?php get_sidebar(); ?>
   <?php endif; ?>

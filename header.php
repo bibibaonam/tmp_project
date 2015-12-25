@@ -269,6 +269,10 @@
 <?php elseif(is_page('sq')): ?>
 <link href="/css/sq.css" rel="stylesheet" type="text/css" />
 <?php endif; ?>
+<!-- add ホテル料金-->
+<?php if(in_category('hotel_price') || get_post_type(get_the_ID()) == 'hotel_price'):?>
+<link href="/css/villa-single.css" rel="stylesheet" type="text/css" />
+<?php endif;?>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/humanity/jquery-ui.css" />
 <script language="javascript" type="text/javascript" src="/js/jquery.js"></script>
 <script language="javascript" type="text/javascript" src="/js/jquery.ah-placeholder.js"></script>

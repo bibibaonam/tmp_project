@@ -178,9 +178,9 @@
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 }
-.tour li.tour_hotel .btn a{
+/*.tour li.tour_hotel .btn a{
 	background-color:#5e3219 !important;
-}
+}*/
 .tour li .btn a:hover{
 	opacity:0.6;
 	filter:alpha(opacity=60);
@@ -756,6 +756,7 @@
 }
 #price_list table#room_price th{
 	min-width:3.6em;
+	text-align: center;
 }
 #price_list table#room_price tr > th,
 #price_list table#room_price tr > td{
@@ -763,9 +764,10 @@
 }
 #price_list table th:first-child,
 #price_list table tr > td:first-child{
-	padding-left:30px;
-	border-left:none !important;
+	/*padding-left:30px;
 	font-weight:bold;
+	border-left: 2px solid #d28d47;
+	border-right: 1px solid #d28d47;*/
 }
 #price_list table th.room{
 	width:103px;
@@ -856,6 +858,29 @@
 	font-weight:bold;
 }
 
+#price_list table#room_price tr > th.sub,
+#price_list table#room_price tr > td.sub{
+	border-top: 1px solid #d28d47;
+	border-left:1px solid #d28d47;
+}
+
+#price_list table#room_price .col-first{
+	width: 120px;
+	border-left:2px solid #d28d47;
+	font-weight:bold;
+	border-right: 1px solid #d28d47;
+	text-align: center;
+}
+#price_list table#room_price .col-last{
+	border-right: 2px solid #d28d47;
+	width: 84px;
+}	
+#price_list table#room_price .pattern-sign {
+	width: 8px;
+}
+#price_list table#room_price{
+	border-bottom: 2px solid #d28d47;
+}
 
 /* color */
 /* クタ／レギャン */
@@ -2226,44 +2251,568 @@
 }
 }
 
+.remarks_list {
+	border-bottom: 1px dotted #666;
+	border-top: 1px dotted #666;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+.remarks_list li {
+	padding: 3px;
+	font-size: 90%;
+}
+#restaurant span{
+	margin-bottom: 5px;
+	display: block;
+}
 /* color */
 /* クタ／レギャン */
-.type-hotels #price_list table th,
-.type-hotels #price_list table td,
-.type-hotels #price_list table td.price td,
-.type-hotels #price_list table#price_info td.bp1{
-	border-color:#E8C6A3 !important;
+.category-list-kuta #price_list table th,
+.category-list-kuta #price_list table td,
+.category-list-kuta #price_list table td.price td,
+.category-list-kuta #price_list table#price_info td.bp1{
+	border-color:#E8C6A3;
 }
-.type-hotels #price_list table td span{
-    background-color:#E8C6A3 !important;
+.category-list-kuta #price_list table td span{
+    background-color:#E8C6A3;
 }
-.type-hotels #main_title,
-.type-hotels .section h2,
-.type-hotels .section h3,
-.type-hotels #icon_list .icon_btn a,
-.type-hotels #restaurant .txt p a,
-.type-hotels #price_list p,
-.type-hotels #price_list table th,
-.type-hotels #price_list table#room_price tr > td:first-child,
-.type-hotels #price_list #return a{
-	color:#d28d47 !important;
+.category-list-kuta #main_title,
+.category-list-kuta .section h2,
+.category-list-kuta .section h3,
+.category-list-kuta #icon_list .icon_btn a,
+.category-list-kuta #restaurant .txt p a,
+.category-list-kuta #restaurant .txt span,
+.category-list-kuta #price_list p,
+.category-list-kuta #price_list table th,
+.category-list-kuta #price_list table#room_price tr > td:first-child,
+.category-list-kuta #price_list #return a{
+	color:#d28d47;
 }
-.type-hotels #area,
-.type-hotels .tour li .btn a,
-.type-hotels #rooms li .left .btn a,
-.type-hotels #spa li table td .btn a{
-    background-color: #d28d47 !important;
+.category-list-kuta #area,
+.category-list-kuta .tour li .btn a,
+.category-list-kuta #rooms li .left .btn a,
+.category-list-kuta #spa li table td .btn a{
+    background-color: #d28d47;
 }
-.type-hotels .tour,
-.type-hotels #price_list table#room_price tr > th,
-.category-villa-kuta-legian #price_list table#room_price tr > td,
-.type-hotels #price_list table#price_info{
-	border-color:#d28d47 !important;
+.category-list-kuta .tour,
+.category-list-kuta #price_list table#room_price tr > th,
+.category-list-kuta #price_list table#room_price tr > td,
+.category-list-kuta #price_list table#price_info{
+	border-color:#d28d47;
 }
-.type-hotels #price_list table#room_price tr > th,
-.type-hotels #price_list table#room_price tr > td{
-	border-left:solid 1px #E8C6A3 !important;
+.category-list-kuta #price_list table#room_price tr > th,
+.category-list-kuta #price_list table#room_price tr > td{
+	border-left:solid 1px #E8C6A3;
 }
+
+/* スミニャック／クロボカン */
+.category-list-semi #price_list table th,
+.category-list-semi #price_list table td,
+.category-list-semi #price_list table td.price td,
+.category-list-semi #price_list table#price_info td.bp1{
+	border-color:#F79FA2;
+}
+.category-list-semi #price_list table td span{
+    background-color:#F79FA2;
+}
+.category-list-semi #main_title,
+.category-list-semi .section h2,
+.category-list-semi .section h3,
+.category-list-semi #icon_list .icon_btn a,
+.category-list-semi #restaurant .txt p a,
+.category-list-semi #restaurant .txt span,
+.category-list-semi #price_list p,
+.category-list-semi #price_list table th,
+.category-list-semi #price_list table#room_price tr > td:first-child,
+.category-list-semi #price_list #return a{
+	color:#f03f46;
+}
+.category-list-semi #area,
+.category-list-semi .tour li .btn a,
+.category-list-semi #rooms li .left .btn a,
+.category-list-semi #spa li table td .btn a{
+    background-color: #f03f46;
+}
+.category-list-semi .tour,
+.category-list-semi #price_list table#room_price tr > th,
+.category-list-semi #price_list table#room_price tr > td,
+.category-list-semi #price_list table#price_info{
+	border-color:#f03f46;
+}
+.category-list-semi #price_list table#room_price tr > th,
+.category-list-semi #price_list table#room_price tr > td{
+	border-left:solid 1px #F79FA2;
+}
+
+/* ヌサドゥア */
+.category-list-nusa #price_list table th,
+.category-list-nusa #price_list table td,
+.category-list-nusa #price_list table td.price td,
+.category-list-nusa #price_list table#price_info td.bp1{
+	border-color:#EBB2D9;
+}
+.category-list-nusa #price_list table td span{
+    background-color:#EBB2D9;
+}
+.category-list-nusa #main_title,
+.category-list-nusa .section h2,
+.category-list-nusa .section h3,
+.category-list-nusa #icon_list .icon_btn a,
+.category-list-nusa #restaurant .txt p a,
+.category-list-nusa #restaurant .txt span,
+.category-list-nusa #price_list p,
+.category-list-nusa #price_list table th,
+.category-list-nusa #price_list table#room_price tr > td:first-child,
+.category-list-nusa #price_list #return a{
+	color:#d766b3;
+}
+.category-list-nusa #area,
+.category-list-nusa .tour li .btn a,
+.category-list-nusa #rooms li .left .btn a,
+.category-list-nusa #spa li table td .btn a{
+    background-color: #d766b3;
+}
+.category-list-nusa .tour,
+.category-list-nusa #price_list table#room_price tr > th,
+.category-list-nusa #price_list table#room_price tr > td,
+.category-list-nusa #price_list table#price_info{
+	border-color:#d766b3;
+}
+.category-list-nusa #price_list table#room_price tr > th,
+.category-list-nusa #price_list table#room_price tr > td{
+	border-left:solid 1px #EBB2D9;
+}
+
+/* ジンバラン／ウルワツ */
+.category-list-jim #price_list table th,
+.category-list-jim #price_list table td,
+.category-list-jim #price_list table td.price td,
+.category-list-jim #price_list table#price_info td.bp1{
+	border-color:#7FCCCC;
+}
+.category-list-jim #price_list table td span{
+    background-color:#7FCCCC;
+}
+.category-list-jim #main_title,
+.category-list-jim .section h2,
+.category-list-jim .section h3,
+.category-list-jim #icon_list .icon_btn a,
+.category-list-jim #restaurant .txt p a,
+.category-list-jim #restaurant .txt span,
+.category-list-jim #price_list p,
+.category-list-jim #price_list table th,
+.category-list-jim #price_list table#room_price tr > td:first-child,
+.category-list-jim #price_list #return a{
+	color:#009999;
+}
+.category-list-jim #area,
+.category-list-jim .tour li .btn a,
+.category-list-jim #rooms li .left .btn a,
+.category-list-jim #spa li table td .btn a{
+    background-color: #009999;
+}
+.category-list-jim .tour,
+.category-list-jim #price_list table#room_price tr > th,
+.category-list-jim #price_list table#room_price tr > td,
+.category-list-jim #price_list table#price_info{
+	border-color:#009999;
+}
+.category-list-jim #price_list table#room_price tr > th,
+.category-list-jim #price_list table#room_price tr > td{
+	border-left:solid 1px #7FCCCC;
+}
+
+/* ウブド */
+.category-list-ubud #price_list table th,
+.category-list-ubud #price_list table td,
+.category-list-ubud #price_list table td.price td,
+.category-list-ubud #price_list table#price_info td.bp1{
+	border-color:#ADBD9B;
+}
+.category-list-ubud #price_list table td span{
+    background-color:#ADBD9B;
+}
+.category-list-ubud #main_title,
+.category-list-ubud .section h2,
+.category-list-ubud .section h3,
+.category-list-ubud #icon_list .icon_btn a,
+.category-list-ubud #restaurant .txt p a,
+.category-list-ubud #restaurant .txt span,
+.category-list-ubud #price_list p,
+.category-list-ubud #price_list table th,
+.category-list-ubud #price_list table#room_price tr > td:first-child,
+.category-list-ubud #price_list #return a{
+	color:#5c7b37;
+}
+.category-list-ubud #area,
+.category-list-ubud .tour li .btn a,
+.category-list-ubud #rooms li .left .btn a,
+.category-list-ubud #spa li table td .btn a{
+    background-color: #5c7b37;
+}
+.category-list-ubud .tour,
+.category-list-ubud #price_list table#room_price tr > th,
+.category-list-ubud #price_list table#room_price tr > td,
+.category-list-ubud #price_list table#price_info{
+	border-color:#5c7b37;
+}
+.category-list-ubud #price_list table#room_price tr > th,
+.category-list-ubud #price_list table#room_price tr > td{
+	border-left:solid 1px #ADBD9B;
+}
+
+/* サヌール */
+.category-list-sanur #price_list table th,
+.category-list-sanur #price_list table td,
+.category-list-sanur #price_list table td.price td,
+.category-list-sanur #price_list table#price_info td.bp1{
+	border-color:#99A9C6;
+}
+.category-list-sanur #price_list table td span{
+    background-color:#99A9C6;
+}
+.category-list-sanur #main_title,
+.category-list-sanur .section h2,
+.category-list-sanur .section h3,
+.category-list-sanur #icon_list .icon_btn a,
+.category-list-sanur #restaurant .txt p a,
+.category-list-sanur #restaurant .txt span,
+.category-list-sanur #price_list p,
+.category-list-sanur #price_list table th,
+.category-list-sanur #price_list table#room_price tr > td:first-child,
+.category-list-sanur #price_list #return a{
+	color:#34548e;
+}
+.category-list-sanur #area,
+.category-list-sanur .tour li .btn a,
+.category-list-sanur #rooms li .left .btn a,
+.category-list-sanur #spa li table td .btn a{
+    background-color: #34548e;
+}
+.category-list-sanur .tour,
+.category-list-sanur #price_list table#room_price tr > th,
+.category-list-sanur #price_list table#room_price tr > td,
+.category-list-sanur #price_list table#price_info{
+	border-color:#34548e;
+}
+.category-list-sanur #price_list table#room_price tr > th,
+.category-list-sanur #price_list table#room_price tr > td{
+	border-left:solid 1px #99A9C6;
+}
+
+/* チャングー */
+.category-list-canggu #price_list table th,
+.category-list-canggu #price_list table td,
+.category-list-canggu #price_list table td.price td,
+.category-list-canggu #price_list table#price_info td.bp1{
+	border-color:#FFE5A8;
+}
+.category-list-canggu #price_list table td span{
+    background-color:#FFE5A8;
+}
+.category-list-canggu #main_title,
+.category-list-canggu .section h2,
+.category-list-canggu .section h3,
+.category-list-canggu #icon_list .icon_btn a,
+.category-list-canggu #restaurant .txt p a,
+.category-list-canggu #restaurant .txt span,
+.category-list-canggu #price_list p,
+.category-list-canggu #price_list table th,
+.category-list-canggu #price_list table#room_price tr > td:first-child,
+.category-list-canggu #price_list #return a{
+	color:#ffcb51;
+}
+.category-list-canggu #area,
+.category-list-canggu .tour li .btn a,
+.category-list-canggu #rooms li .left .btn a,
+.category-list-canggu #spa li table td .btn a{
+    background-color: #ffcb51;
+}
+.category-list-canggu .tour,
+.category-list-canggu #price_list table#room_price tr > th,
+.category-list-canggu #price_list table#room_price tr > td,
+.category-list-canggu #price_list table#price_info{
+	border-color:#ffcb51;
+}
+.category-list-canggu #price_list table#room_price tr > th,
+.category-list-canggu #price_list table#room_price tr > td{
+	border-left:solid 1px #FFE5A8;
+}
+
+/* チャンディダサ */
+.category-list-candidasa #price_list table th,
+.category-list-candidasa #price_list table td,
+.category-list-candidasa #price_list table td.price td,
+.category-list-candidasa #price_list table#price_info td.bp1{
+	border-color:#C6B7BB;
+}
+.category-list-candidasa #price_list table td span{
+    background-color:#C6B7BB;
+}
+.category-list-candidasa #main_title,
+.category-list-candidasa .section h2,
+.category-list-candidasa .section h3,
+.category-list-candidasa #icon_list .icon_btn a,
+.category-list-candidasa #restaurant .txt p a,
+.category-list-candidasa #restaurant .txt span,
+.category-list-candidasa #price_list p,
+.category-list-candidasa #price_list table th,
+.category-list-candidasa #price_list table#room_price tr > td:first-child,
+.category-list-candidasa #price_list #return a{
+	color:#8d7077;
+}
+.category-list-candidasa #area,
+.category-list-candidasa .tour li .btn a,
+.category-list-candidasa #rooms li .left .btn a,
+.category-list-candidasa #spa li table td .btn a{
+    background-color: #8d7077;
+}
+.category-list-candidasa .tour,
+.category-list-candidasa #price_list table#room_price tr > th,
+.category-list-candidasa #price_list table#room_price tr > td,
+.category-list-candidasa #price_list table#price_info{
+	border-color:#8d7077;
+}
+.category-list-candidasa #price_list table#room_price tr > th,
+.category-list-candidasa #price_list table#room_price tr > td{
+	border-left:solid 1px #C6B7BB;
+}
+
+/* タナロット */
+.category-list-tanahlot #price_list table th,
+.category-list-tanahlot #price_list table td,
+.category-list-tanahlot #price_list table td.price td,
+.category-list-tanahlot #price_list table#price_info td.bp1{
+	border-color:#F6B9A5;
+}
+.category-list-tanahlot #price_list table td span{
+    background-color:#F6B9A5;
+}
+.category-list-tanahlot #main_title,
+.category-list-tanahlot .section h2,
+.category-list-tanahlot .section h3,
+.category-list-tanahlot #icon_list .icon_btn a,
+.category-list-tanahlot #restaurant .txt p a,
+.category-list-tanahlot #restaurant .txt span,
+.category-list-tanahlot #price_list p,
+.category-list-tanahlot #price_list table th,
+.category-list-tanahlot #price_list table#room_price tr > td:first-child,
+.category-list-tanahlot #price_list #return a{
+	color:#ee734b;
+}
+.category-list-tanahlot #area,
+.category-list-tanahlot .tour li .btn a,
+.category-list-tanahlot #rooms li .left .btn a,
+.category-list-tanahlot #spa li table td .btn a{
+    background-color: #ee734b;
+}
+.category-list-tanahlot .tour,
+.category-list-tanahlot #price_list table#room_price tr > th,
+.category-list-tanahlot #price_list table#room_price tr > td,
+.category-list-tanahlot #price_list table#price_info{
+	border-color:#ee734b;
+}
+.category-list-tanahlot #price_list table#room_price tr > th,
+.category-list-tanahlot #price_list table#room_price tr > td{
+	border-left:solid 1px #F6B9A5;
+}
+
+/* ムンジャンガン */
+.category-list-menjangan #price_list table th,
+.category-list-menjangan #price_list table td,
+.category-list-menjangan #price_list table td.price td,
+.category-list-menjangan #price_list table#price_info td.bp1{
+	border-color:#B1E89C;
+}
+.category-list-menjangan #price_list table td span{
+    background-color:#B1E89C;
+}
+.category-list-menjangan #main_title,
+.category-list-menjangan .section h2,
+.category-list-menjangan .section h3,
+.category-list-menjangan #icon_list .icon_btn a,
+.category-list-menjangan #restaurant .txt p a,
+.category-list-menjangan #restaurant .txt span,
+.category-list-menjangan #price_list p,
+.category-list-menjangan #price_list table th,
+.category-list-menjangan #price_list table#room_price tr > td:first-child,
+.category-list-menjangan #price_list #return a{
+	color:#64d13a;
+}
+.category-list-menjangan #area,
+.category-list-menjangan .tour li .btn a,
+.category-list-menjangan #rooms li .left .btn a,
+.category-list-menjangan #spa li table td .btn a{
+    background-color: #64d13a;
+}
+.category-list-menjangan .tour,
+.category-list-menjangan #price_list table#room_price tr > th,
+.category-list-menjangan #price_list table#room_price tr > td,
+.category-list-menjangan #price_list table#price_info{
+	border-color:#64d13a;
+}
+.category-list-menjangan #price_list table#room_price tr > th,
+.category-list-menjangan #price_list table#room_price tr > td{
+	border-left:solid 1px #B1E89C;
+}
+
+/* ロビナ */
+.category-list-lovina #price_list table th,
+.category-list-lovina #price_list table td,
+.category-list-lovina #price_list table td.price td,
+.category-list-lovina #price_list table#price_info td.bp1{
+	border-color:#A59DAF;
+}
+.category-list-lovina #price_list table td span{
+    background-color:#A59DAF;
+}
+.category-list-lovina #main_title,
+.category-list-lovina .section h2,
+.category-list-lovina .section h3,
+.category-list-lovina #icon_list .icon_btn a,
+.category-list-lovina #restaurant .txt p a,
+.category-list-lovina #restaurant .txt span,
+.category-list-lovina #price_list p,
+.category-list-lovina #price_list table th,
+.category-list-lovina #price_list table#room_price tr > td:first-child,
+.category-list-lovina #price_list #return a{
+	color:#4b3b5f;
+}
+.category-list-lovina #area,
+.category-list-lovina .tour li .btn a,
+.category-list-lovina #rooms li .left .btn a,
+.category-list-lovina #spa li table td .btn a{
+    background-color: #4b3b5f;
+}
+.category-list-lovina .tour,
+.category-list-lovina #price_list table#room_price tr > th,
+.category-list-lovina #price_list table#room_price tr > td,
+.category-list-lovina #price_list table#price_info{
+	border-color:#4b3b5f;
+}
+.category-list-lovina #price_list table#room_price tr > th,
+.category-list-lovina #price_list table#room_price tr > td{
+	border-left:solid 1px #A59DAF;
+}
+
+/* ジョグジャカルタ */
+.category-list-yogyakarta #price_list table th,
+.category-list-yogyakarta #price_list table td,
+.category-list-yogyakarta #price_list table td.price td,
+.category-list-yogyakarta #price_list table#price_info td.bp1{
+	border-color:#C1E7FB;
+}
+.category-list-yogyakarta #price_list table td span{
+    background-color:#C1E7FB;
+}
+.category-list-yogyakarta #main_title,
+.category-list-yogyakarta .section h2,
+.category-list-yogyakarta .section h3,
+.category-list-yogyakarta #icon_list .icon_btn a,
+.category-list-yogyakarta #restaurant .txt p a,
+.category-list-yogyakarta #restaurant .txt span,
+.category-list-yogyakarta #price_list p,
+.category-list-yogyakarta #price_list table th,
+.category-list-yogyakarta #price_list table#room_price tr > td:first-child,
+.category-list-yogyakarta #price_list #return a{
+	color:#83d0f7;
+}
+.category-list-yogyakarta #area,
+.category-list-yogyakarta .tour li .btn a,
+.category-list-yogyakarta #rooms li .left .btn a,
+.category-list-yogyakarta #spa li table td .btn a{
+    background-color: #83d0f7;
+}
+.category-list-yogyakarta .tour,
+.category-list-yogyakarta #price_list table#room_price tr > th,
+.category-list-yogyakarta #price_list table#room_price tr > td,
+.category-list-yogyakarta #price_list table#price_info{
+	border-color:#83d0f7;
+}
+.category-list-yogyakarta #price_list table#room_price tr > th,
+.category-list-yogyakarta #price_list table#room_price tr > td{
+	border-left:solid 1px #C1E7FB;
+}
+
+/* ロンボク島 */
+.category-list-lombok #price_list table th,
+.category-list-lombok #price_list table td,
+.category-list-lombok #price_list table td.price td,
+.category-list-lombok #price_list table#price_info td.bp1{
+	border-color:#D8B8F4;
+}
+.category-list-lombok #price_list table td span{
+    background-color:#D8B8F4;
+}
+.category-list-lombok #main_title,
+.category-list-lombok .section h2,
+.category-list-lombok .section h3,
+.category-list-lombok #icon_list .icon_btn a,
+.category-list-lombok #restaurant .txt p a,
+.category-list-lombok #restaurant .txt span,
+.category-list-lombok #price_list p,
+.category-list-lombok #price_list table th,
+.category-list-lombok #price_list table#room_price tr > td:first-child,
+.category-list-lombok #price_list #return a{
+	color:#b271ea;
+}
+.category-list-lombok #area,
+.category-list-lombok .tour li .btn a,
+.category-list-lombok #rooms li .left .btn a,
+.category-list-lombok #spa li table td .btn a{
+    background-color: #b271ea;
+}
+.category-list-lombok .tour,
+.category-list-lombok #price_list table#room_price tr > th,
+.category-list-lombok #price_list table#room_price tr > td,
+.category-list-lombok #price_list table#price_info{
+	border-color:#b271ea;
+}
+.category-list-lombok #price_list table#room_price tr > th,
+.category-list-lombok #price_list table#room_price tr > td{
+	border-left:solid 1px #D8B8F4;
+}
+
+/* レンボンガン島 */
+.category-list-lembongan #price_list table th,
+.category-list-lembongan #price_list table td,
+.category-list-lembongan #price_list table td.price td,
+.category-list-lembongan #price_list table#price_info td.bp1{
+	border-color:#9FF7ED;
+}
+.category-list-lembongan #price_list table td span{
+    background-color:#9FF7ED;
+}
+.category-list-lembongan #main_title,
+.category-list-lembongan .section h2,
+.category-list-lembongan .section h3,
+.category-list-lembongan #icon_list .icon_btn a,
+.category-list-lembongan #restaurant .txt p a,
+.category-list-lembongan #restaurant .txt span,
+.category-list-lembongan #price_list p,
+.category-list-lembongan #price_list table th,
+.category-list-lembongan #price_list table#room_price tr > td:first-child,
+.category-list-lembongan #price_list #return a{
+	color:#3fefdb;
+}
+.category-list-lembongan #area,
+.category-list-lembongan .tour li .btn a,
+.category-list-lembongan #rooms li .left .btn a,
+.category-villa-lembongan #spa li table td .btn a{
+    background-color: #3fefdb;
+}
+.category-list-lembongan .tour,
+.category-list-lembongan #price_list table#room_price tr > th,
+.category-list-lembongan #price_list table#room_price tr > td,
+.category-list-lembongan #price_list table#price_info{
+	border-color:#3fefdb;
+}
+.category-list-lembongan #price_list table#room_price tr > th,
+.category-list-lembongan #price_list table#room_price tr > td{
+	border-left:solid 1px #9FF7ED;
+}
+/*common*/
 .tour li.tour_hotel .btn a {
     background-color: #5e3219 !important;
 }
+

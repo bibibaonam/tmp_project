@@ -635,6 +635,10 @@ function get_breadcrumbs(){
 					$hotelsCat = get_category_by_slug($post_type);
 					echo '<li>&nbsp;＞&nbsp;'. '<a href="' . esc_url( get_category_link( $hotelsCat->term_id ) ) . '">'.$hotelsCat->name.'</a>'.'&nbsp;＞&nbsp;';
 					echo the_title('','', FALSE) ."</li>";
+				} else if ($post_type == 'hotel_price') {
+					$hotelsCat = get_category_by_slug('hotels');
+					echo '<li>&nbsp;＞&nbsp;'. '<a href="' . esc_url( get_category_link( $hotelsCat->term_id ) ) . '">'.$hotelsCat->name.'</a>'.'&nbsp;＞&nbsp;';
+					echo the_title('','', FALSE) ."&nbsp;＞&nbsp;ホテル料金</li>";
 				} else {
 					$category_id = get_cat_ID( $category[0]->cat_name );
 					if ( 0 === get_query_var( 'page' ) ) {
