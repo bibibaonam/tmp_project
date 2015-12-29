@@ -636,9 +636,13 @@ function get_breadcrumbs(){
 					echo '<li>&nbsp;＞&nbsp;'. '<a href="' . esc_url( get_category_link( $hotelsCat->term_id ) ) . '">'.$hotelsCat->name.'</a>'.'&nbsp;＞&nbsp;';
 					echo the_title('','', FALSE) ."</li>";
 				} else if ($post_type == 'hotel_price') {
-					$hotelsCat = get_category_by_slug('hotels');
+					/*$hotelsCat = get_category_by_slug('hotels');
 					echo '<li>&nbsp;＞&nbsp;'. '<a href="' . esc_url( get_category_link( $hotelsCat->term_id ) ) . '">'.$hotelsCat->name.'</a>'.'&nbsp;＞&nbsp;';
-					echo the_title('','', FALSE) ."&nbsp;＞&nbsp;ホテル料金</li>";
+					echo the_title('','', FALSE) ."&nbsp;＞&nbsp;ホテル料金</li>";*/
+					$hotelsCat = get_category_by_slug('hotels');
+					$hotelLink = str_replace('hotel_price', 'hotels', "//".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]);
+					echo '<li>&nbsp;＞&nbsp;'. '<a href="' . esc_url( get_category_link( $hotelsCat->term_id ) ) . '">'.$hotelsCat->name.'</a>'.'&nbsp;＞&nbsp;';
+					echo '<a href="'.$hotelLink.'">'.the_title('','', FALSE) ."</a>&nbsp;＞&nbsp;ホテル料金</li>";
 				} else {
 					$category_id = get_cat_ID( $category[0]->cat_name );
 					if ( 0 === get_query_var( 'page' ) ) {
@@ -821,6 +825,8 @@ function shailan_filter_terms( $exclusions, $args ){
 		// $exclusions = 'AND ( t.slug IN (3, 75, 79, 82, 80, 78, 212, 213, 214, 215, 81, 216, 217, 218, 219) )';
 		// echo $args['taxonomy'];die;
 		$exclusions .= " AND ( t.slug IN ('hotels', 'list-ubud', 'list-semi', 'list-kuta', 'list-jim', 'list-nusa', 'list-sanur', 'list-yogyakarta', 'list-tanahlot', 'list-canggu', 'list-candidasa', 'list-menjangan', 'list-lembongan', 'list-lovina', 'list-lombok') )";
+	}else if((isset($_GET['post_type']) && $_GET['post_type'] == 'hotel_price' && isset($args['taxonomy']) && $args['taxonomy'] == 'category') || (isset($_GET['taxonomy']) && $_GET['taxonomy'] == 'category' && isset($_GET['post_type']) && $_GET['post_type'] == 'hotel_price') || ($args['taxonomy'] != 'area' && 'hotel_price' == $current_screen->post_type && in_array($pagenow, array('post-new.php', 'post.php'))) ){
+		$exclusions .= " AND t.slug = 'hotel-price' ";
 	}
 	// Return our SQL statement
 	return $exclusions;
@@ -833,7 +839,7 @@ function wpse_72603_default_categories()
 	global $current_screen;
 
 	// If not our post type, do nothing
-	if( 'hotels' != $current_screen->post_type )
+	if( 'hotels' != $current_screen->post_type || 'hotel_price' != $current_screen->post_type)
 		return;
 
 	?>
@@ -845,6 +851,10 @@ function wpse_72603_default_categories()
 
 			// Tick the checkboxes of categories 3
 			//$('#in-category-3').attr('checked', true);
+			
+			<?php if ('hotel_price' == $current_screen->post_type):?>
+				$('#categorychecklist').find('input').attr('checked', true);
+			<?php endif;?>
 
 			// Disable the clicks in categories 3
 			$('#in-category-3').click(function() { return false; });

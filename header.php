@@ -204,7 +204,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <?php if( is_home() || is_front_page()): ?>
 	<link href="/css/global.css" rel="stylesheet" type="text/css" />
-<?php elseif(in_category('hotels') || checkCatHotels() || is_single_hotel()): ?>
+<?php elseif(in_category('hotels') || checkCatHotels() || is_single_hotel() || get_post_type(get_the_ID()) == 'hotel_price' ): ?>
 	<link href="/css/global-res.css" rel="stylesheet" type="text/css" />
 <?php else : ?>
 <link href="/css/global.css" rel="stylesheet" type="text/css" />
@@ -987,7 +987,7 @@ location.replace('/');
 </div>
 
 <?php //if( is_home() || is_front_page() || is_single('padma-resort-bali-at-legian')): ?>
-<?php if( is_home() || is_front_page() || is_single_hotel()): ?>	
+<?php if( is_home() || is_front_page() || is_single_hotel() || get_post_type(get_the_ID()) == 'hotel_price'): ?>	
 	
 <div id="gNaviSp">
 <ul>
