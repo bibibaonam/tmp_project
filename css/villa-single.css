@@ -747,7 +747,7 @@
 #price_list table th,
 #price_list table td{
 	display:table-cell;
-	font-size:85%;
+	/*font-size:85%;*/
 	line-height:1.2em;
 	vertical-align:middle;
 	padding:10px;
@@ -796,7 +796,7 @@
 	font-weight:normal;
 }
 #price_list table#room_price th.date{
-	width:17.8%;
+	width:18.8%;
 }
 #price_list table#price_info{
 	border-bottom:solid 2px #d28d47;
@@ -870,10 +870,11 @@
 	font-weight:bold;
 	border-right: 1px solid #d28d47;
 	text-align: center;
+	background-color: #fcecbf;
 }
 #price_list table#room_price .col-last{
 	border-right: 2px solid #d28d47;
-	width: 84px;
+	width: 124px;
 }	
 #price_list table#room_price .pattern-sign {
 	width: 8px;
@@ -881,7 +882,6 @@
 #price_list table#room_price{
 	border-bottom: 2px solid #d28d47;
 }
-
 /* color */
 /* クタ／レギャン */
 .category-villa-kuta-legian #price_list table th,
@@ -1753,7 +1753,7 @@
 
 
 /* price_list */
-#price_list p{
+/*#price_list p{
 	font-size:10px;
 	margin: 0px 4% 10px;
 }
@@ -1825,7 +1825,7 @@
 #price_list #return{
 	font-size:10px;
 	padding:30px 4% 15px;
-}
+}*/
 
 
 /* color */
@@ -2816,3 +2816,39 @@
     background-color: #5e3219 !important;
 }
 
+ #responsive {
+	display: none;
+	position:absolute; 
+	width:80px; 
+	margin-left: -80px;
+	border-bottom: 2px solid #d28d47;
+	border-right: 2px solid #d28d47;
+	background-color: #fcecbf;
+}
+.responsive-table {
+	border-top: 2px solid #d28d47;
+	border-left: 2px solid #d28d47;
+	padding: 10px 0;
+	width: 79px;
+	text-align: center;
+	font-weight: bold;
+	display:table;
+}
+.responsive-table div{
+	display: table-cell;
+	vertical-align:middle;
+}
+.responsive_price_list {
+	width: auto; 
+	overflow-x:scroll;  
+	margin-left:80px; 
+	overflow-y:visible;
+	padding-bottom:1px;
+	border-right: 2px solid #d28d47;
+}
+#price_list table th p.pgraph,
+#price_list table td span.pgraph {
+	font-size: 100% !important;
+	color: #333;
+	margin: auto;
+}
