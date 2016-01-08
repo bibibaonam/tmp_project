@@ -1,0 +1,2854 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#contents{
+	width:100%;
+}
+
+#detail{
+	width:auto;
+	background-image:url(/img/villa/detail_y_bg.jpg);
+}
+#detaile_h{
+	width:100%;
+	background-image:url(/img/villa/detail_h_bg.jpg);
+}
+#detaile_f{
+	width:100%;
+	background-image:url(/img/villa/detail_f_bg.jpg);
+}
+
+#main{
+	margin:0px 30px 20px;
+	overflow:hidden;
+}
+#main_title{
+	float:left;
+	width:65%;
+}
+#main_title h1{
+	font-size: 197%;
+    line-height: 1.2em;
+    margin-bottom: 5px;
+}
+#main_title span {
+    font-size: 116%;
+    font-weight: bold;
+}
+#main_info{
+	float:right;
+	width:33%;
+	text-align:right;
+}
+#area {
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+    color: #fff;
+    font-size: 77%;
+    margin-top: 3px;
+    padding: 3px;
+    text-align: center;
+    width:auto;
+	min-width:80px;
+}
+#rank{
+	padding-top:5px;
+}
+#rank img{
+	/*width:100%;*/
+	height:auto;
+}
+#rank img.rank5{
+	max-width:236px;
+}
+#ie8 #rank img.rank5{
+	width:236px;
+	height:17px;
+}
+#rank img.rank4-5{
+	max-width:337px;
+}
+#ie8 #rank img.rank4-5{
+	width:337px;
+	height:17px;
+}
+#main_info ul{
+	padding-top:5px;
+	font-size:0;
+}
+#main_info ul li{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	font-size:12px;
+	margin-left:10px;
+	margin-bottom:5px;
+	padding:5px 10px;
+    color: #fff;
+	line-height:1.2em;
+	font-weight:bold;
+	background-color:#FFB43C;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+#main_img{
+	margin:0px 1px 20px;
+}
+#main_img img{
+	width:100%;
+	height:auto;
+}
+
+#main_img_detail{
+	margin:0px 1px 20px;
+}
+#main_img_detail img{
+	width: 100%;
+	height: auto;
+	/*height:395px;*/
+}
+
+.tour{
+	margin-left:30px;
+	margin-right:30px;
+	padding:5px 10px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border:solid 2px #d28d47;
+}
+#tour1{
+	margin-bottom:40px;
+}
+.tour ul{
+	font-size:0;
+	width:100%;
+}
+.tour li{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	width:32%;
+	padding:5px 10px 5px 0px;
+	font-size:16px;
+	line-height:1.2em;
+	vertical-align:middle;
+	overflow:hidden;
+}
+.tour li.pr0{
+	padding-right:0%;
+	float: right;
+}
+.tour li.tour_read,
+.tour li.tour_hotel{
+	font-size:12px;
+}
+.tour li.tour_read{
+	vertical-align:top;
+}
+.tour li strong{
+	display:block;
+	padding-top:7px;
+	float:left;
+}
+.tour li.tour_read strong{
+	padding-top:0px;
+	font-size:14px;
+	line-height:1.2em;
+	float:none;
+}
+.tour li .btn{
+	float:left;
+	font-size:14px;
+	line-height:1.2em;
+	margin-left:15px;
+}
+.tour li .btn a{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	color:#FFF;
+	padding:5px 10px 3px;
+	font-weight:bold;
+	text-decoration:none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+/*.tour li.tour_hotel .btn a{
+	background-color:#5e3219 !important;
+}*/
+.tour li .btn a:hover{
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+
+
+#lNavi{
+	top:0;
+	z-index:10;
+	margin-left:1px;
+	margin-right:1px;
+	border-bottom:solid 1px #5e3219;
+}
+#lNavi.active{
+	box-shadow:rgba(218, 210, 182, 0.4) 2px 2px 2px 2px;
+	-webkit-box-shadow:rgba(218, 210, 182, 0.4) 2px 2px 2px 2px;
+	-moz-box-shadow:rgba(218, 210, 182, 0.4) 2px 2px 2px 2px;
+	width: 958px;
+}
+
+#ie8 #lNavi.active{
+}
+#lNavi ul{
+	background-color:#FFF;
+	font-size:0;
+	border-top:solid 1px #5e3219;
+	border-right:solid 1px #5e3219;
+}
+#lNavi.active ul{
+	margin:0px;
+}
+#lNavi ul li{
+	display:inline-block;
+    /*display : inline;
+    *zoom : 1;*/
+	width:16.666%;
+	font-weight:bold;
+	text-align:center;
+}
+#ie8 #lNavi ul li.lNavi1,
+#ie8 #lNavi ul li.lNavi4{
+	width:110px;
+}
+#ie8 #lNavi ul li.lNavi2{
+	width:100px;
+}
+#ie8 #lNavi ul li.lNavi3{
+	width:70px;
+}
+#ie8 #lNavi ul li.lNavi5{
+	width:120px;
+}
+#lNavi ul li p,
+#lNavi ul li a{
+	border-left:solid 1px #5e3219;
+	display:block;
+	padding:15px 0 30px;
+	font-size:13px;
+	line-height:1.2em;
+}
+#lNavi ul li p{
+	color:#CCC;
+}
+#lNavi ul li a{
+	color:#5e3219;
+	text-decoration:none;
+	background-image:url(/img/villa/bg_lnavi_btn.png);
+	background-repeat:no-repeat;
+	background-position:center bottom;
+}
+#lNavi ul li a:hover{
+	color:#FFF;
+	background-color:#5e3219;
+	background-image:url(/img/villa/bg_lnavi_btn_on.png);
+}
+#lNavi ul li#faq_open a{
+	background-image:url(/img/villa/bg_faq_btn.png);
+}
+#lNavi ul li#faq_open a:hover{
+	background-image:url(/img/villa/bg_faq_btn_on.png);
+}
+#lNavi ul li p br,
+#lNavi ul li a br{
+	display:none;
+}
+
+.section{
+	margin-left:30px;
+	margin-right:30px;
+	margin-bottom:20px;
+	padding-top:80px;
+}
+.section h2{
+	font-size:138.5%;
+	line-height:1.2em;
+	margin-bottom:10px;
+}
+.section h3{
+	font-size:108%;
+	line-height:1.2em;
+	margin-bottom:10px;
+}
+.section p{
+	font-size:93%;
+}
+.section table{
+	width:100%;
+	border-top: 1px dotted #666;
+}
+.section table th,
+.section table td{
+	font-size:85%;
+	line-height:1.5em;
+	padding:5px 10px;
+	border-bottom:dotted 1px #666;
+	word-break: break-all;
+}
+.section table a{
+	color:#333;
+}
+.section table a:hover{
+	color:#999;
+}
+.section .slide_btn{
+	font-size:108%;
+	font-weight:bold;
+	line-height:1.2em;
+	text-align:center;
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.section .slide_btn a{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	width:100%;
+	color:#FFF;
+	padding:10px 0px 22px;
+	background-color:#5e3219;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-image:url(/img/villa/bg_slide_btn.gif);
+	background-repeat:no-repeat;
+	background-position:center 30px;
+	cursor:pointer;
+}
+.section .slide_btn a.active{
+	background-image:url(/img/villa/bg_slide_btn_close.gif);
+}
+.section .slide_btn a:hover{
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+
+
+/* hotel */
+#hotel_txt{
+	margin-bottom:30px;
+	position:relative;
+}
+#hotel_txt .txt{
+	margin-right:210px;
+	min-height: 120px;
+}
+#hotel_txt #villa_trip{
+	width:190px;
+	position:absolute;
+	top:0px;
+	right:0px;
+	
+}
+#hotel_txt #villa_trip iframe{
+	width:100% !important;
+}
+#hotel_info1,
+#hotel_info2{
+	margin-bottom:30px;
+}
+#hotel_info2 .left{
+	width:48%;
+}
+#hotel_info2 .right{
+	width:48%;
+}
+#hotel_info2 table td{
+	width:1.5em;
+}
+
+#icon_list{
+	margin-bottom:20px;
+}
+#icon_list ul{
+	width:100%;
+	font-size:0;
+	text-align:center;
+	margin-bottom:5px;
+}
+#icon_list ul li{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	margin:0px 5px;
+}
+#icon_list .icon_btn{
+	font-size:93%;
+	line-height:1.2em;
+	text-align:center;
+}
+#icon_list .icon_btn a:hover{
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+
+#hotel_photo{
+	font-size:0;
+}
+#hotel_photo li{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	width:48.5%;
+	margin:10px 3% 10px 0px;
+	vertical-align:top;
+}
+#hotel_photo li.even{
+	margin-right:0%;
+}
+#hotel_photo li .photo{
+	margin-bottom:3px;
+}
+#hotel_photo li .photo img{
+	/*width:100%;*/
+	height:auto;
+	width:100%;
+	/*height:259px;*/
+}
+#hotel_photo li span{
+	display:block;
+	text-align:right;
+	font-size:11px;
+	line-height:1.2em;
+}
+
+#lounge ul li{
+	padding-top:20px;
+	display:block;
+}
+#lounge ul li .photo{
+	float:left;
+	width:48.5%;
+	margin-right:3%;
+}
+#lounge ul li .photo img{
+	/*width:100%;*/
+	height:auto;
+	width:100%;
+	/*height:259px;*/
+}
+#lounge ul li .txt{
+	margin-left:52%;
+}
+#lounge ul li .txt p{
+	margin-bottom:20px;
+}
+#lounge ul li .txt li{
+	font-size:93%;
+	line-height:1.5em;
+	padding-top:0px;
+}
+
+
+/* rooms */
+#rooms li{
+	display:block;
+	padding-top:20px;
+	border-top:dotted 1px #666;
+	margin-bottom:20px;
+}
+#rooms li:first-child{
+	padding-top:0px;
+	border-top:none;
+}
+#rooms li .left{
+	width:35%;
+}
+#rooms li .right{
+	width:62%;
+}
+#rooms li .left .photo{
+	margin-bottom:3px;
+}
+#rooms li .left .photo img{
+	/*width:100%;*/
+	height:auto;
+	width:100%;
+	/*height:187px;*/
+}
+#rooms li .left span{
+	font-size:85%;
+	display:block;
+	margin-bottom:10px;
+	line-height:1.2em;
+}
+#rooms li .left .btn{
+	font-size:108%;
+	font-weight:bold;
+	text-align:center;
+}
+#rooms li .left .btn a{
+	display:block;
+	color:#FFF;
+	padding:5px 10px 3px;
+	text-decoration:none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+#rooms li .left .btn a:hover{
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+#rooms li .right p{
+	margin-bottom:20px;
+}
+#rooms li .right ul li{
+	padding-top:0px;
+	margin-bottom:0px;
+	font-size:93%;
+	line-height:1.5em;
+	border-top:none;
+	text-indent:-1em;
+	margin-left:1em;
+}
+#rooms li .right .room_detail{
+	margin-top:20px;
+	border:solid 2px #CCC;
+	background-color:#EEE;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	padding:10px;
+}
+#room_other{
+	display:none;
+	padding-top:20px;
+	border-top:dotted 1px #666;
+}
+
+
+/* spa */
+#spa_main{
+	margin-bottom:20px;
+	overflow:hidden;
+}
+#spa_main .photo{
+	width:48.5%;
+	float:left;
+}
+#spa_main .photo img{
+	/*width:100%;*/
+	width:100%;
+	height:auto;
+	/*height:259px;*/
+}
+#spa_main .txt{
+	float:right;
+	width:48.5%;
+}
+#spa_main .txt p{
+	margin-bottom:20px;
+}
+#spa_main .txt li{
+	font-size:93%;
+	line-height:1.5em;
+}
+#spa h4{
+	font-size:100%;
+	padding-bottom:5px;
+	border-bottom:dotted 1px #666;
+}
+#spa li{
+	display:block;
+	border-bottom:dotted 1px #666;
+}
+#spa_main .txt li,
+#spa li table,
+#spa li table th,
+#spa li table td{
+	border:none;
+}
+#spa li table th,
+#spa li table td{
+	padding:10px;
+}
+#spa li table th{
+	width:30%;
+	vertical-align:top;
+}
+#spa li table th strong{
+	display:block;
+}
+#spa li table td .btn{
+	padding-top:10px;
+	text-align:right;
+}
+#spa li table td .btn a{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	color:#FFF;
+	font-size:14px;
+	font-weight:bold;
+	padding:5px 10px 3px;
+	text-decoration:none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+#spa li table td .btn a:hover{
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+#spa_other{
+	display:none;
+}
+#spa .slide_btn{
+	margin-top:20px;
+}
+
+
+/* restaurant */
+#restaurant{
+	margin-bottom:40px;
+}
+#restaurant li{
+	display:block;
+	padding-top:20px;
+	border-top:dotted 1px #666;
+	margin-bottom:20px;
+}
+#restaurant li:first-child{
+	padding-top:0px;
+	border-top:none;
+}
+#rest_other{
+	display:none;
+	border-top:dotted 1px #666;
+	padding-top:20px;
+}
+#restaurant .photo{
+	width:48.5%;
+	float:left;
+}
+#restaurant .photo img{
+	/*width:100%;*/
+	height:auto;
+	width:100%;
+	/*height:259px;*/
+}
+#restaurant .txt{
+	float:right;
+	width:48.5%;
+}
+#restaurant .txt p{
+	margin-bottom:20px;
+}
+#restaurant .txt p a:hover{
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+
+
+/* faq */
+#faq{
+	position:fixed;
+	background-color:#FFF;
+	z-index:1000;
+	display:none;
+	width:80%;
+	max-width:1000px;
+}
+#faq .inner{
+	border:solid 2px #5e3219;
+	position:relative;
+	padding:60px 100px;
+}
+#faq .inner li{
+	padding-top:20px;
+	margin-top:20px;
+	border-top:dotted 1px #666;
+}
+#faq .inner li:first-child{
+	padding-top:0px;
+	margin-top:0px;
+	border-top:none;
+}
+#faq .inner li h3{
+	display:block;
+	padding-left:30px;
+	background-image:url(/img/villa/icon_faq1.gif);
+	background-repeat:no-repeat;
+	font-size:138.5%;
+	line-height:1.2em;
+	padding-top:4px;
+	padding-bottom:10px;
+	color:#5e3219;
+}
+#faq .inner li p{
+	font-size:93%;
+}
+#faq .inner li p strong{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	padding-top:4px;
+	padding-left:22px;
+	background-image:url(/img/villa/icon_faq2.gif);
+	background-repeat:no-repeat;
+	background-position:left center;
+	font-weight:normal;
+}
+#faq_close{
+	width:60px;
+	height:60px;
+	position:absolute;
+	top:10px;
+	left:10px;
+	cursor:pointer;
+	background-image:url(/img/villa/btn_faq_close.gif);
+	background-repeat:no-repeat;
+}
+#faq_close:hover{
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+#modal-overlay{
+	display:none;
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-image:url(/img/villa/black30.png);
+	z-index:999;
+	cursor:pointer;
+}
+
+
+/* price_list */
+#price_list p{
+	font-size:85%;
+	line-height:1.2em;
+	margin:0px 30px 10px;
+	font-weight:bold;
+}
+#price_list table{
+	width:100%;
+}
+#price_list table tr{
+	display:table-row;
+}
+#price_list table th,
+#price_list table td{
+	display:table-cell;
+	/*font-size:85%;*/
+	line-height:1.2em;
+	vertical-align:middle;
+	padding:10px;
+	border-top:solid 1px #d28d47;
+	border-left:solid 1px #d28d47;
+}
+#price_list table#room_price th{
+	min-width:3.6em;
+	text-align: center;
+}
+#price_list table#room_price tr > th,
+#price_list table#room_price tr > td{
+	border-top:solid 2px #d28d47;
+}
+#price_list table th:first-child,
+#price_list table tr > td:first-child{
+	/*padding-left:30px;
+	font-weight:bold;
+	border-left: 2px solid #d28d47;
+	border-right: 1px solid #d28d47;*/
+}
+#price_list table th.room{
+	width:103px;
+}
+#price_list table th.number{
+	width:41px;
+}
+#price_list table th.reservation{
+	width:84px;
+}
+#price_list table#room_price td.price{
+	padding:0px;
+}
+#price_list table#room_price td.price td{
+	border-top:solid 1px #d28d47;
+	font-size:11px;
+	padding-left:10px;
+	min-width:3.6em;
+}
+#price_list table#room_price td.price tr:first-child td{
+	border-top:none;
+}
+#price_list table#room_price td.price td:first-child{
+	border-left:none !important;
+	color:#333 !important;
+	font-weight:normal;
+}
+#price_list table#room_price th.date{
+	width:18.8%;
+}
+#price_list table#price_info{
+	border-bottom:solid 2px #d28d47;
+}
+#price_list table#price_info th,
+#price_list table#price_info td{
+	border-top:solid 2px #d28d47;
+	border-left:none;
+}
+#price_list table#price_info th{
+	width:120px;
+}
+#price_list table#price_info td{
+	padding-left:0px;
+	font-weight:normal;
+}
+#price_list table#price_info td.bp1{
+	border-top:solid 1px #d28d47;
+}
+#price_list table td .ttl{
+	display:none;
+}
+#price_list table td span{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	padding:2px 4px;
+	color:#FFF;
+	margin-right:5px;
+}
+#price_list .btn{
+	text-align:center;
+}
+#price_list .btn2{
+	display:none;
+}
+#price_list .btn a{
+	display:inline-block;
+    *display : inline;
+    *zoom : 1;
+	padding:12px 10px 10px;
+	line-height:1.2em;
+	background-color:#5E3219;
+	color:#FFF;
+	font-size:12px;
+	text-decoration:none;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+#price_list .btn a:hover{
+	background-color:#9E8475;
+}
+#price_list #return{
+	text-align:center;
+	padding:30px 0px 15px;
+	font-size:85%;
+	line-height:1.2em;
+	font-weight:bold;
+}
+
+#price_list table#room_price tr > th.sub,
+#price_list table#room_price tr > td.sub{
+	border-top: 1px solid #d28d47;
+	border-left:1px solid #d28d47;
+}
+
+#price_list table#room_price .col-first{
+	width: 120px;
+	border-left:2px solid #d28d47;
+	font-weight:bold;
+	border-right: 1px solid #d28d47;
+	text-align: center;
+	background-color: #fcecbf;
+}
+#price_list table#room_price .col-last{
+	border-right: 2px solid #d28d47;
+	width: 124px;
+}	
+#price_list table#room_price .pattern-sign {
+	width: 8px;
+}
+#price_list table#room_price{
+	border-bottom: 2px solid #d28d47;
+}
+/* color */
+/* クタ／レギャン */
+.category-villa-kuta-legian #price_list table th,
+.category-villa-kuta-legian #price_list table td,
+.category-villa-kuta-legian #price_list table td.price td,
+.category-villa-kuta-legian #price_list table#price_info td.bp1{
+	border-color:#E8C6A3;
+}
+.category-villa-kuta-legian #price_list table td span{
+    background-color:#E8C6A3;
+}
+.category-villa-kuta-legian #main_title,
+.category-villa-kuta-legian .section h2,
+.category-villa-kuta-legian .section h3,
+.category-villa-kuta-legian #icon_list .icon_btn a,
+.category-villa-kuta-legian #restaurant .txt p a,
+.category-villa-kuta-legian #price_list p,
+.category-villa-kuta-legian #price_list table th,
+.category-villa-kuta-legian #price_list table#room_price tr > td:first-child,
+.category-villa-kuta-legian #price_list #return a{
+	color:#d28d47;
+}
+.category-villa-kuta-legian #area,
+.category-villa-kuta-legian .tour li .btn a,
+.category-villa-kuta-legian #rooms li .left .btn a,
+.category-villa-kuta-legian #spa li table td .btn a{
+    background-color: #d28d47;
+}
+.category-villa-kuta-legian .tour,
+.category-villa-kuta-legian #price_list table#room_price tr > th,
+.category-villa-kuta-legian #price_list table#room_price tr > td,
+.category-villa-kuta-legian #price_list table#price_info{
+	border-color:#d28d47;
+}
+.category-villa-kuta-legian #price_list table#room_price tr > th,
+.category-villa-kuta-legian #price_list table#room_price tr > td{
+	border-left:solid 1px #E8C6A3;
+}
+
+/* スミニャック／クロボカン */
+.category-villa-seminyak-kerobokan #price_list table th,
+.category-villa-seminyak-kerobokan #price_list table td,
+.category-villa-seminyak-kerobokan #price_list table td.price td,
+.category-villa-seminyak-kerobokan #price_list table#price_info td.bp1{
+	border-color:#F79FA2;
+}
+.category-villa-seminyak-kerobokan #price_list table td span{
+    background-color:#F79FA2;
+}
+.category-villa-seminyak-kerobokan #main_title,
+.category-villa-seminyak-kerobokan .section h2,
+.category-villa-seminyak-kerobokan .section h3,
+.category-villa-seminyak-kerobokan #icon_list .icon_btn a,
+.category-villa-seminyak-kerobokan #restaurant .txt p a,
+.category-villa-seminyak-kerobokan #price_list p,
+.category-villa-seminyak-kerobokan #price_list table th,
+.category-villa-seminyak-kerobokan #price_list table#room_price tr > td:first-child,
+.category-villa-seminyak-kerobokan #price_list #return a{
+	color:#f03f46;
+}
+.category-villa-seminyak-kerobokan #area,
+.category-villa-seminyak-kerobokan .tour li .btn a,
+.category-villa-seminyak-kerobokan #rooms li .left .btn a,
+.category-villa-seminyak-kerobokan #spa li table td .btn a{
+    background-color: #f03f46;
+}
+.category-villa-seminyak-kerobokan .tour,
+.category-villa-seminyak-kerobokan #price_list table#room_price tr > th,
+.category-villa-seminyak-kerobokan #price_list table#room_price tr > td,
+.category-villa-seminyak-kerobokan #price_list table#price_info{
+	border-color:#f03f46;
+}
+.category-villa-seminyak-kerobokan #price_list table#room_price tr > th,
+.category-villa-seminyak-kerobokan #price_list table#room_price tr > td{
+	border-left:solid 1px #F79FA2;
+}
+
+/* ヌサドゥア */
+.category-villa-nusadua #price_list table th,
+.category-villa-nusadua #price_list table td,
+.category-villa-nusadua #price_list table td.price td,
+.category-villa-nusadua #price_list table#price_info td.bp1{
+	border-color:#EBB2D9;
+}
+.category-villa-nusadua #price_list table td span{
+    background-color:#EBB2D9;
+}
+.category-villa-nusadua #main_title,
+.category-villa-nusadua .section h2,
+.category-villa-nusadua .section h3,
+.category-villa-nusadua #icon_list .icon_btn a,
+.category-villa-nusadua #restaurant .txt p a,
+.category-villa-nusadua #price_list p,
+.category-villa-nusadua #price_list table th,
+.category-villa-nusadua #price_list table#room_price tr > td:first-child,
+.category-villa-nusadua #price_list #return a{
+	color:#d766b3;
+}
+.category-villa-nusadua #area,
+.category-villa-nusadua .tour li .btn a,
+.category-villa-nusadua #rooms li .left .btn a,
+.category-villa-nusadua #spa li table td .btn a{
+    background-color: #d766b3;
+}
+.category-villa-nusadua .tour,
+.category-villa-nusadua #price_list table#room_price tr > th,
+.category-villa-nusadua #price_list table#room_price tr > td,
+.category-villa-nusadua #price_list table#price_info{
+	border-color:#d766b3;
+}
+.category-villa-nusadua #price_list table#room_price tr > th,
+.category-villa-nusadua #price_list table#room_price tr > td{
+	border-left:solid 1px #EBB2D9;
+}
+
+/* ジンバラン／ウルワツ */
+.category-villa-jimbaran-uluwatu #price_list table th,
+.category-villa-jimbaran-uluwatu #price_list table td,
+.category-villa-jimbaran-uluwatu #price_list table td.price td,
+.category-villa-jimbaran-uluwatu #price_list table#price_info td.bp1{
+	border-color:#7FCCCC;
+}
+.category-villa-jimbaran-uluwatu #price_list table td span{
+    background-color:#7FCCCC;
+}
+.category-villa-jimbaran-uluwatu #main_title,
+.category-villa-jimbaran-uluwatu .section h2,
+.category-villa-jimbaran-uluwatu .section h3,
+.category-villa-jimbaran-uluwatu #icon_list .icon_btn a,
+.category-villa-jimbaran-uluwatu #restaurant .txt p a,
+.category-villa-jimbaran-uluwatu #price_list p,
+.category-villa-jimbaran-uluwatu #price_list table th,
+.category-villa-jimbaran-uluwatu #price_list table#room_price tr > td:first-child,
+.category-villa-jimbaran-uluwatu #price_list #return a{
+	color:#009999;
+}
+.category-villa-jimbaran-uluwatu #area,
+.category-villa-jimbaran-uluwatu .tour li .btn a,
+.category-villa-jimbaran-uluwatu #rooms li .left .btn a,
+.category-villa-jimbaran-uluwatu #spa li table td .btn a{
+    background-color: #009999;
+}
+.category-villa-jimbaran-uluwatu .tour,
+.category-villa-jimbaran-uluwatu #price_list table#room_price tr > th,
+.category-villa-jimbaran-uluwatu #price_list table#room_price tr > td,
+.category-villa-jimbaran-uluwatu #price_list table#price_info{
+	border-color:#009999;
+}
+.category-villa-jimbaran-uluwatu #price_list table#room_price tr > th,
+.category-villa-jimbaran-uluwatu #price_list table#room_price tr > td{
+	border-left:solid 1px #7FCCCC;
+}
+
+/* ウブド */
+.category-villa-ubud #price_list table th,
+.category-villa-ubud #price_list table td,
+.category-villa-ubud #price_list table td.price td,
+.category-villa-ubud #price_list table#price_info td.bp1{
+	border-color:#ADBD9B;
+}
+.category-villa-ubud #price_list table td span{
+    background-color:#ADBD9B;
+}
+.category-villa-ubud #main_title,
+.category-villa-ubud .section h2,
+.category-villa-ubud .section h3,
+.category-villa-ubud #icon_list .icon_btn a,
+.category-villa-ubud #restaurant .txt p a,
+.category-villa-ubud #price_list p,
+.category-villa-ubud #price_list table th,
+.category-villa-ubud #price_list table#room_price tr > td:first-child,
+.category-villa-ubud #price_list #return a{
+	color:#5c7b37;
+}
+.category-villa-ubud #area,
+.category-villa-ubud .tour li .btn a,
+.category-villa-ubud #rooms li .left .btn a,
+.category-villa-ubud #spa li table td .btn a{
+    background-color: #5c7b37;
+}
+.category-villa-ubud .tour,
+.category-villa-ubud #price_list table#room_price tr > th,
+.category-villa-ubud #price_list table#room_price tr > td,
+.category-villa-ubud #price_list table#price_info{
+	border-color:#5c7b37;
+}
+.category-villa-ubud #price_list table#room_price tr > th,
+.category-villa-ubud #price_list table#room_price tr > td{
+	border-left:solid 1px #ADBD9B;
+}
+
+/* サヌール */
+.category-villa-sanur #price_list table th,
+.category-villa-sanur #price_list table td,
+.category-villa-sanur #price_list table td.price td,
+.category-villa-sanur #price_list table#price_info td.bp1{
+	border-color:#99A9C6;
+}
+.category-villa-sanur #price_list table td span{
+    background-color:#99A9C6;
+}
+.category-villa-sanur #main_title,
+.category-villa-sanur .section h2,
+.category-villa-sanur .section h3,
+.category-villa-sanur #icon_list .icon_btn a,
+.category-villa-sanur #restaurant .txt p a,
+.category-villa-sanur #price_list p,
+.category-villa-sanur #price_list table th,
+.category-villa-sanur #price_list table#room_price tr > td:first-child,
+.category-villa-sanur #price_list #return a{
+	color:#34548e;
+}
+.category-villa-sanur #area,
+.category-villa-sanur .tour li .btn a,
+.category-villa-sanur #rooms li .left .btn a,
+.category-villa-sanur #spa li table td .btn a{
+    background-color: #34548e;
+}
+.category-villa-sanur .tour,
+.category-villa-sanur #price_list table#room_price tr > th,
+.category-villa-sanur #price_list table#room_price tr > td,
+.category-villa-sanur #price_list table#price_info{
+	border-color:#34548e;
+}
+.category-villa-sanur #price_list table#room_price tr > th,
+.category-villa-sanur #price_list table#room_price tr > td{
+	border-left:solid 1px #99A9C6;
+}
+
+/* チャングー */
+.category-villa-canggu #price_list table th,
+.category-villa-canggu #price_list table td,
+.category-villa-canggu #price_list table td.price td,
+.category-villa-canggu #price_list table#price_info td.bp1{
+	border-color:#FFE5A8;
+}
+.category-villa-canggu #price_list table td span{
+    background-color:#FFE5A8;
+}
+.category-villa-canggu #main_title,
+.category-villa-canggu .section h2,
+.category-villa-canggu .section h3,
+.category-villa-canggu #icon_list .icon_btn a,
+.category-villa-canggu #restaurant .txt p a,
+.category-villa-canggu #price_list p,
+.category-villa-canggu #price_list table th,
+.category-villa-canggu #price_list table#room_price tr > td:first-child,
+.category-villa-canggu #price_list #return a{
+	color:#ffcb51;
+}
+.category-villa-canggu #area,
+.category-villa-canggu .tour li .btn a,
+.category-villa-canggu #rooms li .left .btn a,
+.category-villa-canggu #spa li table td .btn a{
+    background-color: #ffcb51;
+}
+.category-villa-canggu .tour,
+.category-villa-canggu #price_list table#room_price tr > th,
+.category-villa-canggu #price_list table#room_price tr > td,
+.category-villa-canggu #price_list table#price_info{
+	border-color:#ffcb51;
+}
+.category-villa-canggu #price_list table#room_price tr > th,
+.category-villa-canggu #price_list table#room_price tr > td{
+	border-left:solid 1px #FFE5A8;
+}
+
+/* チャンディダサ */
+.category-villa-candidasa #price_list table th,
+.category-villa-candidasa #price_list table td,
+.category-villa-candidasa #price_list table td.price td,
+.category-villa-candidasa #price_list table#price_info td.bp1{
+	border-color:#C6B7BB;
+}
+.category-villa-candidasa #price_list table td span{
+    background-color:#C6B7BB;
+}
+.category-villa-candidasa #main_title,
+.category-villa-candidasa .section h2,
+.category-villa-candidasa .section h3,
+.category-villa-candidasa #icon_list .icon_btn a,
+.category-villa-candidasa #restaurant .txt p a,
+.category-villa-candidasa #price_list p,
+.category-villa-candidasa #price_list table th,
+.category-villa-candidasa #price_list table#room_price tr > td:first-child,
+.category-villa-candidasa #price_list #return a{
+	color:#8d7077;
+}
+.category-villa-candidasa #area,
+.category-villa-candidasa .tour li .btn a,
+.category-villa-candidasa #rooms li .left .btn a,
+.category-villa-candidasa #spa li table td .btn a{
+    background-color: #8d7077;
+}
+.category-villa-candidasa .tour,
+.category-villa-candidasa #price_list table#room_price tr > th,
+.category-villa-candidasa #price_list table#room_price tr > td,
+.category-villa-candidasa #price_list table#price_info{
+	border-color:#8d7077;
+}
+.category-villa-candidasa #price_list table#room_price tr > th,
+.category-villa-candidasa #price_list table#room_price tr > td{
+	border-left:solid 1px #C6B7BB;
+}
+
+/* タナロット */
+.category-villa-tanahlot #price_list table th,
+.category-villa-tanahlot #price_list table td,
+.category-villa-tanahlot #price_list table td.price td,
+.category-villa-tanahlot #price_list table#price_info td.bp1{
+	border-color:#F6B9A5;
+}
+.category-villa-tanahlot #price_list table td span{
+    background-color:#F6B9A5;
+}
+.category-villa-tanahlot #main_title,
+.category-villa-tanahlot .section h2,
+.category-villa-tanahlot .section h3,
+.category-villa-tanahlot #icon_list .icon_btn a,
+.category-villa-tanahlot #restaurant .txt p a,
+.category-villa-tanahlot #price_list p,
+.category-villa-tanahlot #price_list table th,
+.category-villa-tanahlot #price_list table#room_price tr > td:first-child,
+.category-villa-tanahlot #price_list #return a{
+	color:#ee734b;
+}
+.category-villa-tanahlot #area,
+.category-villa-tanahlot .tour li .btn a,
+.category-villa-tanahlot #rooms li .left .btn a,
+.category-villa-tanahlot #spa li table td .btn a{
+    background-color: #ee734b;
+}
+.category-villa-tanahlot .tour,
+.category-villa-tanahlot #price_list table#room_price tr > th,
+.category-villa-tanahlot #price_list table#room_price tr > td,
+.category-villa-tanahlot #price_list table#price_info{
+	border-color:#ee734b;
+}
+.category-villa-tanahlot #price_list table#room_price tr > th,
+.category-villa-tanahlot #price_list table#room_price tr > td{
+	border-left:solid 1px #F6B9A5;
+}
+
+/* ムンジャンガン */
+.category-villa-menjangan #price_list table th,
+.category-villa-menjangan #price_list table td,
+.category-villa-menjangan #price_list table td.price td,
+.category-villa-menjangan #price_list table#price_info td.bp1{
+	border-color:#B1E89C;
+}
+.category-villa-menjangan #price_list table td span{
+    background-color:#B1E89C;
+}
+.category-villa-menjangan #main_title,
+.category-villa-menjangan .section h2,
+.category-villa-menjangan .section h3,
+.category-villa-menjangan #icon_list .icon_btn a,
+.category-villa-menjangan #restaurant .txt p a,
+.category-villa-menjangan #price_list p,
+.category-villa-menjangan #price_list table th,
+.category-villa-menjangan #price_list table#room_price tr > td:first-child,
+.category-villa-menjangan #price_list #return a{
+	color:#64d13a;
+}
+.category-villa-menjangan #area,
+.category-villa-menjangan .tour li .btn a,
+.category-villa-menjangan #rooms li .left .btn a,
+.category-villa-menjangan #spa li table td .btn a{
+    background-color: #64d13a;
+}
+.category-villa-menjangan .tour,
+.category-villa-menjangan #price_list table#room_price tr > th,
+.category-villa-menjangan #price_list table#room_price tr > td,
+.category-villa-menjangan #price_list table#price_info{
+	border-color:#64d13a;
+}
+.category-villa-menjangan #price_list table#room_price tr > th,
+.category-villa-menjangan #price_list table#room_price tr > td{
+	border-left:solid 1px #B1E89C;
+}
+
+/* ロビナ */
+.category-villa-lovina #price_list table th,
+.category-villa-lovina #price_list table td,
+.category-villa-lovina #price_list table td.price td,
+.category-villa-lovina #price_list table#price_info td.bp1{
+	border-color:#A59DAF;
+}
+.category-villa-lovina #price_list table td span{
+    background-color:#A59DAF;
+}
+.category-villa-lovina #main_title,
+.category-villa-lovina .section h2,
+.category-villa-lovina .section h3,
+.category-villa-lovina #icon_list .icon_btn a,
+.category-villa-lovina #restaurant .txt p a,
+.category-villa-lovina #price_list p,
+.category-villa-lovina #price_list table th,
+.category-villa-lovina #price_list table#room_price tr > td:first-child,
+.category-villa-lovina #price_list #return a{
+	color:#4b3b5f;
+}
+.category-villa-lovina #area,
+.category-villa-lovina .tour li .btn a,
+.category-villa-lovina #rooms li .left .btn a,
+.category-villa-lovina #spa li table td .btn a{
+    background-color: #4b3b5f;
+}
+.category-villa-lovina .tour,
+.category-villa-lovina #price_list table#room_price tr > th,
+.category-villa-lovina #price_list table#room_price tr > td,
+.category-villa-lovina #price_list table#price_info{
+	border-color:#4b3b5f;
+}
+.category-villa-lovina #price_list table#room_price tr > th,
+.category-villa-lovina #price_list table#room_price tr > td{
+	border-left:solid 1px #A59DAF;
+}
+
+/* ジョグジャカルタ */
+.category-villa-yogyakarta #price_list table th,
+.category-villa-yogyakarta #price_list table td,
+.category-villa-yogyakarta #price_list table td.price td,
+.category-villa-yogyakarta #price_list table#price_info td.bp1{
+	border-color:#C1E7FB;
+}
+.category-villa-yogyakarta #price_list table td span{
+    background-color:#C1E7FB;
+}
+.category-villa-yogyakarta #main_title,
+.category-villa-yogyakarta .section h2,
+.category-villa-yogyakarta .section h3,
+.category-villa-yogyakarta #icon_list .icon_btn a,
+.category-villa-yogyakarta #restaurant .txt p a,
+.category-villa-yogyakarta #price_list p,
+.category-villa-yogyakarta #price_list table th,
+.category-villa-yogyakarta #price_list table#room_price tr > td:first-child,
+.category-villa-yogyakarta #price_list #return a{
+	color:#83d0f7;
+}
+.category-villa-yogyakarta #area,
+.category-villa-yogyakarta .tour li .btn a,
+.category-villa-yogyakarta #rooms li .left .btn a,
+.category-villa-yogyakarta #spa li table td .btn a{
+    background-color: #83d0f7;
+}
+.category-villa-yogyakarta .tour,
+.category-villa-yogyakarta #price_list table#room_price tr > th,
+.category-villa-yogyakarta #price_list table#room_price tr > td,
+.category-villa-yogyakarta #price_list table#price_info{
+	border-color:#83d0f7;
+}
+.category-villa-yogyakarta #price_list table#room_price tr > th,
+.category-villa-yogyakarta #price_list table#room_price tr > td{
+	border-left:solid 1px #C1E7FB;
+}
+
+/* ロンボク島 */
+.category-villa-lombok #price_list table th,
+.category-villa-lombok #price_list table td,
+.category-villa-lombok #price_list table td.price td,
+.category-villa-lombok #price_list table#price_info td.bp1{
+	border-color:#D8B8F4;
+}
+.category-villa-lombok #price_list table td span{
+    background-color:#D8B8F4;
+}
+.category-villa-lombok #main_title,
+.category-villa-lombok .section h2,
+.category-villa-lombok .section h3,
+.category-villa-lombok #icon_list .icon_btn a,
+.category-villa-lombok #restaurant .txt p a,
+.category-villa-lombok #price_list p,
+.category-villa-lombok #price_list table th,
+.category-villa-lombok #price_list table#room_price tr > td:first-child,
+.category-villa-lombok #price_list #return a{
+	color:#b271ea;
+}
+.category-villa-lombok #area,
+.category-villa-lombok .tour li .btn a,
+.category-villa-lombok #rooms li .left .btn a,
+.category-villa-lombok #spa li table td .btn a{
+    background-color: #b271ea;
+}
+.category-villa-lombok .tour,
+.category-villa-lombok #price_list table#room_price tr > th,
+.category-villa-lombok #price_list table#room_price tr > td,
+.category-villa-lombok #price_list table#price_info{
+	border-color:#b271ea;
+}
+.category-villa-lombok #price_list table#room_price tr > th,
+.category-villa-lombok #price_list table#room_price tr > td{
+	border-left:solid 1px #D8B8F4;
+}
+
+/* レンボンガン島 */
+.category-villa-lembongan #price_list table th,
+.category-villa-lembongan #price_list table td,
+.category-villa-lembongan #price_list table td.price td,
+.category-villa-lembongan #price_list table#price_info td.bp1{
+	border-color:#9FF7ED;
+}
+.category-villa-lembongan #price_list table td span{
+    background-color:#9FF7ED;
+}
+.category-villa-lembongan #main_title,
+.category-villa-lembongan .section h2,
+.category-villa-lembongan .section h3,
+.category-villa-lembongan #icon_list .icon_btn a,
+.category-villa-lembongan #restaurant .txt p a,
+.category-villa-lembongan #price_list p,
+.category-villa-lembongan #price_list table th,
+.category-villa-lembongan #price_list table#room_price tr > td:first-child,
+.category-villa-lembongan #price_list #return a{
+	color:#3fefdb;
+}
+.category-villa-lembongan #area,
+.category-villa-lembongan .tour li .btn a,
+.category-villa-lembongan #rooms li .left .btn a,
+.category-villa-lembongan #spa li table td .btn a{
+    background-color: #3fefdb;
+}
+.category-villa-lembongan .tour,
+.category-villa-lembongan #price_list table#room_price tr > th,
+.category-villa-lembongan #price_list table#room_price tr > td,
+.category-villa-lembongan #price_list table#price_info{
+	border-color:#3fefdb;
+}
+.category-villa-lembongan #price_list table#room_price tr > th,
+.category-villa-lembongan #price_list table#room_price tr > td{
+	border-left:solid 1px #9FF7ED;
+}
+
+@media screen and (max-width: 1000px) {
+#detail{
+	background-image:none;
+	border:1px solid #ebe3c6;
+	border-top-right-radius: 6px;
+	-moz-border-top-right-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+	-moz-border-top-left-radius: 6px;
+	-webkit-border-top-left-radius: 6px;
+}
+
+#main{
+	margin:0px 20px 20px;
+}
+#main_img{
+	margin:0px 0px 20px;
+}
+
+.tour{
+	margin-left:20px;
+	margin-right:20px;
+}
+
+#lNavi{
+	margin:0px;
+}
+	
+#lNavi.active {
+    left: 0;
+    width: 100% !important;
+}
+#lNavi.active ul {
+    margin: 0;
+    width: 100% !important;
+}
+
+.section{
+	margin-left:20px;
+	margin-right:20px;
+}
+#price_list table th.room{
+	width:auto;
+}
+#price_list table th.number{
+	width:auto;
+}
+#price_list table th.reservation{
+	width:auto;
+}
+}
+
+@media screen and (max-width: 850px) {
+#main_title{
+	float:none;
+	width:100%;
+	margin-bottom:5px;
+}
+#main_info{
+	width:100%;
+	float:none;
+	text-align:left;
+	overflow:hidden;
+}
+#area{
+	margin-right:10px;
+}
+#rank{
+	display:inline-block;
+}
+#main_info ul li{
+	margin-left:0px;
+	margin-right:10px;
+}
+
+.tour li{
+	width:48.5%;
+	padding-right:3%;
+}
+.tour li.pr0{
+	padding-right:3%;
+}
+.tour li:nth-child(2n){
+	padding-right:0% !important;
+}
+
+#lNavi ul li p,
+#lNavi ul li a{
+	padding:15px 15px 30px;
+}
+#lNavi ul li p {
+	line-height: none;
+}
+#lNavi ul li a {
+	line-height: 4.8em;
+    padding: 8px 10px 7px;
+}
+}
+
+@media screen and (max-width: 740px) {
+#container{
+	padding:15px 9px 0px;
+}
+#detail{
+	padding:20px 0px;
+}
+#main{
+	margin:0px 15px 20px;
+}
+#main_title h1{
+	font-size:18px;
+}
+#main_title span{
+	font-size:12px;
+}
+#main_info ul li{
+	font-size:10px;
+}
+
+.tour{
+	margin-left:15px;
+	margin-right:15px;
+}
+.tour li{
+	width:48%;
+	padding-right:4%;
+	font-size:13px;
+}
+.tour li.pr0{
+	padding-right:4%;
+}
+.tour li.tour_read, .tour li.tour_hotel{
+	font-size:10px;
+}
+.tour li.tour_read strong{
+	font-size:12px;
+}
+.tour li .btn{
+	font-size:12px;
+	margin-left:10px;
+}
+
+#lNavi{
+	margin:0px;
+}
+#lNavi ul{
+	margin:0px;
+	text-align:center;
+	border-bottom:none;
+	border-top:none;
+	border-right:none;
+}
+#lNavi.active{
+	left:0px;
+	width:100% !important;
+}
+#lNavi.active ul{
+	width:100% !important;
+	margin:0px;
+}
+#lNavi ul li{
+	width:16.666%;
+	vertical-align:top;
+	border-top:solid 1px #5e3219;
+}
+#lNavi ul li p,
+#lNavi ul li a{
+	font-size:12px;
+	height:26px;
+	padding:11px 5px 24px;
+	line-height: 1.2em;
+}
+#lNavi ul li a{
+	background-image:url(/img/villa/bg_lnavi_btn_sp.png);
+	background-repeat:no-repeat;
+	background-size:12px 8px;
+	background-position:center bottom 10px;
+}
+#lNavi ul li:last-child p,
+#lNavi ul li:last-child a{
+	border-right: 1px solid #5e3219;
+}
+#lNavi ul li.line1 p,
+#lNavi ul li.line1 a{
+	height:14px;
+	padding:17px 5px 30px;
+}
+#lNavi ul li.line3 p,
+#lNavi ul li.line3 a{
+	height:42px;
+	padding:3px 5px 16px;
+}
+#lNavi ul li#faq_open a{
+	background-image:url(/img/villa/bg_faq_btn_sp.png);
+	background-size:14px 14px;
+	background-position:center bottom 6px;
+}
+#lNavi ul li a:hover{
+	background-image:url(/img/villa/bg_lnavi_btn_on_sp.png);
+}
+#lNavi ul li#faq_open a:hover{
+	background-image:url(/img/villa/bg_faq_btn_on_sp.png);
+}
+#lNavi ul li p br,
+#lNavi ul li a br{
+	display:inline;
+}
+
+.section{
+	margin-left:15px;
+	margin-right:15px;
+}
+.section h2{
+	font-size:16px;
+}
+.section h3{
+	font-size:12px;
+}
+.section p{
+	font-size:11px;
+}
+.section table th,
+.section table td{
+	font-size:10px;
+}
+.section .slide_btn{
+	font-size:12px;
+	width:260px;
+}
+.section .slide_btn a{
+	background-image:url(/img/villa/bg_slide_btn_sp.gif);
+	background-size:12px 8px;
+}
+.section .slide_btn a.active{
+	background-image:url(/img/villa/bg_slide_btn_close_sp.gif);
+}
+
+
+/* hotel */
+#hotel_txt .txt{
+	margin-right:0px;
+	margin-bottom:15px;
+}
+#hotel_txt #villa_trip{
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	height:130px;
+}
+#hotel_info1,
+#hotel_info2{
+	margin-bottom:20px;
+}
+
+#icon_list{
+	margin-bottom:10px;
+}
+#icon_list ul li{
+	width:32px;
+}
+#icon_list ul li img{
+	width:100%;
+	height:auto;
+}
+#icon_list .icon_btn{
+	font-size:10px;
+}
+
+#hotel_photo li span{
+	font-size:10px;
+}
+
+
+/* rooms */
+#rooms li .left{
+	width:48.5%;
+	margin-right:3%;
+}
+#rooms li .right{
+	width:48.5%;
+}
+#rooms li .left span{
+	font-size:10px;
+}
+#rooms li .left .btn{
+	font-size:12px;
+}
+#rooms li .right ul li{
+	font-size:11px;
+}
+#rooms li .right p{
+	margin-bottom:10px;
+}
+#rooms li .right .room_detail{
+	margin-top:10px;
+}
+
+
+/* spa */
+#spa h4{
+	font-size:11px;
+}
+#spa li table td .btn a{
+	font-size:12px;
+}
+
+
+/* faq */
+#faq{
+	width:100%;
+}
+#faq .inner{
+	padding:40px;
+}
+#faq_close{
+	width:30px;
+	height:30px;
+	background-size:30px 30px;
+	top:5px;
+	left:5px;
+}
+#faq .inner li h3{
+	font-size:16px;
+	padding-left:28px;
+	background-image:url(/img/icon_faq1_sp.gif);
+	background-size:23px 23px;
+}
+#faq .inner li p{
+	font-size:11px;
+}
+#faq .inner li p strong{
+	padding-left:20px;
+	background-image:url(/img/icon_faq2_sp.gif);
+	background-size:16px 16px;
+}
+
+
+/* price_list */
+/*#price_list p{
+	font-size:10px;
+	margin: 0px 4% 10px;
+}
+#price_list table tr{
+	display:block;
+	width:100%;
+	overflow:hidden;
+}
+#price_list table#room_price > tbody > tr:first-child{
+	display:none;
+}
+#price_list table th,
+#price_list table td,
+#price_list table#price_info th,
+#price_list table#price_info td{
+	display:list-item;
+	list-style-type:none;
+	width:92% !important;
+	padding:10px 4%;
+	float:left;
+	font-size:10px;
+	border-top:solid 1px #d28d47 !important;
+	border-left:none !important;
+}
+#price_list table#room_price td:first-child{
+	border-top:solid 2px #d28d47 !important;
+}
+#price_list table#room_price td:first-child{
+	padding-left:4%;
+}
+#price_list table#room_price td br,
+#price_list table#price_info th br{
+	display:none;
+}
+#price_list table td.room,
+#price_list table td.number,
+#price_list table td.room .ttl,
+#price_list table td.number .ttl,
+#price_list table#price_info th{
+	color:#FFF !important;
+}
+#price_list table td.price{
+	width:100% !important;
+}
+#price_list table#room_price td.price td{
+	width:92% !important;
+	font-size:10px;
+	padding-left:4%;
+	padding-right:4%;
+}
+#price_list table td .ttl{
+	display:block;
+	font-weight:bold;
+	font-size:10px;
+	line-height:1.2em;
+	float:left;
+	width:25%;
+	padding-right:5%;
+}
+#price_list table td.reservation{
+	display:none;
+}
+#price_list .btn2{
+	display:block;
+	padding-top:10px;
+	padding-bottom:30px;
+	border-top:solid 2px #d28d47 !important;
+}
+#price_list #return{
+	font-size:10px;
+	padding:30px 4% 15px;
+}*/
+
+
+/* color */
+/* クタ／レギャン */
+.category-villa-kuta-legian #price_list table#room_price th,
+.category-villa-kuta-legian #price_list table td.price td{
+	border-color:#E8C6A3 !important;
+}
+.category-villa-kuta-legian #price_list table#room_price tr,
+.category-villa-kuta-legian #price_list table#room_price td.btn2,
+.category-villa-kuta-legian #price_list table#room_price td:first-child{
+	border-color:#d28d47 !important;
+}
+.category-villa-kuta-legian #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-kuta-legian #price_list table td.room,
+.category-villa-kuta-legian #price_list table td.number,
+.category-villa-kuta-legian #price_list table#price_info th{
+	background-color:#d28d47;
+}
+.category-villa-kuta-legian #price_list table td .ttl{
+	color:#d28d47;
+}
+
+/* スミニャック／クロボカン */
+.category-villa-seminyak-kerobokan #price_list table#room_price th,
+.category-villa-seminyak-kerobokan #price_list table td.price td{
+	border-color:#F79FA2 !important;
+}
+.category-villa-seminyak-kerobokan #price_list table#room_price tr,
+.category-villa-seminyak-kerobokan #price_list table#room_price td.btn2,
+.category-villa-seminyak-kerobokan #price_list table#room_price td:first-child{
+	border-color:#f03f46 !important;
+}
+.category-villa-seminyak-kerobokan #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-seminyak-kerobokan #price_list table td.room,
+.category-villa-seminyak-kerobokan #price_list table td.number,
+.category-villa-seminyak-kerobokan #price_list table#price_info th{
+	background-color:#f03f46;
+}
+.category-villa-seminyak-kerobokan #price_list table td .ttl{
+	color:#f03f46;
+}
+
+/* ヌサドゥア */
+.category-villa-nusadua #price_list table#room_price th,
+.category-villa-nusadua #price_list table td.price td{
+	border-color:#EBB2D9 !important;
+}
+.category-villa-nusadua #price_list table#room_price tr,
+.category-villa-nusadua #price_list table#room_price td.btn2,
+.category-villa-nusadua #price_list table#room_price td:first-child{
+	border-color:#d766b3 !important;
+}
+.category-villa-nusadua #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-nusadua #price_list table td.room,
+.category-villa-nusadua #price_list table td.number,
+.category-villa-nusadua #price_list table#price_info th{
+	background-color:#d766b3;
+}
+.category-villa-nusadua #price_list table td .ttl{
+	color:#d766b3;
+}
+
+/* ジンバラン／ウルワツ */
+.category-villa-jimbaran-uluwatu #price_list table#room_price th,
+.category-villa-jimbaran-uluwatu #price_list table td.price td{
+	border-color:#7FCCCC !important;
+}
+.category-villa-jimbaran-uluwatu #price_list table#room_price tr,
+.category-villa-jimbaran-uluwatu #price_list table#room_price td.btn2,
+.category-villa-jimbaran-uluwatu #price_list table#room_price td:first-child{
+	border-color:#009999 !important;
+}
+.category-villa-jimbaran-uluwatu #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-jimbaran-uluwatu #price_list table td.room,
+.category-villa-jimbaran-uluwatu #price_list table td.number,
+.category-villa-jimbaran-uluwatu #price_list table#price_info th{
+	background-color:#009999;
+}
+.category-villa-jimbaran-uluwatu #price_list table td .ttl{
+	color:#009999;
+}
+
+/* ウブド */
+.category-villa-ubud #price_list table#room_price th,
+.category-villa-ubud #price_list table td.price td{
+	border-color:#ADBD9B !important;
+}
+.category-villa-ubud #price_list table#room_price tr,
+.category-villa-ubud #price_list table#room_price td.btn2,
+.category-villa-ubud #price_list table#room_price td:first-child{
+	border-color:#5c7b37 !important;
+}
+.category-villa-ubud #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-ubud #price_list table td.room,
+.category-villa-ubud #price_list table td.number,
+.category-villa-ubud #price_list table#price_info th{
+	background-color:#5c7b37;
+}
+.category-villa-ubud #price_list table td .ttl{
+	color:#5c7b37;
+}
+
+/* サヌール */
+.category-villa-sanur #price_list table#room_price th,
+.category-villa-sanur #price_list table td.price td{
+	border-color:#99A9C6 !important;
+}
+.category-villa-sanur #price_list table#room_price tr,
+.category-villa-sanur #price_list table#room_price td.btn2,
+.category-villa-sanur #price_list table#room_price td:first-child{
+	border-color:#34548e !important;
+}
+.category-villa-sanur #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-sanur #price_list table td.room,
+.category-villa-sanur #price_list table td.number,
+.category-villa-sanur #price_list table#price_info th{
+	background-color:#34548e;
+}
+.category-villa-sanur #price_list table td .ttl{
+	color:#34548e;
+}
+
+/* チャングー */
+.category-villa-canggu #price_list table#room_price th,
+.category-villa-canggu #price_list table td.price td{
+	border-color:#FFE5A8 !important;
+}
+.category-villa-canggu #price_list table#room_price tr,
+.category-villa-canggu #price_list table#room_price td.btn2,
+.category-villa-canggu #price_list table#room_price td:first-child{
+	border-color:#ffcb51 !important;
+}
+.category-villa-canggu #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-canggu #price_list table td.room,
+.category-villa-canggu #price_list table td.number,
+.category-villa-canggu #price_list table#price_info th{
+	background-color:#ffcb51;
+}
+.category-villa-canggu #price_list table td .ttl{
+	color:#ffcb51;
+}
+
+/* チャンディダサ */
+.category-villa-candidasa #price_list table#room_price th,
+.category-villa-candidasa #price_list table td.price td{
+	border-color:#C6B7BB !important;
+}
+.category-villa-candidasa #price_list table#room_price tr,
+.category-villa-candidasa #price_list table#room_price td.btn2,
+.category-villa-candidasa #price_list table#room_price td:first-child{
+	border-color:#8d7077 !important;
+}
+.category-villa-candidasa #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-candidasa #price_list table td.room,
+.category-villa-candidasa #price_list table td.number,
+.category-villa-candidasa #price_list table#price_info th{
+	background-color:#8d7077;
+}
+.category-villa-candidasa #price_list table td .ttl{
+	color:#8d7077;
+}
+
+/* タナロット */
+.category-villa-tanahlot #price_list table#room_price th,
+.category-villa-tanahlot #price_list table td.price td{
+	border-color:#F6B9A5 !important;
+}
+.category-villa-tanahlot #price_list table#room_price tr,
+.category-villa-tanahlot #price_list table#room_price td.btn2,
+.category-villa-tanahlot #price_list table#room_price td:first-child{
+	border-color:#ee734b !important;
+}
+.category-villa-tanahlot #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-tanahlot #price_list table td.room,
+.category-villa-tanahlot #price_list table td.number,
+.category-villa-tanahlot #price_list table#price_info th{
+	background-color:#ee734b;
+}
+.category-villa-tanahlot #price_list table td .ttl{
+	color:#ee734b;
+}
+
+/* ムンジャンガン */
+.category-villa-menjangan #price_list table#room_price th,
+.category-villa-menjangan #price_list table td.price td{
+	border-color:#B1E89C !important;
+}
+.category-villa-menjangan #price_list table#room_price tr,
+.category-villa-menjangan #price_list table#room_price td.btn2,
+.category-villa-menjangan #price_list table#room_price td:first-child{
+	border-color:#64d13a !important;
+}
+.category-villa-menjangan #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-menjangan #price_list table td.room,
+.category-villa-menjangan #price_list table td.number,
+.category-villa-menjangan #price_list table#price_info th{
+	background-color:#64d13a;
+}
+.category-villa-menjangan #price_list table td .ttl{
+	color:#64d13a;
+}
+
+/* ロビナ */
+.category-villa-lovina #price_list table#room_price th,
+.category-villa-lovina #price_list table td.price td{
+	border-color:#A59DAF !important;
+}
+.category-villa-lovina #price_list table#room_price tr,
+.category-villa-lovina #price_list table#room_price td.btn2,
+.category-villa-lovina #price_list table#room_price td:first-child{
+	border-color:#4b3b5f !important;
+}
+.category-villa-lovina #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-lovina #price_list table td.room,
+.category-villa-lovina #price_list table td.number,
+.category-villa-lovina #price_list table#price_info th{
+	background-color:#4b3b5f;
+}
+.category-villa-lovina #price_list table td .ttl{
+	color:#4b3b5f;
+}
+
+/* ジョグジャカルタ */
+.category-villa-yogyakarta #price_list table#room_price th,
+.category-villa-yogyakarta #price_list table td.price td{
+	border-color:#C1E7FB !important;
+}
+.category-villa-yogyakarta #price_list table#room_price tr,
+.category-villa-yogyakarta #price_list table#room_price td.btn2,
+.category-villa-yogyakarta #price_list table#room_price td:first-child{
+	border-color:#83d0f7 !important;
+}
+.category-villa-yogyakarta #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-yogyakarta #price_list table td.room,
+.category-villa-yogyakarta #price_list table td.number,
+.category-villa-yogyakarta #price_list table#price_info th{
+	background-color:#83d0f7;
+}
+.category-villa-yogyakarta #price_list table td .ttl{
+	color:#83d0f7;
+}
+
+/* ロンボク島 */
+.category-villa-lombok #price_list table#room_price th,
+.category-villa-lombok #price_list table td.price td{
+	border-color:#D8B8F4 !important;
+}
+.category-villa-lombok #price_list table#room_price tr,
+.category-villa-lombok #price_list table#room_price td.btn2,
+.category-villa-lombok #price_list table#room_price td:first-child{
+	border-color:#b271ea !important;
+}
+.category-villa-lombok #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-lombok #price_list table td.room,
+.category-villa-lombok #price_list table td.number,
+.category-villa-lombok #price_list table#price_info th{
+	background-color:#b271ea;
+}
+.category-villa-lombok #price_list table td .ttl{
+	color:#b271ea;
+}
+
+/* レンボンガン島 */
+.category-villa-lembongan #price_list table#room_price th,
+.category-villa-lembongan #price_list table td.price td{
+	border-color:#9FF7ED !important;
+}
+.category-villa-lembongan #price_list table#room_price tr,
+.category-villa-lembongan #price_list table#room_price td.btn2,
+.category-villa-lembongan #price_list table#room_price td:first-child{
+	border-color:#3fefdb !important;
+}
+.category-villa-lembongan #price_list table td.number{
+	border-top:solid 2px #FFF !important;
+}
+.category-villa-lembongan #price_list table td.room,
+.category-villa-lembongan #price_list table td.number,
+.category-villa-lembongan #price_list table#price_info th{
+	background-color:#3fefdb;
+}
+.category-villa-lembongan #price_list table td .ttl{
+	color:#3fefdb;
+}
+}
+
+@media screen and (max-width: 520px) {
+.tour li{
+	width:100%;
+	padding-right:0% !important;
+}
+}
+
+@media screen and (max-width: 500px) {
+
+/* hotel */
+#hotel_info2 .left,
+#hotel_info2 .right{
+	float:none;
+	width:100%;
+}
+#hotel_info2 .left{
+	margin-bottom:20px;
+}
+
+#icon_list ul li{
+	margin:0px 2px;
+}
+
+#hotel_photo li{
+	display:block;
+	width:100%;
+	max-width:320px;
+	margin-left:auto;
+	margin-right:auto !important;
+	margin-top:0px;
+	padding-top:10px;
+}
+
+#lounge ul li .photo{
+	width:100%;
+	max-width:320px;
+	margin-left:auto;
+	margin-right:auto;
+	float:none;
+	margin-bottom:10px;
+}
+#lounge ul li .txt{
+	margin-left:0px;
+}
+#lounge ul li .txt p{
+	margin-bottom:10px;
+}
+
+
+/* rooms */
+#rooms li .left{
+	float:none;
+	width:100%;
+	max-width:320px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#rooms li .right{
+	float:none;
+	width:100%;
+	margin-bottom:15px;
+}
+
+
+/* spa */
+#spa_main .photo{
+	float:none;
+	width:100%;
+	max-width:320px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px;
+}
+#spa_main .txt{
+	float:none;
+	width:100%;
+}
+
+
+/* restaurant */
+#restaurant .photo{
+	float:none;
+	width:100%;
+	max-width:320px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px;
+}
+#restaurant .txt{
+	float:none;
+	width:100%;
+}
+}
+
+@media screen and (max-width: 460px) {
+#lNavi ul li p, #lNavi ul li a{
+	font-size:10px;
+}
+#lNavi ul li p,
+#lNavi ul li a{
+	padding: 11px 0px 19px;
+}
+#lNavi ul li.line1 p,
+#lNavi ul li.line1 a{
+	padding: 17px 0px 25px;
+}
+#lNavi ul li.line3 p,
+#lNavi ul li.line3 a{
+	height:36px;
+	padding:6px 0px 14px;;
+}
+}
+
+.remarks_list {
+	border-bottom: 1px dotted #666;
+	border-top: 1px dotted #666;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+.remarks_list li {
+	padding: 3px;
+	font-size: 90%;
+}
+#restaurant span{
+	margin-bottom: 5px;
+	display: block;
+}
+/* color */
+/* クタ／レギャン */
+.category-list-kuta #price_list table th,
+.category-list-kuta #price_list table td,
+.category-list-kuta #price_list table td.price td,
+.category-list-kuta #price_list table#price_info td.bp1{
+	border-color:#E8C6A3;
+}
+.category-list-kuta #price_list table td span{
+    background-color:#E8C6A3;
+}
+.category-list-kuta #main_title,
+.category-list-kuta .section h2,
+.category-list-kuta .section h3,
+.category-list-kuta #icon_list .icon_btn a,
+.category-list-kuta #restaurant .txt p a,
+.category-list-kuta #restaurant .txt span,
+.category-list-kuta #price_list p,
+.category-list-kuta #price_list table th,
+.category-list-kuta #price_list table#room_price tr > td:first-child,
+.category-list-kuta #price_list #return a{
+	color:#d28d47;
+}
+.category-list-kuta #area,
+.category-list-kuta .tour li .btn a,
+.category-list-kuta #rooms li .left .btn a,
+.category-list-kuta #spa li table td .btn a{
+    background-color: #d28d47;
+}
+.category-list-kuta .tour,
+.category-list-kuta #price_list table#room_price tr > th,
+.category-list-kuta #price_list table#room_price tr > td,
+.category-list-kuta #price_list table#price_info{
+	border-color:#d28d47;
+}
+.category-list-kuta #price_list table#room_price tr > th,
+.category-list-kuta #price_list table#room_price tr > td{
+	border-left:solid 1px #E8C6A3;
+}
+
+/* スミニャック／クロボカン */
+.category-list-semi #price_list table th,
+.category-list-semi #price_list table td,
+.category-list-semi #price_list table td.price td,
+.category-list-semi #price_list table#price_info td.bp1{
+	border-color:#F79FA2;
+}
+.category-list-semi #price_list table td span{
+    background-color:#F79FA2;
+}
+.category-list-semi #main_title,
+.category-list-semi .section h2,
+.category-list-semi .section h3,
+.category-list-semi #icon_list .icon_btn a,
+.category-list-semi #restaurant .txt p a,
+.category-list-semi #restaurant .txt span,
+.category-list-semi #price_list p,
+.category-list-semi #price_list table th,
+.category-list-semi #price_list table#room_price tr > td:first-child,
+.category-list-semi #price_list #return a{
+	color:#f03f46;
+}
+.category-list-semi #area,
+.category-list-semi .tour li .btn a,
+.category-list-semi #rooms li .left .btn a,
+.category-list-semi #spa li table td .btn a{
+    background-color: #f03f46;
+}
+.category-list-semi .tour,
+.category-list-semi #price_list table#room_price tr > th,
+.category-list-semi #price_list table#room_price tr > td,
+.category-list-semi #price_list table#price_info{
+	border-color:#f03f46;
+}
+.category-list-semi #price_list table#room_price tr > th,
+.category-list-semi #price_list table#room_price tr > td{
+	border-left:solid 1px #F79FA2;
+}
+
+/* ヌサドゥア */
+.category-list-nusa #price_list table th,
+.category-list-nusa #price_list table td,
+.category-list-nusa #price_list table td.price td,
+.category-list-nusa #price_list table#price_info td.bp1{
+	border-color:#EBB2D9;
+}
+.category-list-nusa #price_list table td span{
+    background-color:#EBB2D9;
+}
+.category-list-nusa #main_title,
+.category-list-nusa .section h2,
+.category-list-nusa .section h3,
+.category-list-nusa #icon_list .icon_btn a,
+.category-list-nusa #restaurant .txt p a,
+.category-list-nusa #restaurant .txt span,
+.category-list-nusa #price_list p,
+.category-list-nusa #price_list table th,
+.category-list-nusa #price_list table#room_price tr > td:first-child,
+.category-list-nusa #price_list #return a{
+	color:#d766b3;
+}
+.category-list-nusa #area,
+.category-list-nusa .tour li .btn a,
+.category-list-nusa #rooms li .left .btn a,
+.category-list-nusa #spa li table td .btn a{
+    background-color: #d766b3;
+}
+.category-list-nusa .tour,
+.category-list-nusa #price_list table#room_price tr > th,
+.category-list-nusa #price_list table#room_price tr > td,
+.category-list-nusa #price_list table#price_info{
+	border-color:#d766b3;
+}
+.category-list-nusa #price_list table#room_price tr > th,
+.category-list-nusa #price_list table#room_price tr > td{
+	border-left:solid 1px #EBB2D9;
+}
+
+/* ジンバラン／ウルワツ */
+.category-list-jim #price_list table th,
+.category-list-jim #price_list table td,
+.category-list-jim #price_list table td.price td,
+.category-list-jim #price_list table#price_info td.bp1{
+	border-color:#7FCCCC;
+}
+.category-list-jim #price_list table td span{
+    background-color:#7FCCCC;
+}
+.category-list-jim #main_title,
+.category-list-jim .section h2,
+.category-list-jim .section h3,
+.category-list-jim #icon_list .icon_btn a,
+.category-list-jim #restaurant .txt p a,
+.category-list-jim #restaurant .txt span,
+.category-list-jim #price_list p,
+.category-list-jim #price_list table th,
+.category-list-jim #price_list table#room_price tr > td:first-child,
+.category-list-jim #price_list #return a{
+	color:#009999;
+}
+.category-list-jim #area,
+.category-list-jim .tour li .btn a,
+.category-list-jim #rooms li .left .btn a,
+.category-list-jim #spa li table td .btn a{
+    background-color: #009999;
+}
+.category-list-jim .tour,
+.category-list-jim #price_list table#room_price tr > th,
+.category-list-jim #price_list table#room_price tr > td,
+.category-list-jim #price_list table#price_info{
+	border-color:#009999;
+}
+.category-list-jim #price_list table#room_price tr > th,
+.category-list-jim #price_list table#room_price tr > td{
+	border-left:solid 1px #7FCCCC;
+}
+
+/* ウブド */
+.category-list-ubud #price_list table th,
+.category-list-ubud #price_list table td,
+.category-list-ubud #price_list table td.price td,
+.category-list-ubud #price_list table#price_info td.bp1{
+	border-color:#ADBD9B;
+}
+.category-list-ubud #price_list table td span{
+    background-color:#ADBD9B;
+}
+.category-list-ubud #main_title,
+.category-list-ubud .section h2,
+.category-list-ubud .section h3,
+.category-list-ubud #icon_list .icon_btn a,
+.category-list-ubud #restaurant .txt p a,
+.category-list-ubud #restaurant .txt span,
+.category-list-ubud #price_list p,
+.category-list-ubud #price_list table th,
+.category-list-ubud #price_list table#room_price tr > td:first-child,
+.category-list-ubud #price_list #return a{
+	color:#5c7b37;
+}
+.category-list-ubud #area,
+.category-list-ubud .tour li .btn a,
+.category-list-ubud #rooms li .left .btn a,
+.category-list-ubud #spa li table td .btn a{
+    background-color: #5c7b37;
+}
+.category-list-ubud .tour,
+.category-list-ubud #price_list table#room_price tr > th,
+.category-list-ubud #price_list table#room_price tr > td,
+.category-list-ubud #price_list table#price_info{
+	border-color:#5c7b37;
+}
+.category-list-ubud #price_list table#room_price tr > th,
+.category-list-ubud #price_list table#room_price tr > td{
+	border-left:solid 1px #ADBD9B;
+}
+
+/* サヌール */
+.category-list-sanur #price_list table th,
+.category-list-sanur #price_list table td,
+.category-list-sanur #price_list table td.price td,
+.category-list-sanur #price_list table#price_info td.bp1{
+	border-color:#99A9C6;
+}
+.category-list-sanur #price_list table td span{
+    background-color:#99A9C6;
+}
+.category-list-sanur #main_title,
+.category-list-sanur .section h2,
+.category-list-sanur .section h3,
+.category-list-sanur #icon_list .icon_btn a,
+.category-list-sanur #restaurant .txt p a,
+.category-list-sanur #restaurant .txt span,
+.category-list-sanur #price_list p,
+.category-list-sanur #price_list table th,
+.category-list-sanur #price_list table#room_price tr > td:first-child,
+.category-list-sanur #price_list #return a{
+	color:#34548e;
+}
+.category-list-sanur #area,
+.category-list-sanur .tour li .btn a,
+.category-list-sanur #rooms li .left .btn a,
+.category-list-sanur #spa li table td .btn a{
+    background-color: #34548e;
+}
+.category-list-sanur .tour,
+.category-list-sanur #price_list table#room_price tr > th,
+.category-list-sanur #price_list table#room_price tr > td,
+.category-list-sanur #price_list table#price_info{
+	border-color:#34548e;
+}
+.category-list-sanur #price_list table#room_price tr > th,
+.category-list-sanur #price_list table#room_price tr > td{
+	border-left:solid 1px #99A9C6;
+}
+
+/* チャングー */
+.category-list-canggu #price_list table th,
+.category-list-canggu #price_list table td,
+.category-list-canggu #price_list table td.price td,
+.category-list-canggu #price_list table#price_info td.bp1{
+	border-color:#FFE5A8;
+}
+.category-list-canggu #price_list table td span{
+    background-color:#FFE5A8;
+}
+.category-list-canggu #main_title,
+.category-list-canggu .section h2,
+.category-list-canggu .section h3,
+.category-list-canggu #icon_list .icon_btn a,
+.category-list-canggu #restaurant .txt p a,
+.category-list-canggu #restaurant .txt span,
+.category-list-canggu #price_list p,
+.category-list-canggu #price_list table th,
+.category-list-canggu #price_list table#room_price tr > td:first-child,
+.category-list-canggu #price_list #return a{
+	color:#ffcb51;
+}
+.category-list-canggu #area,
+.category-list-canggu .tour li .btn a,
+.category-list-canggu #rooms li .left .btn a,
+.category-list-canggu #spa li table td .btn a{
+    background-color: #ffcb51;
+}
+.category-list-canggu .tour,
+.category-list-canggu #price_list table#room_price tr > th,
+.category-list-canggu #price_list table#room_price tr > td,
+.category-list-canggu #price_list table#price_info{
+	border-color:#ffcb51;
+}
+.category-list-canggu #price_list table#room_price tr > th,
+.category-list-canggu #price_list table#room_price tr > td{
+	border-left:solid 1px #FFE5A8;
+}
+
+/* チャンディダサ */
+.category-list-candidasa #price_list table th,
+.category-list-candidasa #price_list table td,
+.category-list-candidasa #price_list table td.price td,
+.category-list-candidasa #price_list table#price_info td.bp1{
+	border-color:#C6B7BB;
+}
+.category-list-candidasa #price_list table td span{
+    background-color:#C6B7BB;
+}
+.category-list-candidasa #main_title,
+.category-list-candidasa .section h2,
+.category-list-candidasa .section h3,
+.category-list-candidasa #icon_list .icon_btn a,
+.category-list-candidasa #restaurant .txt p a,
+.category-list-candidasa #restaurant .txt span,
+.category-list-candidasa #price_list p,
+.category-list-candidasa #price_list table th,
+.category-list-candidasa #price_list table#room_price tr > td:first-child,
+.category-list-candidasa #price_list #return a{
+	color:#8d7077;
+}
+.category-list-candidasa #area,
+.category-list-candidasa .tour li .btn a,
+.category-list-candidasa #rooms li .left .btn a,
+.category-list-candidasa #spa li table td .btn a{
+    background-color: #8d7077;
+}
+.category-list-candidasa .tour,
+.category-list-candidasa #price_list table#room_price tr > th,
+.category-list-candidasa #price_list table#room_price tr > td,
+.category-list-candidasa #price_list table#price_info{
+	border-color:#8d7077;
+}
+.category-list-candidasa #price_list table#room_price tr > th,
+.category-list-candidasa #price_list table#room_price tr > td{
+	border-left:solid 1px #C6B7BB;
+}
+
+/* タナロット */
+.category-list-tanahlot #price_list table th,
+.category-list-tanahlot #price_list table td,
+.category-list-tanahlot #price_list table td.price td,
+.category-list-tanahlot #price_list table#price_info td.bp1{
+	border-color:#F6B9A5;
+}
+.category-list-tanahlot #price_list table td span{
+    background-color:#F6B9A5;
+}
+.category-list-tanahlot #main_title,
+.category-list-tanahlot .section h2,
+.category-list-tanahlot .section h3,
+.category-list-tanahlot #icon_list .icon_btn a,
+.category-list-tanahlot #restaurant .txt p a,
+.category-list-tanahlot #restaurant .txt span,
+.category-list-tanahlot #price_list p,
+.category-list-tanahlot #price_list table th,
+.category-list-tanahlot #price_list table#room_price tr > td:first-child,
+.category-list-tanahlot #price_list #return a{
+	color:#ee734b;
+}
+.category-list-tanahlot #area,
+.category-list-tanahlot .tour li .btn a,
+.category-list-tanahlot #rooms li .left .btn a,
+.category-list-tanahlot #spa li table td .btn a{
+    background-color: #ee734b;
+}
+.category-list-tanahlot .tour,
+.category-list-tanahlot #price_list table#room_price tr > th,
+.category-list-tanahlot #price_list table#room_price tr > td,
+.category-list-tanahlot #price_list table#price_info{
+	border-color:#ee734b;
+}
+.category-list-tanahlot #price_list table#room_price tr > th,
+.category-list-tanahlot #price_list table#room_price tr > td{
+	border-left:solid 1px #F6B9A5;
+}
+
+/* ムンジャンガン */
+.category-list-menjangan #price_list table th,
+.category-list-menjangan #price_list table td,
+.category-list-menjangan #price_list table td.price td,
+.category-list-menjangan #price_list table#price_info td.bp1{
+	border-color:#B1E89C;
+}
+.category-list-menjangan #price_list table td span{
+    background-color:#B1E89C;
+}
+.category-list-menjangan #main_title,
+.category-list-menjangan .section h2,
+.category-list-menjangan .section h3,
+.category-list-menjangan #icon_list .icon_btn a,
+.category-list-menjangan #restaurant .txt p a,
+.category-list-menjangan #restaurant .txt span,
+.category-list-menjangan #price_list p,
+.category-list-menjangan #price_list table th,
+.category-list-menjangan #price_list table#room_price tr > td:first-child,
+.category-list-menjangan #price_list #return a{
+	color:#64d13a;
+}
+.category-list-menjangan #area,
+.category-list-menjangan .tour li .btn a,
+.category-list-menjangan #rooms li .left .btn a,
+.category-list-menjangan #spa li table td .btn a{
+    background-color: #64d13a;
+}
+.category-list-menjangan .tour,
+.category-list-menjangan #price_list table#room_price tr > th,
+.category-list-menjangan #price_list table#room_price tr > td,
+.category-list-menjangan #price_list table#price_info{
+	border-color:#64d13a;
+}
+.category-list-menjangan #price_list table#room_price tr > th,
+.category-list-menjangan #price_list table#room_price tr > td{
+	border-left:solid 1px #B1E89C;
+}
+
+/* ロビナ */
+.category-list-lovina #price_list table th,
+.category-list-lovina #price_list table td,
+.category-list-lovina #price_list table td.price td,
+.category-list-lovina #price_list table#price_info td.bp1{
+	border-color:#A59DAF;
+}
+.category-list-lovina #price_list table td span{
+    background-color:#A59DAF;
+}
+.category-list-lovina #main_title,
+.category-list-lovina .section h2,
+.category-list-lovina .section h3,
+.category-list-lovina #icon_list .icon_btn a,
+.category-list-lovina #restaurant .txt p a,
+.category-list-lovina #restaurant .txt span,
+.category-list-lovina #price_list p,
+.category-list-lovina #price_list table th,
+.category-list-lovina #price_list table#room_price tr > td:first-child,
+.category-list-lovina #price_list #return a{
+	color:#4b3b5f;
+}
+.category-list-lovina #area,
+.category-list-lovina .tour li .btn a,
+.category-list-lovina #rooms li .left .btn a,
+.category-list-lovina #spa li table td .btn a{
+    background-color: #4b3b5f;
+}
+.category-list-lovina .tour,
+.category-list-lovina #price_list table#room_price tr > th,
+.category-list-lovina #price_list table#room_price tr > td,
+.category-list-lovina #price_list table#price_info{
+	border-color:#4b3b5f;
+}
+.category-list-lovina #price_list table#room_price tr > th,
+.category-list-lovina #price_list table#room_price tr > td{
+	border-left:solid 1px #A59DAF;
+}
+
+/* ジョグジャカルタ */
+.category-list-yogyakarta #price_list table th,
+.category-list-yogyakarta #price_list table td,
+.category-list-yogyakarta #price_list table td.price td,
+.category-list-yogyakarta #price_list table#price_info td.bp1{
+	border-color:#C1E7FB;
+}
+.category-list-yogyakarta #price_list table td span{
+    background-color:#C1E7FB;
+}
+.category-list-yogyakarta #main_title,
+.category-list-yogyakarta .section h2,
+.category-list-yogyakarta .section h3,
+.category-list-yogyakarta #icon_list .icon_btn a,
+.category-list-yogyakarta #restaurant .txt p a,
+.category-list-yogyakarta #restaurant .txt span,
+.category-list-yogyakarta #price_list p,
+.category-list-yogyakarta #price_list table th,
+.category-list-yogyakarta #price_list table#room_price tr > td:first-child,
+.category-list-yogyakarta #price_list #return a{
+	color:#83d0f7;
+}
+.category-list-yogyakarta #area,
+.category-list-yogyakarta .tour li .btn a,
+.category-list-yogyakarta #rooms li .left .btn a,
+.category-list-yogyakarta #spa li table td .btn a{
+    background-color: #83d0f7;
+}
+.category-list-yogyakarta .tour,
+.category-list-yogyakarta #price_list table#room_price tr > th,
+.category-list-yogyakarta #price_list table#room_price tr > td,
+.category-list-yogyakarta #price_list table#price_info{
+	border-color:#83d0f7;
+}
+.category-list-yogyakarta #price_list table#room_price tr > th,
+.category-list-yogyakarta #price_list table#room_price tr > td{
+	border-left:solid 1px #C1E7FB;
+}
+
+/* ロンボク島 */
+.category-list-lombok #price_list table th,
+.category-list-lombok #price_list table td,
+.category-list-lombok #price_list table td.price td,
+.category-list-lombok #price_list table#price_info td.bp1{
+	border-color:#D8B8F4;
+}
+.category-list-lombok #price_list table td span{
+    background-color:#D8B8F4;
+}
+.category-list-lombok #main_title,
+.category-list-lombok .section h2,
+.category-list-lombok .section h3,
+.category-list-lombok #icon_list .icon_btn a,
+.category-list-lombok #restaurant .txt p a,
+.category-list-lombok #restaurant .txt span,
+.category-list-lombok #price_list p,
+.category-list-lombok #price_list table th,
+.category-list-lombok #price_list table#room_price tr > td:first-child,
+.category-list-lombok #price_list #return a{
+	color:#b271ea;
+}
+.category-list-lombok #area,
+.category-list-lombok .tour li .btn a,
+.category-list-lombok #rooms li .left .btn a,
+.category-list-lombok #spa li table td .btn a{
+    background-color: #b271ea;
+}
+.category-list-lombok .tour,
+.category-list-lombok #price_list table#room_price tr > th,
+.category-list-lombok #price_list table#room_price tr > td,
+.category-list-lombok #price_list table#price_info{
+	border-color:#b271ea;
+}
+.category-list-lombok #price_list table#room_price tr > th,
+.category-list-lombok #price_list table#room_price tr > td{
+	border-left:solid 1px #D8B8F4;
+}
+
+/* レンボンガン島 */
+.category-list-lembongan #price_list table th,
+.category-list-lembongan #price_list table td,
+.category-list-lembongan #price_list table td.price td,
+.category-list-lembongan #price_list table#price_info td.bp1{
+	border-color:#9FF7ED;
+}
+.category-list-lembongan #price_list table td span{
+    background-color:#9FF7ED;
+}
+.category-list-lembongan #main_title,
+.category-list-lembongan .section h2,
+.category-list-lembongan .section h3,
+.category-list-lembongan #icon_list .icon_btn a,
+.category-list-lembongan #restaurant .txt p a,
+.category-list-lembongan #restaurant .txt span,
+.category-list-lembongan #price_list p,
+.category-list-lembongan #price_list table th,
+.category-list-lembongan #price_list table#room_price tr > td:first-child,
+.category-list-lembongan #price_list #return a{
+	color:#3fefdb;
+}
+.category-list-lembongan #area,
+.category-list-lembongan .tour li .btn a,
+.category-list-lembongan #rooms li .left .btn a,
+.category-villa-lembongan #spa li table td .btn a{
+    background-color: #3fefdb;
+}
+.category-list-lembongan .tour,
+.category-list-lembongan #price_list table#room_price tr > th,
+.category-list-lembongan #price_list table#room_price tr > td,
+.category-list-lembongan #price_list table#price_info{
+	border-color:#3fefdb;
+}
+.category-list-lembongan #price_list table#room_price tr > th,
+.category-list-lembongan #price_list table#room_price tr > td{
+	border-left:solid 1px #9FF7ED;
+}
+/*common*/
+.tour li.tour_hotel .btn a {
+    background-color: #5e3219 !important;
+}
+
+ #responsive {
+	display: none;
+	position:absolute; 
+	width:80px; 
+	margin-left: -80px;
+	border-bottom: 2px solid #d28d47;
+	border-right: 2px solid #d28d47;
+	background-color: #fcecbf;
+}
+.responsive-table {
+	border-top: 2px solid #d28d47;
+	border-left: 2px solid #d28d47;
+	padding: 10px 0;
+	width: 79px;
+	text-align: center;
+	font-weight: bold;
+	display:table;
+}
+.responsive-table div{
+	display: table-cell;
+	vertical-align:middle;
+}
+.responsive_price_list {
+	width: auto; 
+	overflow-x:scroll;  
+	margin-left:80px; 
+	overflow-y:visible;
+	padding-bottom:1px;
+	border-right: 2px solid #d28d47;
+}
+#price_list table th p.pgraph,
+#price_list table td span.pgraph {
+	font-size: 100% !important;
+	color: #333;
+	margin: auto;
+}
