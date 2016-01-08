@@ -1,1 +1,0 @@
-<?php @header("HTTP/1.1 404 Not found", TRUE, 404); ?>
